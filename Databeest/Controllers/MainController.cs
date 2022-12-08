@@ -4,29 +4,31 @@ using System.Diagnostics;
 
 namespace Databeest.Controllers
 {
-    public class HomeController : Controller
+    public class MainController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        // MS generated
+        private readonly ILogger<MainController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public MainController(ILogger<MainController> logger)
         {
             _logger = logger;
         }
+        //
 
+        /************************************************************************/
+        /* Index                                                                */
+        /************************************************************************/
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        // MS generated
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //
     }
 }
