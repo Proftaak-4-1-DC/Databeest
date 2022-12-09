@@ -1,6 +1,7 @@
 ﻿using Databeest.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Databeest.Common;
 
 namespace Databeest.Controllers
 {
@@ -8,6 +9,7 @@ namespace Databeest.Controllers
     {
         // MS generated
         private readonly ILogger<MainController> _logger;
+        private SqlManager SqlManager  = new SqlManager();
 
         public MainController(ILogger<MainController> logger)
         {
@@ -20,6 +22,8 @@ namespace Databeest.Controllers
         /************************************************************************/
         public IActionResult Index()
         {
+            SqlManager.OpenConnection();
+
             return View();
         }
 
