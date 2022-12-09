@@ -1,4 +1,7 @@
-﻿namespace Databeest.Models
+﻿using Databeest.Common;
+using MySql.Data.MySqlClient;
+
+namespace Databeest.Models
 {
     public class User
     {
@@ -13,6 +16,10 @@
             Password = password;
 
             Email = Username + "@databeast.nl";
+        }
+
+        public void Create()
+        {
         }
     }
 }
