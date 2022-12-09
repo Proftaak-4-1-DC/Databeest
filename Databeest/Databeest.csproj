@@ -11,5 +11,23 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+	
+  <ItemGroup>
+    <None Remove="appsettings.json.example" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Content Include="appsettings.json.example" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\**" ExcludeFromSingleFile="false">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+</ItemGroup>
 
 </Project>
