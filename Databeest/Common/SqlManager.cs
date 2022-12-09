@@ -32,12 +32,12 @@ public class SqlManager // IDisposable? wanneer gebruiken?
         {
             //Connection.Open();
 
-            using (MySqlConnection connection = new MySqlConnection(ConnectionString))
+            /*using (MySqlConnection connection = new MySqlConnection(ConnectionString))
             using (MySqlCommand command = new MySqlCommand())
             {
                 connection.Open();
                 command.ExecuteNonQuery();
-            }
+            }*/
         }
 
         public void CloseConnection()
