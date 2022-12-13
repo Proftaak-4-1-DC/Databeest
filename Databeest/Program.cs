@@ -1,11 +1,31 @@
 using Microsoft.AspNetCore.HttpOverrides;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddCertificateForwarding(options =>
+{
+    options.CertificateHeader = "ssl-client-cert";
+    options.HeaderConverter = (headerValue) =>
+    {
+        X509Certificate2? clientCertificate = null;
+
+        if (!string.IsNullOrWhiteSpace(headerValue))
+        {
+            clientCertificate = X509Certificate2.CreateFromPem(WebUtility.UrlDecode(headerValue));
+        }
+
+        return clientCertificate!;
+    };
+});
 
 var app = builder.Build();
+
+app.UseCertificateForwarding();
+app.UseAuthentication();
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
@@ -17,7 +37,6 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHttpsRedirection();
-
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 } else
