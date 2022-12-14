@@ -30,4 +30,17 @@
     </Content>
 </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\img\close.png" />
+    <None Include="wwwroot\img\congrats.png" />
+    <None Include="wwwroot\img\drafts2.png" />
+    <None Include="wwwroot\img\full-mail-icon.png" />
+    <None Include="wwwroot\img\full-mail.jpeg" />
+    <None Include="wwwroot\img\inbox.png" />
+    <None Include="wwwroot\img\pencil.png" />
+    <None Include="wwwroot\img\search.png" />
+    <None Include="wwwroot\img\sent.png" />
+    <None Include="wwwroot\img\trash.png" />
+  </ItemGroup>
+
 </Project>
