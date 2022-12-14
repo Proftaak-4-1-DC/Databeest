@@ -10,3 +10,6 @@ obj
 # Sensitive data
 Databeest/appsettings.json
 Databeest/databeast.nl
+
+# Haat aan mac
+.DS_Store
