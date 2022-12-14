@@ -2,6 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
 // Show selected type of inbox like Inbox or Sent 
 function showLeft(id) {
     $('#' + id).show();
@@ -23,35 +24,28 @@ function showLeft(id) {
 }
 
 // Open selected mail on right side function
-    function MailOpen(id) {
-        $('#' + id).show();
-        $('.mailbox-container').not('#' + id).hide();
+function MailOpen(id) {
+    $('#' + id).show();
+    $('.mailbox-container').not('#' + id).hide();
+    $(this).addClass('selected');
+}
+
+$(function(){
+    $('.inbox').click(function(){
+        $('.inbox').removeClass('selected');
         $(this).addClass('selected');
-        }
+    });
 
-        $(function(){
-            $('.inbox').click(function(){
-                $('.inbox').removeClass('selected');
-                $(this).addClass('selected');
-            });
-        });
-        
-
-        // Search bar filter function 
-        $(document).ready(function(){
-            $("#search-bar").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#b1 .inbox").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
+    // Search bar filter function 
+    $("#search-bar").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#b1 .inbox").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
 
-        $(document).ready(function(){
-            $("#search-bar").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#b2 .inbox").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
+        var value = $(this).val().toLowerCase();
+        $("#b2 .inbox").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
+    });
+});
