@@ -1,4 +1,12 @@
+# Dev
 .vs
+.vscode
+
+# Binaries
+publish/
 bin
 obj
+
+# Sensitive data
 Databeest/appsettings.json
+Databeest/databeast.nl
