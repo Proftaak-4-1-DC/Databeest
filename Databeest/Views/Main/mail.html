@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mail</title>
+        <link rel="stylesheet" href="mail.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="top-bar">
+            <div class="desktop-bar"></div>
+            <div class="spacing-bar"></div>
+            <div class="app-bar">
+                <img class="app-bar-icon" src="full-mail-icon.png">
+                <a href="#" class="app-bar-close"><img src="close.png"></a>
+            </div>
+        </div>
+
+        <div class="mail-container">
+            <!-- LEFT SIDE OF MAIL PAGE -->
+            <div class="mail-left">
+                <div class="compose-container">
+                    <a href="#" class="compose">
+                        <ul>
+                            <li><img src="pencil.png"></li>
+                            <li>Compose</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="boxes-container">
+                    <a id="inbox" class="box" onclick="showLeft('b1')">
+                        <ul>
+                            <li><img src="inbox.png"></li>
+                            <li>Inbox</li>
+                        </ul>
+                    </a>
+                    <a id="sent" class="box" onclick="showLeft('b2')">
+                        <ul>
+                            <li><img src="sent.png" style="width: 50px;"></li>
+                            <li>Sent</li>
+                        </ul>
+                    </a>
+                    <a id="draft" class="box" onclick="showLeft('b3')">
+                        <ul>
+                            <li><img src="drafts2.png"></li>
+                            <li>Draft</li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+             <!-- MIDDLE SIDE OF MAIL PAGE -->
+            <div class="mail-middle">
+
+            <div class="search">
+                <input id="search-bar" type="text" name="search"  placeholder="Search mail">
+                <img src="search.png">
+        </div>       
+
+        <!-- INBOX -->
+        <div id="b1" class="inbox-container inbox-hide">
+            <div id="box-start1" class="inbox selected" onclick="MailOpen('i1')">
+                <p>Directeur River College</p>
+                <p>Welkom</p>
+                <img class="trash" src="trash.png">
+            </div>
+            <div class="inbox" onclick="MailOpen('i2')">
+                <p>flinkedeals.nl</p>
+                <p>Gefeliciteerd U heeft 1000 euro gewonnen!!!!</p>
+                <img class="trash" src="trash.png">
+            </div>
+            <div class="inbox" onclick="MailOpen('i3')">
+                <p>Leon vd pavert</p>
+                <p>Les uitval mevrouw Dorst</p>
+                <img class="trash" src="trash.png">
+            </div>
+            <div class="inbox" onclick="MailOpen('i4')">
+                <p>Leon vd pavert</p>
+                <p>Filmpje School</p>
+                <img class="trash" src="trash.png">
+            </div>
+            <div class="inbox" onclick="MailOpen('i5')">
+                <p>Directeur River College</p>
+                <p>De open dag van het River College</p>
+                <img class="trash" src="trash.png">
+            </div>
+            <div class="inbox" onclick="MailOpen('i6')">
+                <p>Directeur River College</p>
+                <p>Nieuwsbrief</p>
+                <img class="trash" src="trash.png">
+            </div>
+        </div>
+
+            <!-- SENT -->
+            <div id="b2" class="inbox-container inbox-hide" style="display:none;">
+                <div id="box-start2" class="inbox" onclick="MailOpen('i7')">
+                    <p>Directeur River College</p>
+                    <p>Aanmelden opendag</p>
+                    <img class="trash" src="trash.png">
+                </div>
+                <div class="inbox" onclick="MailOpen('i8')">
+                    <p>Leon vd pavert</p>
+                    <p>Les uitval mevrouw Dorst</p>
+                    <img class="trash" src="trash.png">
+                </div>        
+            </div>
+
+                <!-- Draft -->
+                <div id="b3" class="inbox-container inbox-hide" style="display:none;">
+                    <div class="inbox">
+                        <p>Nog geen berichten</p>
+                        <p>Nog geen berichten</p>
+                    </div>       
+                </div>  
+                </div>
+                <div class="mail-right">
+                    <div class="mail-box">
+                        <div class="mailbox-container" id="i1">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>Directeur River College</span></p>
+                                <p class="hide">r.vweert@rivercollege.nl</p>
+                                <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                            </div>
+
+                            <h2 class="mail-title">Welkom</h2>
+                            <div class="mail-text">
+                                <p>
+                                    Beste, 
+                                    <br><br>
+                                    {naam persoon}
+                                    <br><br>
+                                    Welkom bij River College. 
+                                    <br><br>
+                                    We zijn erg blij dat je vanaf vandaag deel uitmaakt van onze school. We zullen dit e-mailadres gebruiken om u op de hoogte te houden van alle meldingen en evenementen van River. Ook kun je hiermee je docenten met dit mailadress bereiken.
+                                    <br><br>
+                                    Met vriendelijke groet,
+                                    <br><br>
+                                    Davy van Weert <br>
+                                    Directeur River College
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mailbox-container" id="i2" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>Flinkedeals B.V.</span></p>
+                                <p class="hide">win-actie@flinkedeals.nl</p>
+                                <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                            </div>
+
+                            <h2 class="mail-title">Gefeliciteerd 1000 Euro gewonnen!!!!!!</h2>
+                            <div class="mail-text">
+                                <p>Beste, {naam persoon}
+                                <br>
+                                <br>
+                                Wij van flinkedeals.nl mogen u hartelijk feliciteren met het winnen van 1000 Euro!
+                                <br><br>
+                                Door op de onderstaande link te klikken kunt u uw gegevens invullen om dit bedragen te ontvangen. 
+                                <br><br>
+                                Het overmaken van dit bedrag is belastingvrij en zal tussen de 1-2 werkdagen duren. 
+                                <br><br> 
+                            </p>
+                            <a href="https://www.flinkedeals.nl/1000euro">Klik hier om uw gegevens in te vullen</a>
+                            <br></br>
+                            <img src="congrats.png">
+                            </div>
+                        </div>
+
+                        <div class="mailbox-container" id="i3" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>Leon vd pavert</span></p>
+                                <p class="hide">l.vdpavert@rivercollege.nl</p>
+                                <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                            </div>
+
+                            <h2 class="mail-title">Les uitval mevrouw Dorst</h2>
+                            <div class="mail-text">
+                                <p>Heyo {naam persoon}
+                                <br><br> 
+                                Ik weet niet of je het al had gehoorrd maar de les van mevrouw Dorst valt uit (zoals gewoonlijk natuurlijk)
+
+                                ja dat was het doei!
+                                <br><br>
+                                Leon :)
+                            </p>
+                            </div>
+                        </div>
+
+                        <div class="mailbox-container" id="i4" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>Leon vd pavert</span></p>
+                                <p class="hide">jrfokgtq1oe@gmail.com</p>
+                                <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                            </div>
+
+                            <h2 class="mail-title">Filmpje school</h2>
+                            <div class="mail-text">
+                            </p> 
+                                Hahah moet je dit filmpje zien.
+                                <br><br>
+                                Leon :)
+                            </p>
+                            <a href="https://www.flinkedeals.nl/1000euro">http://yotube.com/funny-cat-fell/</a>
+                            </div>
+                        </div>
+
+                        <div class="mailbox-container" id="i5" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>Directeur River College</span></p>
+                                <p class="hide">r.vweert@rivercollege.nl</p>
+                                <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                            </div>
+
+                            <h2 class="mail-title">De open dag van het River College</h2>
+                            <div class="mail-text">
+                                <p>
+                                    Beste, 
+                                    <br><br>
+                                    {naam persoon}
+                                    <br><br>
+                                    Bedankt voor het aanmelden voor onze opendag. Dit mailtje is ter bevestiging van de aanmelding
+                                    <br><br>
+                                    De opendag is op 21-01-2023 van 10:00 tot 16:00
+                                    <br><br>
+                                    Met vriendelijke groet,
+                                    <br><br>
+                                    Davy van Weert <br>
+                                    Directeur River College
+                            </p>
+                            </div>
+                        </div>
+
+                        <div class="mailbox-container" id="i6" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>Directeur River College</span></p>
+                                <p class="hide">r.vweert@rivercollege.nl</p>
+                                <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                            </div>
+
+                            <h2 class="mail-title">Nieuwsbrief</h2>
+                            <div class="mail-text">
+                                <p>
+                                    Beste, 
+                                    <br><br>
+                                    {naam persoon}
+                                    <br><br>
+                                    Klik hier om de nieuwsbrief van de start van het schooljaar te lezen.
+                                    <br><br>
+                                    <a href="https://www.flinkedeals.nl/1000euro">https://denieuwsbriefvanhetjaar.nl</a>
+                                    <br><br>
+                                    Met vriendelijke groet,
+                                    <br><br>
+                                    Davy van Weert <br>
+                                    Directeur River College
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- OPEN MAIL SENT-BOX -->
+                        <div class="mailbox-container" id="i7" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>U</span></p>
+                                <p class="hide">ditismijnmail@mailmail.com</p>
+                                <p class="ontvanger-openmai">Ontvanger: r.vweert@rivercollege.nl </p>
+                            </div>
+
+                            <h2 class="mail-title">Aanmelden opendag</h2>
+                            <div class="mail-text">
+                                <p>
+                                    Beste, 
+                                    <br><br>
+                                    Meneer van Weert
+                                    <br><br>
+                                     Graag zou ik mij aanmelden voor de opendag van het River College.
+                                    <br><br>
+                                    Ik had wel nog een vraagje over de opendag. Wat is de datum en het tijdstip van de opendag?
+                                    <br><br>
+                                    Met vriendelijke groet,
+                                    <br><br>
+                                    {naam persoon} <br>
+                                    Leerling River College
+
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mailbox-container" id="i8" style="display: none ;">
+                            <div class="top-openmail-container">
+                                <img src="trash.png" class="trash-openmail">
+                                <p class="afzender-openmail">Afzender: <span>U</span></p>
+                                <p class="hide">ditismijnmail@mailmail.com</p>
+                                <p class="ontvanger-openmai">Ontvanger: r.vweert@rivercollege.nl </p>
+                            </div>
+
+                            <h2 class="mail-title">Les uitval mevrouw Dorst</h2>
+                            <div class="mail-text">
+                                <p>
+                                    Hey Leon 
+                                    <br><br>
+                                    Heel erg bedankt voor het melden. Het is ook altijd wat met mevrouw Dorst
+                                    <br><br>
+                                    groetjes
+                                    <br><br>
+                                    {naam persoon} (O)-(O) <br>
+                                </p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>   
+                <script src="mail.js"></script>   
+    </body>
+</html>
