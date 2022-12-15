@@ -1,0 +1,152 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    color: white;
+    font-size: 16px;
+    background-image: url("../img/layout/background_desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+  background-color: #19384C;
+  color: white;
+}
+.wifiContainer {
+    display: flex;
+}
+
+.searchBar {
+    background-color: aliceblue;
+    width: 30%;
+    border-radius: 20px;
+    margin: auto;
+    text-align: center;
+    color: black;
+}
+
+.dateTime {
+    padding: 8px;
+    margin: 0 20px;
+    text-align: right;
+}
+
+.containerTaskbar {
+    display: flex;
+    top: 0px;
+    height: 55px;
+    width: 300px;
+    border-radius: 5px;
+    justify-content: space-between;
+    background-color: #254f6b;
+    padding: 0px 20px;
+}
+
+.containerTaskbar img:hover {
+    background-color: #275d81;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.imageClass {
+    padding: 8px;
+    border-radius: 12px;
+    height: 40px;
+}
+/* OnlineSatus begin */
+#homeOpener {
+    position: absolute;
+    left: 1.5%;
+    height: 96px;
+    width: 150px;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #19384C;
+}
+#afsluiten {
+    display: flex;
+    height: 35px;
+    justify-content: space-between;
+    padding: 10px 10px 0px 15px;
+}
+#afsluiten:hover {
+    background-color: #275d81;
+    border-radius: 0px 0px 5px 5px;
+}
+#afmelden {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    padding: 10px 10px 0px 15px;
+}
+#afmelden:hover {
+    background-color: #275d81;
+}
+.hoverSelect:hover {
+    background-color: #254f6b;
+    border-radius: 5px;
+}
+/* OnlineSatus end */
+/* WifiPicker begin */
+#wifiPicker {
+    position: absolute;
+    right: 4%;
+    height: 130px;
+    width: 150px;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #19384C;
+}
+.optionClass {
+    position: relative;
+    border: greenyellow;
+    height: 38%;
+    padding: 8px;
+}
+.optionClass img {
+    height: 20px;
+    width: 20px;
+}
+.optionClass:hover {
+    background-color: #254f6b;
+    border-radius: 0px 0px 5px 5px;
+}
+.mainConnection {
+    display: flex;
+    justify-content: space-between;
+}
+.secondConnection {
+    display: flex;
+    justify-content: space-between;
+}
+.connectButttonClass {
+    border-radius: 3px;
+    border: none;
+    padding: 4px;
+    background-color: rgb(25, 121, 180);
+    color: white;
+}
+.connectButttonClass:hover {
+    background-color: rgb(20, 110, 167);
+    color: white;
+}
+.informationConnection {
+    top: 100px;
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+}
+/* WifiPicker end */
+
+.svgClass {
+    height: 25px;
+    width: 25px;
+}
