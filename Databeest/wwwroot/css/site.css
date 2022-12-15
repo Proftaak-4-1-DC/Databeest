@@ -17,6 +17,12 @@ body {
   margin-bottom: 60px;
 }
 
+/* Algemeen */
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
 /* Mailbox */
 html, body {
     margin: 0;
