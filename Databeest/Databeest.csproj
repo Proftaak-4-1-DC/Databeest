@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -31,16 +31,16 @@
 </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\img\close.png" />
+    <None Include="wwwroot\img\icons\close.png" />
     <None Include="wwwroot\img\congrats.png" />
-    <None Include="wwwroot\img\drafts2.png" />
-    <None Include="wwwroot\img\full-mail-icon.png" />
+    <None Include="wwwroot\img\icons\drafts2.png" />
+    <None Include="wwwroot\img\icons\full-mail-icon.png" />
     <None Include="wwwroot\img\full-mail.jpeg" />
-    <None Include="wwwroot\img\inbox.png" />
-    <None Include="wwwroot\img\pencil.png" />
-    <None Include="wwwroot\img\search.png" />
-    <None Include="wwwroot\img\sent.png" />
-    <None Include="wwwroot\img\trash.png" />
+    <None Include="wwwroot\img\icons\inbox.png" />
+    <None Include="wwwroot\img\icons\pencil.png" />
+    <None Include="wwwroot\img\icons\search.png" />
+    <None Include="wwwroot\img\icons\sent.png" />
+    <None Include="wwwroot\img\icons\trash.png" />
   </ItemGroup>
 
 </Project>
