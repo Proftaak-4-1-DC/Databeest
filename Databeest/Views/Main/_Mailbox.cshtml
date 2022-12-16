@@ -1,25 +1,50 @@
 ﻿@{
     ViewData["Title"] = "Mailbox";
 }
-
-<div class="top-bar">
     <div class="spacing-bar"></div>
     <div class="app-bar">
-        <img class="app-bar-icon" src="~/img/icons/full-mail-icon.png">
+        <img class="app-bar-icon" src="~/img/layout/mail.png">
         <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
     </div>
-</div>
 
 <div class="mail-container">
     <!-- LEFT SIDE OF MAIL PAGE -->
     <div class="mail-left">
-        <div class="compose-container">
-            <a href="#" class="compose">
+        <div class="compose-container">        
+            <a id="compose" onclick="composePopup()" class="compose"> 
                 <ul>
                     <li><img src="~/img/icons/pencil.png"></li>
-                    <li>Compose</li>
+                    <li>Opstellen</li>
                 </ul>
             </a>
+                <p class="pop-up">Mail verstuur limiet bereikt!</p>               
+            <style>
+                .pop-up{
+                    visibility: hidden;
+                    width: 14%;
+                    background-color: #8a8a8a;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 10px;
+                    padding: 8px 0;
+                    position: absolute;
+                    top: 30%;
+                    margin-left: 1%;
+                    z-index: 1;
+                }
+
+            </style>
+              <script>
+                function composePopup() {
+                    let popup = document.getElementsByClassName("pop-up");
+                    popup[0].style.visibility = "visible";
+
+                    function composeHidePopUp() {
+                        popup[0].style.visibility = "hidden";
+                    }
+                    setTimeout(composeHidePopUp, 2000);
+                }
+            </script>
         </div>
         <div class="boxes-container">
             <a id="inbox" class="box" onclick="showLeft('b1')">
@@ -31,13 +56,13 @@
             <a id="sent" class="box" onclick="showLeft('b2')">
                 <ul>
                     <li><img src="~/img/icons/sent.png" style="width: 50px;"></li>
-                    <li>Sent</li>
+                    <li>Verstuurd</li>
                 </ul>
             </a>
             <a id="draft" class="box" onclick="showLeft('b3')">
                 <ul>
                     <li><img src="~/img/icons/drafts2.png"></li>
-                    <li>Draft</li>
+                    <li>Concept</li>
                 </ul>
             </a>
         </div>
@@ -157,8 +182,8 @@
                         <br><br>
                     </p>
                     <a href="https://www.flinkedeals.nl/1000euro">Klik hier om uw gegevens in te vullen</a>
-                    <br></br>
-                    <img src="~/img/icons/congrats.png">
+                    <br><br>
+                    <img src="~/img/congrats.png"> 
                 </div>
             </div>
 
