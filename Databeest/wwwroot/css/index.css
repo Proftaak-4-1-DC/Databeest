@@ -8,7 +8,7 @@ body {
     font-size: 16px;
     background-image: url("../img/layout/background_desktop.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: round;
 }
 .d-none {
     display: none;
@@ -22,6 +22,11 @@ body {
 }
 .wifiContainer {
     display: flex;
+}
+.wifiLockedClass {
+    padding: 1px;
+    height: 18px;
+    width: 18px;
 }
 .searchBar {
     background-color: aliceblue;

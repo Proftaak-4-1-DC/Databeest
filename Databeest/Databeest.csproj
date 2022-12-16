@@ -38,7 +38,7 @@
 </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Main\Virus.cshtml" />
+    <None Include="Views\Main\_Virus.cshtml" />
     <None Include="wwwroot\css\virus.css" />
     <None Include="wwwroot\img\icons\close.png" />
     <None Include="wwwroot\img\congrats.png" />
