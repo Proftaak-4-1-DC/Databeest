@@ -10,7 +10,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+.d-none {
+    display: none;
+}
 .container {
   display: flex;
   padding: 10px 20px;
@@ -21,7 +23,6 @@ body {
 .wifiContainer {
     display: flex;
 }
-
 .searchBar {
     background-color: aliceblue;
     width: 30%;
@@ -30,13 +31,11 @@ body {
     text-align: center;
     color: black;
 }
-
 .dateTime {
     padding: 8px;
     margin: 0 20px;
     text-align: right;
 }
-
 .containerTaskbar {
     display: flex;
     top: 0px;
@@ -47,13 +46,11 @@ body {
     background-color: #254f6b;
     padding: 0px 20px;
 }
-
 .containerTaskbar img:hover {
     background-color: #275d81;
     border-radius: 5px;
     transition: all 0.2s ease;
 }
-
 .imageClass {
     padding: 8px;
     border-radius: 12px;
@@ -145,7 +142,6 @@ body {
     text-align: center;
 }
 /* WifiPicker end */
-
 .svgClass {
     height: 25px;
     width: 25px;
