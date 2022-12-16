@@ -21,7 +21,11 @@ body {
 .wifiContainer {
     display: flex;
 }
-
+.wifiLockedClass {
+    padding: 1px;
+    height: 18px;
+    width: 18px;
+}
 .searchBar {
     background-color: aliceblue;
     width: 30%;
