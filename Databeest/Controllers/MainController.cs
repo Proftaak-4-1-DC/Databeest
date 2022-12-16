@@ -29,12 +29,12 @@ namespace Databeest.Controllers
 
         public IActionResult Virus()
         {
-            return View();
+            return PartialView("_Virus");
         }
 
         public IActionResult Mailbox()
         {
-            return View();
+            return PartialView("_Mailbox");
         }
 
         // MS generated

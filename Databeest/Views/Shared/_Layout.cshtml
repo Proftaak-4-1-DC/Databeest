@@ -1,84 +1,86 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Databeest</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Databeest.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
-</head>
-<body>
-    <div class="navbar">
-        <div class="container">
-            <div class="hoverSelect">
-                <button style="background: none; border: none;" onclick="openHome()">
-                    <img src="~/img/layout/databeast.png" class="imageClass" alt="Home">
-                </button>
-            </div>
-            <div class="containerTaskbar">
-                <a  asp-area="" asp-controller="Main" asp-action="Mailbox"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
-                <a><img src="~/img/layout/photogram.png" class="imageClass" alt="Photogram"></a>
-                <a><img src="~/img/layout/internet.png" class="imageClass" alt="Internet"></a>
-            </div>
-            <div class="wifiContainer">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"]</title>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/Databeest.styles.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="container">
                 <div class="hoverSelect">
-                    <button style="background: none; border: none;" onclick="openWifi()">
-                        <img src="~/img/layout/wifiIcon.png" class="imageClass" alt="wifi">
+                    <button style="background: none; border: none;">
+                        <img src="~/img/layout/databeast.png" class="imageClass" alt="Home">
                     </button>
                 </div>
-                <div class="dateTime">
-                    <div id="date"></div>
-                    <div id="time"></div>
+                <div class="containerTaskbar">
+                    <a id="mailApp"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
+                    <a id="photogramApp"><img src="~/img/layout/photogram.png" class="imageClass" alt="Photogram"></a>
+                    <a id="internetApp"><img src="~/img/layout/internet.png" class="imageClass" alt="Internet"></a>
+                </div>
+                <div class="wifiContainer">
+                    <div class="hoverSelect">
+                        <button style="background: none; border: none;">
+                            <img src="~/img/layout/wifiIcon.png" class="imageClass" alt="wifi">
+                        </button>
+                    </div>
+                    <div class="dateTime">
+                        <div id="date"></div>
+                        <div id="time"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="homeOpener" style="display: none;">
-            <div id="afmelden">
-                <p>Afmelden</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                </svg>
-            </div>
-            <div id="afsluiten">
-                Afsluiten
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                </svg>
-            </div>
-        </div>
-        <div id="wifiPicker" style="display: none;">
-            <div class="optionClass">
-                <div class="mainConnection">
-                    <p>Free_wifi</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="svgClass">
-                        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z" />
+            <div id="homeOpener" class="d-none">
+                <div id="afmelden">
+                    <p>Afmelden</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                     </svg>
                 </div>
-                <div class="secondConnection">
-                    <div class="informationConnection"><p>i</p></div>
-                    <button type="submit" class="connectButttonClass">verbinden</button>
+                <div id="afsluiten">
+                    Afsluiten
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                    </svg>
                 </div>
             </div>
-            <div class="optionClass">
-                <div class="mainConnection">
-                    <p>WifiBeast</p>
-                    <img src="~/img/layout/lockedWifi.png" class="wifiLockedClass" />
-                </div>
-                <div class="secondConnection">
-                    <div class="informationConnection"><p>i</p></div>
-                    <button type="submit" class="connectButttonClass">verbinden</button>
-                </div>
-            </div>
+            <div id="wifiPicker" style="display: none;">
+              <div class="optionClass">
+                  <div class="mainConnection">
+                      <p>Free_wifi</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="svgClass">
+                          <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z" />
+                      </svg>
+                  </div>
+                  <div class="secondConnection">
+                      <div class="informationConnection"><p>i</p></div>
+                      <button type="submit" class="connectButttonClass">verbinden</button>
+                  </div>
+              </div>
+              <div class="optionClass">
+                  <div class="mainConnection">
+                      <p>WifiBeast</p>
+                      <img src="~/img/layout/lockedWifi.png" class="wifiLockedClass" />
+                  </div>
+                  <div class="secondConnection">
+                      <div class="informationConnection"><p>i</p></div>
+                      <button type="submit" class="connectButttonClass">verbinden</button>
+                  </div>
+              </div>
+          </div>
         </div>
-    </div>
-    <div class="contentApps">
-            @RenderBody()
-    </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/index.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
+        <div class="contentApps">
+            @RenderBody()
+        </div>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/index.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
 </html>

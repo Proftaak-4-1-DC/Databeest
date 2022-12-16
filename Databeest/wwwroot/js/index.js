@@ -1,20 +1,27 @@
-function openHome() {
-    var homePickerNB = document.getElementById("homeOpener");
-    if (homePickerNB.style.display === "block") {
-        homePickerNB.style.display = "none";
-    } else if (homePickerNB.style.display === "none") {
-        homePickerNB.style.display = "block";
-    }
-}
+$(function () {
+    //////////////////////////////////////////////////
+    // Top bar                                      //
+    //////////////////////////////////////////////////
+    // Time and date
+    getTime();
+    setInterval(getTime, 1000);
 
-function openWifi() {
-    let wifiPickerNB = document.getElementById("wifiPicker");
-    if (wifiPickerNB.style.display === "block") {
-        wifiPickerNB.style.display = "none";
-    } else if (wifiPickerNB.style.display === "none") {
-        wifiPickerNB.style.display = "block";
-    }
-}
+    // Wifi & Start button
+    $('.wifiContainer button').on('click', function () {
+        $('#wifiPicker').toggleClass('d-none');
+    });
+
+    $('.hoverSelect button').on('click', function () {
+        $('#homeOpener').toggleClass('d-none');
+    });
+
+    // Navigation
+    $('#mailApp').on('click', function () {
+        $.get('/Main/Mailbox', function (data) {
+            $('.contentApps').html(data);
+        });
+    });
+});
 
 function getTime() {
     let dateTime = new Date();
@@ -38,4 +45,3 @@ function getTime() {
     }
 }
 
-setInterval(getTime, 1000);
