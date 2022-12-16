@@ -5,13 +5,13 @@
     padding: 0px;
 }
 body {
-    background-image: url("images/achtergrond\ inlog.jpg");
+    background-image: url("../img/bg-inlog.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #backgroundre {
-    background-image: url("images/achtergrond\ regsiter.png");
+    background-image: url("../img/bg-register.png");
     background-size: cover;
     background-repeat: no-repeat;
 }

@@ -38,8 +38,13 @@
 </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Main\_Virus.cshtml" />
+    <None Include="Views\Main\Partials\_Login.cshtml" />
+    <None Include="Views\Main\Partials\_Register.cshtml" />
+    <None Include="wwwroot\css\stylelogin.css" />
     <None Include="wwwroot\css\virus.css" />
+    <None Include="wwwroot\img\bg-inlog.jpg" />
+    <None Include="wwwroot\img\bg-register.png" />
+    <None Include="wwwroot\img\icons\avatarpicture.jpg" />
     <None Include="wwwroot\img\icons\close.png" />
     <None Include="wwwroot\img\congrats.png" />
     <None Include="wwwroot\img\icons\drafts2.png" />
