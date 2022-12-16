@@ -37,4 +37,5 @@ function getTime() {
         document.getElementById("time").innerHTML = timeString;
     }
 }
-getTime();
+
+setInterval(getTime, 1000);
