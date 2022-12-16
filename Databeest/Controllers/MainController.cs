@@ -22,9 +22,26 @@ namespace Databeest.Controllers
         /************************************************************************/
         public IActionResult Index()
         {
+            if (User?.Identity.IsAuthenticated == true)
+            {
+                return View("Index");
+            } else
+            {
+                return View("Partials/_Login");
+            }
             SqlManager.OpenConnection();
 
             return View();
+        }
+
+        public IActionResult Register()
+        {
+            return PartialView("Partials/_Register");
+        }
+
+        public IActionResult Login()
+        {
+            return PartialView("Partials/_Login");
         }
 
         public IActionResult Virus()
