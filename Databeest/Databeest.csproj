@@ -13,13 +13,6 @@
   </ItemGroup>
 	
   <ItemGroup>
-    <Compile Remove="wwwroot\img\NewFolder\**" />
-    <Content Remove="wwwroot\img\NewFolder\**" />
-    <EmbeddedResource Remove="wwwroot\img\NewFolder\**" />
-    <None Remove="wwwroot\img\NewFolder\**" />
-  </ItemGroup>
-	
-  <ItemGroup>
     <None Remove="appsettings.json.example" />
   </ItemGroup>
 	
@@ -38,7 +31,6 @@
 </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Main\_Virus.cshtml" />
     <None Include="wwwroot\css\virus.css" />
     <None Include="wwwroot\img\icons\close.png" />
     <None Include="wwwroot\img\congrats.png" />
