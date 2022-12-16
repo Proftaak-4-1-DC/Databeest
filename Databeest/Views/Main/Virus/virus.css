@@ -1,0 +1,56 @@
+html,  body{
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+.top-bar{
+    height: 20vh;
+    max-height: 20vh;
+    width: 100vw;
+    z-index: 1;
+}
+/* .spacing-bar{
+    height: 2%;
+} */
+.desktop-bar{
+    height: 50%;
+    width: 100%;
+    z-index: 1;
+}
+.app-bar{
+    background-color: #19384C;
+    height: 50%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.app-bar-icon{
+    width: 60px;
+    padding: 1%;
+}
+.app-bar-close {
+    padding: 1%;
+    padding-top: 1.5%;
+    padding-right: 1.5%;
+}
+.app-bar-close img{
+    width: 25px;
+    filter: invert(1);
+}
+.virus-container {
+    width: 100vw;
+    max-height: 80vh;
+    height: 80vh;
+}
+
+
