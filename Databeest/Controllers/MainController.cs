@@ -27,6 +27,11 @@ namespace Databeest.Controllers
             return View();
         }
 
+        public IActionResult Virus()
+        {
+            return View();
+        }
+
         public IActionResult Mailbox()
         {
             return View();
