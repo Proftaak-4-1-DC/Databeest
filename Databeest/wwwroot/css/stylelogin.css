@@ -65,16 +65,13 @@ border: white;
 opacity: 80%;
 }
 
-
-
-button[type=submit] {
-    margin: 10% ;
-    width: 100%;
+img#next {
+    display: block;
+    margin: 10%;
     margin-left: auto;
     margin-right: auto;
     background-color: transparent;
     border: none;
-    
 }
 
 .buttonLogin {
@@ -83,12 +80,10 @@ button[type=submit] {
 
 }
 
-
 a {
     color: white;
     text-shadow: black 2px 2px;
 }
-
 
 .forgetpassword {
     margin-left: auto;
@@ -108,5 +103,4 @@ input[type=checkboxprivacy] {
 label[for="voorwaardeprivacy"] {
     color: white;
     text-shadow: black 2px 2px;
-
 }

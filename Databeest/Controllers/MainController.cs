@@ -22,14 +22,15 @@ namespace Databeest.Controllers
         /************************************************************************/
         public IActionResult Index()
         {
-            if (User?.Identity.IsAuthenticated == true)
-            {
-                return View("Shared/_Layout");
-            } else
-            {
-                return View("Partials/_Login");
-            }
+            return View("Partials/_Index");
+            return View("Partials/_Login");
             //SqlManager.OpenConnection();
+        }
+
+        [HttpPost]
+        public IActionResult IndexPost()
+        {
+            return View("Shared/_Layout");
         }
 
         public IActionResult Register()
