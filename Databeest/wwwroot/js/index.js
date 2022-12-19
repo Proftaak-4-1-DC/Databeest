@@ -3,8 +3,10 @@ $(function () {
     // Top bar                                      //
     //////////////////////////////////////////////////
     // Time and date
-    getTime();
-    setInterval(getTime, 1000);
+    if ($('#date').length != 0) {
+        getTime();
+        setInterval(getTime, 1000);
+    }
 
     // Wifi & Start button
     $('.wifiContainer button').on('click', function () {
@@ -30,12 +32,6 @@ $(function () {
 
     $('#noaccount').on('click', function() {
         $.get('/Main/Register', function(data) {
-            $('.contentApps').html(data);
-        });
-    });
-
-    $('#tijdelijk').on('click', function() {
-        $.get('/Main/Index', function(data) {
             $('.contentApps').html(data);
         });
     });

@@ -3,6 +3,10 @@
     <link rel="stylesheet" href="~/css/stylelogin.css" />
 }
 
+@{
+    Layout = "_LayoutNotLoggedIn";
+}
+
 <div class="mainContainer">
     <form class="layout">
         <p>Inloggen</p>
@@ -18,10 +22,6 @@
 
         <div class="forgetpassword">
             <span class="psw"><a id="noaccount">Nog geen account?</a></span>
-        </div>
-
-        <div class="forgetpassword">
-            <span class="psw"><a id="tijdelijk">Ik ben toch ingelogd</a></span>
         </div>
     </form>
 </div>
