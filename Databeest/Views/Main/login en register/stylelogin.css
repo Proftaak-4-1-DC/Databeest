@@ -55,7 +55,7 @@ body {
     width: 40%;
 }
 
-input[type=text], input[type=password] {
+#usernameblockid, #passwordblockid, #reenterpasswordid  { 
 width: 100%;
 padding: 10px;
 margin-top: 15%;
@@ -67,7 +67,7 @@ opacity: 80%;
 
 
 
-button[type=submit] {
+#buttonlogin {
     margin: 10% ;
     width: 100%;
     margin-left: auto;
@@ -75,16 +75,17 @@ button[type=submit] {
     background-color: transparent;
     border: none;
     
+    
 }
 
-.buttonLogin {
+.layoutprivacycheckbox {
     display: flex;
     justify-content: center;
-
+    color: white;
 }
 
 
-a {
+#nohyperlink  {
     text-decoration: none;
     color: white;
     text-shadow: black 2px 2px;
@@ -101,13 +102,6 @@ a {
     text-shadow: black 2px 2px;
 }
 
-input[type=checkboxprivacy] {
-    width: 1%;
-    
-}
 
-label[for="voorwaardeprivacy"] {
-    color: white;
-    text-shadow: black 2px 2px;
 
-}
+

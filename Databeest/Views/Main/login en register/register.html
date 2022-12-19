@@ -18,19 +18,23 @@
 
         <div class="mainContainer">
             <form class="layout">
-                <p> registreren </p>
-
-                <div class="loginText">
-                    <input type="text" placeholder="Username" name="username" required>
-                    <input type="password" placeholder="Password" name="password" required>
-                    <input type="password" placeholder="Re-Password" name="password" required>
-                    <button type="submit"><img src="images/Buttonlogin.png" alt="loginknop" height="25"></button>
-                   
+                <div class="inlogtext">
+                    <p> registreren </p>
                 </div>
 
-                <div class="buttonLogin">
+                <div class="loginText">
+                    <input id="usernameblockid" type="text" placeholder="Username" name="username" required>
+                    <input id="passwordblockid" type="password" placeholder="Password" name="password" required>
+                    <input id="reenterpasswordid" type="password" placeholder="Re-Password" name="password" required>
+                    <button id="buttonlogin" type="submit"><img src="images/Buttonlogin.png" alt="loginknop" height="25"></button>
+
+                </div>
+
+                <div class="layoutprivacycheckbox">
                     <input type="checkbox" name="voorwaardeprivacy" value="privacyvoorwaarde" required>
-                    <label for="voorwaardeprivacy">Ik ga akkoord met de <a href="http://127.0.0.1:5500/privacyvoorwaarde.html" target="_blank">privacyvoorwaarde</a></label></br>
+                    <label for="voorwaardeprivacy">Ik ga akkoord met de <a id="nohyperlink"
+                            href="http://127.0.0.1:5500/privacyvoorwaarde.html"
+                            target="_blank">privacyvoorwaarde</a></label></br>
                 </div>
             </form>
         </div>
