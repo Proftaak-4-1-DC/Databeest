@@ -23,15 +23,17 @@
 }
 
 .avatar {
-    margin-top: 10%;
-    width: 20%;
+   
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .profielfoto {
-    border-radius: 100px;
     width: 100%;
+    justify-content: center;
+    display: flex;
+    
 }
 
 .mainContainer {
@@ -50,6 +52,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+    
 }
 
 #usernameblockid, #passwordblockid, #reenterpasswordid  { 
