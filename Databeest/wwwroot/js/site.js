@@ -4,20 +4,22 @@
 // Write your JavaScript code.
  
 // Show selected type of inbox like Inbox or Sent 
+
 function showLeft(id) {
     $('#' + id).show();
     $('.inbox-hide').not('#' + id).hide();
 
+    // Gives class selected to first mail in inbox / sent 
+    $(".inbox-container").each(function( index ) {
+        $(this).children().first().addClass("selected");
+    });
+
     if (id == 'b1') {
-        $('.inbox').removeClass('selected');
-        $('#box-start1').addClass('selected');
         $('#' + 'i1').show();
         $('.mailbox-container').not('#' + 'i1').hide();
         
     }
     if (id == 'b2') {
-        $('.inbox').removeClass('selected');
-        $('#box-start2').addClass('selected');
         $('#' + 'i7').show();
         $('.mailbox-container').not('#' + 'i7').hide();  
     }
@@ -27,25 +29,4 @@ function showLeft(id) {
 function MailOpen(id) {
     $('#' + id).show();
     $('.mailbox-container').not('#' + id).hide();
-    $(this).addClass('selected');
 }
-
-$(function(){
-    $('.inbox').click(function(){
-        $('.inbox').removeClass('selected');
-        $(this).addClass('selected');
-    });
-
-    // Search bar filter function 
-    $("#search-bar").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#b1 .inbox").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-
-        var value = $(this).val().toLowerCase();
-        $("#b2 .inbox").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-});
