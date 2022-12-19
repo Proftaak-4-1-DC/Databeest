@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-body {
+
+#backgroundlogin {
     background-image: url("images/achtergrond\ inlog.jpg");
     background-size: cover;
     background-repeat: no-repeat;
