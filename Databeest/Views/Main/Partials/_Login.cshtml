@@ -2,14 +2,27 @@
 {
     <link rel="stylesheet" href="~/css/stylelogin.css" />
 }
-    
-<!-- <div class="backgroundpicture">
-    <img src="images/achtefffrgrond inlog.jpg" alt="achtergrondfoto">
-</div> -->
+
+@section Scripts
+{
+    <script>
+        $('#noaccount').on('click', function() {
+            $.get('/Register', function(data) {
+                $('.contentApps').html(data);
+            });
+        });
+
+        $('#tijdelijk').on('click', function() {
+            $.get('/Index', function(data) {
+                $('.contentApps').html(data);
+            });
+        });
+    </script>
+}
 
 <div class="mainContainer">
     <form class="layout">
-        <p> Inloggen </p>
+        <p>Inloggen</p>
         <div class="avatar">
             <img class="profielfoto" src="~/img/icons/avatarpicture.jpg" alt="profielfoto">
         </div>
@@ -21,7 +34,11 @@
         </div>
 
         <div class="forgetpassword">
-            <span class="psw"><a asp-controller="Main" asp-action="Register">Nog geen account?</a></span>
+            <span class="psw"><a id="noaccount">Nog geen account?</a></span>
+        </div>
+
+        <div class="forgetpassword">
+            <span class="psw"><a id="tijdelijk">Ik ben toch ingelogd</a></span>
         </div>
     </form>
 </div>

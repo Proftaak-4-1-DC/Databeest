@@ -29,9 +29,7 @@ namespace Databeest.Controllers
             {
                 return View("Partials/_Login");
             }
-            SqlManager.OpenConnection();
-
-            return View();
+            //SqlManager.OpenConnection();
         }
 
         public IActionResult Register()
@@ -42,6 +40,11 @@ namespace Databeest.Controllers
         public IActionResult Login()
         {
             return PartialView("Partials/_Login");
+        }
+
+        public IActionResult AlgemeneVoorwaarden()
+        {
+            return PartialView("Partials/_Policy");
         }
 
         public IActionResult Virus()

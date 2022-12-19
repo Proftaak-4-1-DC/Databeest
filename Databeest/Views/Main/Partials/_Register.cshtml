@@ -2,30 +2,38 @@
 {
     <link rel="stylesheet" href="~/css/stylelogin.css" />
 }
-<body id="backgroundre">
 
-    <!-- <div class="backgroundpicture">
-        <img src="images/achtefffrgrond inlog.jpg" alt="achtergrondfoto">
-    </div> -->
-    <div class="heelbody">
+@section Scripts
+{
+    <script>
+        $('#policy').on('click', function() {
+            $.get('/AlgemeneVoorwaarden', function(data) {
+                $('.contentApps').html(data);
+            });
+        });
+    </script>
+}
 
-        <div class="mainContainer">
-            <form class="layout">
-                <p> registreren </p>
+<!-- <div class="backgroundpicture">
+    <img src="images/achtefffrgrond inlog.jpg" alt="achtergrondfoto">
+</div> -->
+<div class="backgroundre">
+    <div class="mainContainer">
+        <form class="layout">
+            <p> registreren </p>
 
-                <div class="loginText">
-                    <input type="text" placeholder="Username" name="username" required>
-                    <input type="password" placeholder="Password" name="password" required>
-                    <input type="password" placeholder="Re-Password" name="password" required>
-                    <button type="submit"><img src="images/Buttonlogin.png" alt="loginknop" height="25"></button>
+            <div class="loginText">
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <input type="password" placeholder="Re-Password" name="password" required>
+                <button type="submit"><img src="~/img/icons/buttonlogin.png" alt="loginknop" height="25"></button>
                    
-                </div>
+            </div>
 
-                <div class="buttonLogin">
-                    <input type="checkbox" name="voorwaardeprivacy" value="privacyvoorwaarde" required>
-                    <label for="voorwaardeprivacy">Ik ga akkoord met de <a href="http://127.0.0.1:5500/privacyvoorwaarde.html" target="_blank">privacyvoorwaarde</a></label></br>
-                </div>
-            </form>
-        </div>
-
+            <div class="buttonLogin">
+                <input type="checkbox" name="voorwaardeprivacy" value="privacyvoorwaarde" required>
+                Ik ga akkoord met de <a id="policy">algemene voorwaarden</a>
+            </div>
+        </form>
     </div>
+</div>

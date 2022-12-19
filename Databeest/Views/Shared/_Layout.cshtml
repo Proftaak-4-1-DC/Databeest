@@ -15,53 +15,42 @@
         <div class="navbar">
             <div class="container">
                 <div class="hoverSelect">
-                    <button style="background: none; border: none;" onclick="openHome()">
+                    <button style="background: none; border: none;">
                         <img src="~/img/layout/databeast.png" class="imageClass" alt="Home">
                     </button>
                 </div>
                 <div class="containerTaskbar">
-                    <a asp-controller="Main" asp-action="Mailbox"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
-                    <a><img src="~/img/layout/photogram.png" class="imageClass" alt="Photogram"></a>
-                    <a><img src="~/img/layout/internet.png" class="imageClass" alt="Internet"></a>
+                    <a id="mailApp"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
+                    <a id="photogramApp"><img src="~/img/layout/photogram.png" class="imageClass" alt="Photogram"></a>
+                    <a id="internetApp"><img src="~/img/layout/internet.png" class="imageClass" alt="Internet"></a>
                 </div>
                 <div class="wifiContainer">
                     <div class="hoverSelect">
                         <button style="background: none; border: none;">
-                            <img src="~/img/layout/databeast.png" class="imageClass" alt="Home">
+                            <img src="~/img/layout/wifiIcon.png" class="imageClass" alt="wifi">
                         </button>
                     </div>
-                    <div class="containerTaskbar">
-                        <a id="mailApp"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
-                        <a id="photogramApp"><img src="~/img/layout/photogram.png" class="imageClass" alt="Photogram"></a>
-                        <a id="internetApp"><img src="~/img/layout/internet.png" class="imageClass" alt="Internet"></a>
-                    </div>
-                    <div class="wifiContainer">
-                        <div class="hoverSelect">
-                            <button style="background: none; border: none;">
-                                <img src="~/img/layout/wifiIcon.png" class="imageClass" alt="wifi">
-                            </button>
-                        </div>
-                        <div class="dateTime">
-                            <div id="date"></div>
-                            <div id="time"></div>
-                        </div>
+                    <div class="dateTime">
+                        <div id="date"></div>
+                        <div id="time"></div>
                     </div>
                 </div>
-                <div id="homeOpener" class="d-none">
-                    <div id="afmelden">
-                        <p>Afmelden</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-                        </svg>
-                    </div>
-                    <div id="afsluiten">
-                        Afsluiten
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                        </svg>
-                    </div>
+            </div>
+            <div id="homeOpener" class="d-none">
+                <div id="afmelden">
+                    <p>Afmelden</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
                 </div>
-                <div id="wifiPicker" style="display: none;">
+                <div id="afsluiten">
+                    Afsluiten
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgClass">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                    </svg>
+                </div>
+            </div>
+            <div id="wifiPicker" class="d-none">
                 <div class="optionClass">
                     <div class="mainConnection">
                         <p>Free_wifi</p>

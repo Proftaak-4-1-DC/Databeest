@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <None Include="Views\Main\Partials\_Login.cshtml" />
+    <None Include="Views\Main\Partials\_Policy.cshtml" />
     <None Include="Views\Main\Partials\_Register.cshtml" />
     <None Include="wwwroot\css\stylelogin.css" />
     <None Include="wwwroot\css\virus.css" />
