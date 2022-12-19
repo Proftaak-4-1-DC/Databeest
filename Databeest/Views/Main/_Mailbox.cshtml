@@ -1,11 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Mailbox";
 }
-    <div class="spacing-bar"></div>
-    <div class="app-bar">
-        <img class="app-bar-icon" src="~/img/layout/mail.png">
-        <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
-    </div>
+
+<div class="spacing-bar"></div>
+<div class="app-bar">
+    <img class="app-bar-icon" src="~/img/layout/mail.png">
+    <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
+</div>
 
 <div class="mail-container">
     <!-- LEFT SIDE OF MAIL PAGE -->
@@ -17,34 +18,8 @@
                     <li>Opstellen</li>
                 </ul>
             </a>
-                <p class="pop-up">Mail verstuur limiet bereikt!</p>               
-            <style>
-                .pop-up{
-                    visibility: hidden;
-                    width: 14%;
-                    background-color: #8a8a8a;
-                    color: #fff;
-                    text-align: center;
-                    border-radius: 10px;
-                    padding: 8px 0;
-                    position: absolute;
-                    top: 30%;
-                    margin-left: 1%;
-                    z-index: 1;
-                }
-
-            </style>
-              <script>
-                function composePopup() {
-                    let popup = document.getElementsByClassName("pop-up");
-                    popup[0].style.visibility = "visible";
-
-                    function composeHidePopUp() {
-                        popup[0].style.visibility = "hidden";
-                    }
-                    setTimeout(composeHidePopUp, 2000);
-                }
-            </script>
+            <p class="pop-up">Mail verstuur limiet bereikt!</p>               
+            
         </div>
         <div class="boxes-container">
             <a id="inbox" class="box" onclick="showLeft('b1')">

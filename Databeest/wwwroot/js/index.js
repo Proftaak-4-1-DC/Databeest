@@ -21,7 +21,34 @@ $(function () {
             $('.contentApps').html(data);
         });
     });
+
+    $('#policy').on('click', function() {
+        $.get('/Main/Policy', function(data) {
+            $('.contentApps').html(data);
+        });
+    });
+
+    $('#noaccount').on('click', function() {
+        $.get('/Main/Register', function(data) {
+            $('.contentApps').html(data);
+        });
+    });
+
+    $('#tijdelijk').on('click', function() {
+        $.get('/Main/Index', function(data) {
+            $('.contentApps').html(data);
+        });
+    });
 });
+
+function composePopup() {
+    let popup = document.getElementsByClassName("pop-up");
+    popup[0].style.visibility = "visible";
+
+    setTimeout(function() {
+        popup[0].style.visibility = "hidden";
+    }, 2000);
+}
 
 function getTime() {
     let dateTime = new Date();

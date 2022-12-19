@@ -28,10 +28,6 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-app.MapControllerRoute(name: "default", pattern: "{action=Index}", defaults: new { controller = "Main", action = "Index" });
-app.MapControllerRoute(name: "login", pattern: "{action=Login}", defaults: new { controller = "Main", action = "Login" });
-app.MapControllerRoute(name: "register", pattern: "{action=Register}", defaults: new { controller = "Main", action = "Register" });
-app.MapControllerRoute(name: "policy", pattern: "{action=AlgemeneVoorwaarden}", defaults: new { controller = "Main", action = "AlgemeneVoorwaarden" });
-app.MapControllerRoute(name: "virus", pattern: "{controller=Main}/{action=Virus}");
+app.MapControllerRoute(name: "index", pattern: "{controller=Main}/{action=Index}");
 
 app.Run();

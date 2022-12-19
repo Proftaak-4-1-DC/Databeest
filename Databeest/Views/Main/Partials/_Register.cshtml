@@ -3,17 +3,6 @@
     <link rel="stylesheet" href="~/css/stylelogin.css" />
 }
 
-@section Scripts
-{
-    <script>
-        $('#policy').on('click', function() {
-            $.get('/AlgemeneVoorwaarden', function(data) {
-                $('.contentApps').html(data);
-            });
-        });
-    </script>
-}
-
 <!-- <div class="backgroundpicture">
     <img src="images/achtefffrgrond inlog.jpg" alt="achtergrondfoto">
 </div> -->

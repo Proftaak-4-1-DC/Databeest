@@ -24,7 +24,7 @@ namespace Databeest.Controllers
         {
             if (User?.Identity.IsAuthenticated == true)
             {
-                return View("Index");
+                return View("Shared/_Layout");
             } else
             {
                 return View("Partials/_Login");
@@ -42,7 +42,7 @@ namespace Databeest.Controllers
             return PartialView("Partials/_Login");
         }
 
-        public IActionResult AlgemeneVoorwaarden()
+        public IActionResult Policy()
         {
             return PartialView("Partials/_Policy");
         }
