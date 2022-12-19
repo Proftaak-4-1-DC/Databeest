@@ -2,7 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-
+ 
 // Show selected type of inbox like Inbox or Sent 
 function showLeft(id) {
     $('#' + id).show();
