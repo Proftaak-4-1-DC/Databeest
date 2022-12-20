@@ -2,7 +2,6 @@
     ViewData["Title"] = "Mailbox";
 }
 
-<div class="spacing-bar"></div>
 <div class="app-bar">
     <img class="app-bar-icon" src="~/img/layout/mail.png">
     <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
@@ -12,29 +11,28 @@
     <!-- LEFT SIDE OF MAIL PAGE -->
     <div class="mail-left">
         <div class="compose-container">        
-            <a id="compose" onclick="composePopup()" class="compose"> 
+            <a class="compose"> 
                 <ul>
                     <li><img src="~/img/icons/pencil.png"></li>
                     <li>Opstellen</li>
                 </ul>
             </a>
-            <p class="pop-up">Mail verstuur limiet bereikt!</p>               
-            
+            <p class="compose-pop-up">Mail verstuur limiet bereikt!</p>               
         </div>
-        <div class="boxes-container">
-            <a id="inbox" class="box" onclick="showLeft('b1')">
+        <div class="mail-left-boxes-container">
+            <a id="inbox" class="mail-left-box" onclick="showLeft('b1')">
                 <ul>
                     <li><img src="~/img/icons/inbox.png"></li>
                     <li>Inbox</li>
                 </ul>
             </a>
-            <a id="sent" class="box" onclick="showLeft('b2')">
+            <a id="sent" class="mail-left-box" onclick="showLeft('b2')">
                 <ul>
                     <li><img src="~/img/icons/sent.png" style="width: 50px;"></li>
                     <li>Verstuurd</li>
                 </ul>
             </a>
-            <a id="draft" class="box" onclick="showLeft('b3')">
+            <a id="draft" class="mail-left-box" onclick="showLeft('b3')">
                 <ul>
                     <li><img src="~/img/icons/drafts2.png"></li>
                     <li>Concept</li>
@@ -45,14 +43,14 @@
     <!-- MIDDLE SIDE OF MAIL PAGE -->
     <div class="mail-middle">
 
-        <div class="search">
+        <div class="mail-search-container">
             <input id="search-bar" type="text" name="search" placeholder="Search mail">
             <img src="~/img/icons/search.png">
         </div>
 
         <!-- INBOX -->
         <div id="b1" class="inbox-container inbox-hide">
-            <div id="box-start1" class="inbox selected" onclick="MailOpen('i1')">
+            <div class="inbox selected" onclick="MailOpen('i1')">
                 <p>Directeur River College</p>
                 <p>Welkom</p>
                 <img class="trash" src="~/img/icons/trash.png">
@@ -86,7 +84,7 @@
 
         <!-- SENT -->
         <div id="b2" class="inbox-container inbox-hide" style="display:none;">
-            <div id="box-start2" class="inbox" onclick="MailOpen('i7')">
+            <div class="inbox" onclick="MailOpen('i7')">
                 <p>Directeur River College</p>
                 <p>Aanmelden opendag</p>
                 <img class="trash" src="~/img/icons/trash.png">
