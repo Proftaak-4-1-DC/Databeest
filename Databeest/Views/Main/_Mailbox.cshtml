@@ -1,10 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Mailbox";
 }
-    <div class="app-bar">
-        <img class="app-bar-icon" src="~/img/layout/mail.png">
-        <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
-    </div>
+
+<div class="app-bar">
+    <img class="app-bar-icon" src="~/img/layout/mail.png">
+    <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
+</div>
 
 <div class="mail-container">
     <!-- LEFT SIDE OF MAIL PAGE -->
@@ -16,38 +17,7 @@
                     <li>Opstellen</li>
                 </ul>
             </a>
-                <p class="compose-pop-up">Mail verstuur limiet bereikt!</p>               
-              <script>
-               
-                // Add class selected to selected inbox e-mail
-                $(function(){
-                    $('.inbox').click(function(){
-                        $('.inbox').removeClass('selected');
-                        $(this).addClass('selected');
-                    });
-                    // Compose mail limit pop-up 
-                    $('.compose').click(function(){
-                         $('.compose-pop-up').css('visibility', 'visible');
-                            
-                            setTimeout(function() { 
-                                $('.compose-pop-up').css('visibility', 'hidden');
-                            }, 2000);
-                        });
-
-                        // Search bar filter function 
-                        $("#search-bar").on("keyup", function() {
-                            var value = $(this).val().toLowerCase();
-                            $("#b1 .inbox").filter(function() {
-                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                            });
-
-                            var value = $(this).val().toLowerCase();
-                            $("#b2 .inbox").filter(function() {
-                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                            });
-                        });
-                    });
-            </script>
+            <p class="compose-pop-up">Mail verstuur limiet bereikt!</p>               
         </div>
         <div class="mail-left-boxes-container">
             <a id="inbox" class="mail-left-box" onclick="showLeft('b1')">
