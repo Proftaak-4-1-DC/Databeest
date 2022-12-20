@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
+<<<<<<< HEAD:Databeest/Views/Main/login en register/stylelogin.css
 
 #backgroundlogin {
     background-image: url("images/achtergrond\ inlog.jpg");
+=======
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-image: url("../img/bg-inlog.jpg");
+>>>>>>> fd68c483b186607ad22c81748b373fce17e39960:Databeest/wwwroot/css/stylelogin.css
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #backgroundre {
-    background-image: url("images/achtergrond\ regsiter.png");
+    background-image: url("../img/bg-register.png");
     background-size: cover;
     background-repeat: no-repeat;
 }

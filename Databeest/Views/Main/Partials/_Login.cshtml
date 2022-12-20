@@ -1,0 +1,27 @@
+@section Css
+{
+    <link rel="stylesheet" href="~/css/stylelogin.css" />
+}
+    
+<!-- <div class="backgroundpicture">
+    <img src="images/achtefffrgrond inlog.jpg" alt="achtergrondfoto">
+</div> -->
+
+<div class="mainContainer">
+    <form class="layout">
+        <p> Inloggen </p>
+        <div class="avatar">
+            <img class="profielfoto" src="~/img/icons/avatarpicture.jpg" alt="profielfoto">
+        </div>
+
+        <div class="loginText">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit"><img src="~/img/icons/buttonlogin.png" alt="loginknop" height="40"></button>
+        </div>
+
+        <div class="forgetpassword">
+            <span class="psw"><a asp-controller="Main" asp-action="Register">Nog geen account?</a></span>
+        </div>
+    </form>
+</div>

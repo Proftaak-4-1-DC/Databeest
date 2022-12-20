@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Databeest</title>
+    
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Databeest.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+
+    @await RenderSectionAsync("Css", required: false)
 </head>
 <body>
     <div class="navbar">
@@ -17,7 +20,7 @@
                 </button>
             </div>
             <div class="containerTaskbar">
-                <a  asp-area="" asp-controller="Main" asp-action="Mailbox"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
+                <a asp-controller="Main" asp-action="Mailbox"><img src="~/img/layout/mail.png" class="imageClass" alt="Mail"></a>
                 <a><img src="~/img/layout/photogram.png" class="imageClass" alt="Photogram"></a>
                 <a><img src="~/img/layout/internet.png" class="imageClass" alt="Internet"></a>
             </div>
