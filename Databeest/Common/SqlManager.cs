@@ -35,12 +35,14 @@ namespace Databeest.Common
 
         public void OpenConnection()
         {
-            Connection.Open();
+            if (!String.IsNullOrEmpty(ConnectionString))
+                Connection.Open();
         }
 
         public void CloseConnection()
         {
-            Connection.Close();
+            if (!String.IsNullOrEmpty(ConnectionString))
+                Connection.Close();
         }
     }
 }
