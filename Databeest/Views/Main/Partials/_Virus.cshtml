@@ -1,77 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Virus</title>
-    <link rel="stylesheet" href="~/css/virus.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="top-bar">
-            <div class="desktop-bar"></div>
-            <div class="spacing-bar"></div>
-            <div class="app-bar">
-            <img class="app-bar-icon" src="~/img/layout/internet.png">
-                <div class="link-bar">
-                    <p>http://viruswarnreal.nl/</p>
-                </div>
-                <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
-            </div>
+<div class="top-bar">
+    <div class="app-bar">
+    <img class="app-bar-icon" src="~/img/layout/internet.png">
+        <div class="link-bar">
+            <p>http://viruswarnreal.nl/</p>
         </div>
-        <style>
-            h1{
-                font-size: 3em;
-            }
-            .red{
-                color: #FF0000;
-            }
-            .virus-container{
-                text-align: center;
-            } 
-            .warning1{
-                position: absolute;
-                width: 20%;
-                left: 2%;
-            }
-            .warning2{
-                position: absolute;
-                right: 5%;
-                bottom: 5%;
-                width: 15%;
-            }  
-            
-            .link-bar{
-                width: 80%;
-                background-color: #FFFFFF;
-                border-radius: 5px;
-            }
-            .link-bar p{
-                padding-left: 2%;
-            }
-        </style>
-
-        <div class="virus-container">
-        <img class="warning1" src="~/img/icons/warning.png">
-            <h1 class="red">WARNING!</h1><br>
-            <h3 class="red">YOUR COMPUTER MAY BE INFECTED:</h3>
-            <h1 class="red">VIRUSSUPPORT@GMAIL.COM</h1>
-            <h4>FOR TECHNICAL SUPPORT MAIL IMMEDIATELY</h4>
-            <h5>the sytem has found (3) viruses that pose a serious threat <br> browser.hijacker.spy/trojan.fakeav-download</h5>
-            <h5>Your personal and financial information <br> <span class="red">may not be secured.</span></p>   
-            <h2>Mail now for support</h2> 
-            <h2 class="red">VIRUSSUPPORT@GMAIL.COM</h2>  
-            <img class="warning2" src="~/img/icons/warning.png"> 
-        </div>
-
-
-
-        <!-- <script>
-            $(document).ready(function(){
-                $(".app-bar-close").click(function(){
-                    $(".virus-container").css("display", "none");
-                });
-            });
-        </script> -->
-            
-    </body>
-</html>
+        <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
+    </div>
+</div>
+<div class="virus-container">
+    <h1>Your computer has been locked:</h3>
+    <div class="virus-bottom-text">
+        <h3>The computer with the IP adress {ip 182.} has been <br> infected by the Virus RND/DataBeastSnifer!</h3>
+        <h3>Call the technical support +{number} to protect your <br> files and identity from further damage</h3>
+        <h3>for example, passwords, messages, and credit cards have been stolen.</h3>
+    </div>
+    <div class="virus-button-container"><a class="virus-button">Call us: {number}</a></div>
+</div>            
