@@ -55,7 +55,7 @@ namespace Databeest.Controllers
 
         public IActionResult Mailbox()
         {
-            return PartialView("Partials/_Virus");
+            return PartialView("_Mailbox");
         }
 
         // MS generated
