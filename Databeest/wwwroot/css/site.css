@@ -42,7 +42,7 @@ html {
   }
   
   .app-bar {
-      background-color: rgba(25, 56, 76, 0.8);
+      background-color: rgb(61 90 109);
       height: 50%;
       width: 100%;
       z-index: 1;
@@ -56,10 +56,12 @@ html {
   .app-bar-icon {
       width: 35px;
       padding-left: 1%;
+      padding-bottom: .3%;
   }
   
   .app-bar-close {
       padding-right: 1.5%;
+      padding-bottom: .3%;
   }
   
       .app-bar-close img {
@@ -76,6 +78,7 @@ html {
     .link-bar p{
         padding-left: 2%;
         color: #000;
+        margin: 5px;
     }
   
   .mail-container {
@@ -398,4 +401,31 @@ html {
     border: none;
     padding: 1%;
     cursor: pointer;
+}
+
+/* NO-WIFI PAGE CSS */
+
+.no-wifi-container{
+    width: 100vw;
+    max-height: 80vh;
+    height: 80vh;
+    text-align: center;
+    color: #000 !important;
+    background-color: #fff;
+}
+
+.no-wifi-container img{
+    width: 15%;
+    padding-top: 2%;
+}
+
+.no-wifi-container h1{
+    font-size: 3em;
+    margin:0;
+}
+
+.no-wifi-container p{
+    max-width: 60%;
+    margin: 0 auto;
+    font-size: 1.5em;
 }
