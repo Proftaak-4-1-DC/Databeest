@@ -4,45 +4,43 @@ using System.Configuration;
 
 namespace Databeest.Common
 {
-    /*using (var sqlconn = new ...)
-    using (var sqlcom = new ...)
-    {
-        sqlcon.open();
-        sqlcom.ExecuteNonQuery();
-    }*/
-
-
-public class SqlManager // IDisposable? wanneer gebruiken?
+    public class SqlManager // IDisposable? wanneer gebruiken?
     {
         private readonly IConfigurationBuilder ConfigBuilder = new ConfigurationBuilder();
-        private static string ConnectionString;
-        //public MySqlConnection Connection = new MySqlConnection();
+        private string ConnectionString { get; set; }
+        public MySqlConnection Connection { get; set; }
+        
+        private MySqlCommand _command;
+        public MySqlCommand Command {
+            get
+            {
+                return _command;
+            }
+            set
+            {
+                _command = value;
+                _command.ExecuteNonQuery();
+            } 
+        }
+        
+        public MySqlDataReader DataReader { get; set; }
 
         public SqlManager()
         {
             ConfigBuilder.AddJsonFile("appsettings.json");
             IConfiguration configuration = ConfigBuilder.Build();
             ConnectionString = configuration["ConnectionStrings:ConnectionString"];
-
-            OpenConnection();
+            Connection = new MySqlConnection(ConnectionString);
         }
 
-
-        public static void OpenConnection()
+        public void OpenConnection()
         {
-            //Connection.Open();
-
-            /*using (MySqlConnection connection = new MySqlConnection(ConnectionString))
-            using (MySqlCommand command = new MySqlCommand())
-            {
-                connection.Open();
-                command.ExecuteNonQuery();
-            }*/
+            Connection.Open();
         }
 
         public void CloseConnection()
         {
-            //Connection.Close();
+            Connection.Close();
         }
     }
 }

@@ -25,16 +25,12 @@ $(function () {
     }
 
     $('#mailApp').on('click', function () {
-        $.get('/Main/Mailbox', function (data) {
-            $('.contentApps').html(data);
-        });
+        goToPage('/Main/Mailbox')
     });
     
     // Register --> Algemene Voorwaarden
     $('#policy').on('click', function() {
-        $.get('/Main/Policy', function(data) {
-            $('.contentApps').html(data);
-        });
+        goToPage('/Main/Policy');
     });
 
     // Login --> Register
@@ -51,6 +47,15 @@ $(function () {
                 goToPage('/Main/Index');
             }
         })
+    });
+
+    // Register --> Create account --> Index
+    $('form#register #next').on('click', function () {
+        $.ajax({
+            type: 'POST',
+            url: '/Main/RegisterPost',
+            data: $('form#register').serialize(),
+        });
     });
 
     //////////////////////////////////////////////////

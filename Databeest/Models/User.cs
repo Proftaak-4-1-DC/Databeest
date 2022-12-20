@@ -10,16 +10,15 @@ namespace Databeest.Models
         public string Email { get; set; }
         public int Score { get; set; } = 0;
 
+        public User()
+        { }
+
         User(string username, string password)
         {
             Username = username;
             Password = password;
 
             Email = Username + "@databeast.nl";
-        }
-
-        public void Create()
-        {
         }
     }
 }

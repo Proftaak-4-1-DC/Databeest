@@ -22,20 +22,27 @@ namespace Databeest.Controllers
         /************************************************************************/
         public IActionResult Index()
         {
-            return View("Partials/_Index");
             return View("Partials/_Login");
+            return View("Partials/_Index");
             //SqlManager.OpenConnection();
         }
 
         [HttpPost]
         public IActionResult IndexPost()
         {
-            return View("Shared/_Layout");
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Register()
         {
             return PartialView("Partials/_Register");
+        }
+
+        [HttpPost]
+        public IActionResult RegisterPost(User user)
+        {
+           UserDB.Create(user);
+           return View();
         }
 
         public IActionResult Login()
