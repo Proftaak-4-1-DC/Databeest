@@ -1,40 +1,14 @@
-@section Css
-{
-    <link rel="stylesheet" href="~/css/stylelogin.css" />
-}
-
 @{
     Layout = "_LayoutNotLoggedIn";
 }
 
 <div class="mainContainer">
     <form class="layout" id="login">
-        <p>Inloggen</p>
-        <div class="avatar">
-            <img class="profielfoto" src="~/img/icons/avatarpicture.jpg" alt="profielfoto">
-        </div>
-
-        <div class="loginText">
-            <input type="text" placeholder="Username" name="username" required>
-            <input type="password" placeholder="Password" name="password" required>
-            <img id="next" src="~/img/icons/buttonlogin.png" alt="loginknop" height="40">
-        </div>
-
-        <div class="forgetpassword">
-            <span class="psw"><a id="noaccount">Nog geen account?</a></span>
-        </div>
-    </form>
-</div>
-
-<!-- Boven = oud, onder = nieuw. Moet samengevoegd worden ivm js changes-->
-
-<div class="mainContainer">
-    <form class="layout">
         <div class="inlogtext">
-            <p> INLOGGEN </p>
+            <p>INLOGGEN</p>
         </div>
         <div class="avatar">
-            <img class="profielfoto" src="images/profielfoto database.png" alt="profielfoto">
+            <img class="profielfoto" src="~/img/icons/pf databeest.png" alt="profielfoto">
         </div>
 
         <div class="loginText">
@@ -42,14 +16,13 @@
             <input id="passwordblockid" type="password" placeholder="Password" name="password" required>
             <div class="buttonsoptie">
                 <button id="buttonlogin" type="submit">
-                    <img src="images/Buttonlogin.png" alt="loginknop"
-                         height="40">
+                    <img id="next" src="~/img/icons/buttonlogin.png" alt="loginknop" height="40">
                 </button>
             </div>
         </div>
 
         <div class="forgetpassword">
-            <span class="psw">No<a id="nohyperlink" target="_blank" href="http://127.0.0.1:5500/register.html"> account?</a></span>
+            <span class="psw"><a id="noaccount">Nog geen account?</a></span>
         </div>
     </form>
 </div>
