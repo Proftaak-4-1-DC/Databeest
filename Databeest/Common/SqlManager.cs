@@ -19,6 +19,7 @@ namespace Databeest.Common
             set
             {
                 _command = value;
+                _command.Connection = Connection;
                 _command.ExecuteNonQuery();
             } 
         }

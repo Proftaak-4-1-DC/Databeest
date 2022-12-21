@@ -41,6 +41,7 @@ namespace Databeest.Controllers
         [HttpPost]
         public IActionResult RegisterPost(User user)
         {
+           user = new User(user.Username, user.Password);
            UserDB.Create(user);
            return View();
         }

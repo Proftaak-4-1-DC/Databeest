@@ -7,13 +7,15 @@ namespace Databeest.Models
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public string PasswordConfirm { get; set; }
+        public int AcceptedPolicy { get; set; }
         public string Email { get; set; }
         public int Score { get; set; } = 0;
 
         public User()
         { }
 
-        User(string username, string password)
+        public User(string username, string password)
         {
             Username = username;
             Password = password;
