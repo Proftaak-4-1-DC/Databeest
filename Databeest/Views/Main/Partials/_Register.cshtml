@@ -8,7 +8,7 @@
 }
 
 <div class="mainContainer">
-    <form class="layout">
+    <form class="layout" id="register">
         <div class="inlogtext">
             <p>REGISTREREN</p>
         </div>
@@ -19,12 +19,12 @@
             <input id="usernameblockid" type="text" placeholder="Username" name="username" required>
             <input id="passwordblockid" type="password" placeholder="Password" name="password" required>
             <input id="reenterpasswordid" type="password" placeholder="Re-Password" name="password" required>
-            <button id="buttonlogin" type="submit"><img src="images/Buttonlogin.png" alt="loginknop" height="25"></button>
+            <img id="next" src="~/img/icons/buttonlogin.png" alt="loginknop" height="25">
         </div>
 
         <div class="layoutprivacycheckbox">
             <input type="checkbox" name="voorwaardeprivacy" value="privacyvoorwaarde" required>
-            <label for="voorwaardeprivacy">Ik ga akkoord met de <a id="nohyperlink" href="http://127.0.0.1:5500/privacyvoorwaarde.html" target="_blank">privacyvoorwaarde</a></label></br>
+            <label for="voorwaardeprivacy">Ik ga akkoord met de <a id="noaccount">privacyvoorwaarde</a></label></br>
         </div>
     </form>
 </div>
