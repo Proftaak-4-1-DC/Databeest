@@ -146,3 +146,20 @@ function getTime() {
         document.getElementById("time").innerHTML = timeString;
     }
 }
+
+// Virus countdown timer 
+function countdownVirusTimer(){
+    let virusTimer = 120;
+    let virusTimerText = virusTimer;
+    document.getElementById("virus-timer").innerHTML = virusTimerText + " seconds";
+    let virusTimerInterval = setInterval(function(){
+        virusTimer--;
+        virusTimerText = virusTimer;
+        document.getElementById("virus-timer").innerHTML = virusTimerText + " seconds";
+        if(virusTimer == 0){
+            clearInterval(virusTimerInterval);
+            document.getElementById("virus-timer").innerHTML = "0";
+        }
+    }, 1000);
+}     
+countdownVirusTimer();

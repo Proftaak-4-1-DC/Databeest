@@ -362,5 +362,32 @@ html {
       float: right;
       margin-right: 5%;
       margin-top: 5%;
-  }  
+  } 
+  
+  /* VIRUS PAGE CSS */
+.virus-container {
+    width: 100vw;
+    max-height: 80vh;
+    height: 80vh;
+    background-color: #FF0000;
+    text-align: center;
+}
+.virus-container h1{
+    font-size: 3em;
+    margin: 0;
+    padding-top: 5%;
+}
+.virus-container .virus-bottom-text{
+    padding-top: 5%;
+}
+.virus-container .virus-button-container{
+    padding-top: 5%;
+}
+.virus-container .virus-button{
+    background-color: #b73e3e96;
+    color: #fff;
+    border: none;
+    padding: 1%;
+    cursor: pointer;
+}
   
