@@ -26,7 +26,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\**" ExcludeFromSingleFile="false">
+    <Content Update="wwwroot\**" ExcludeFromSingleFile="true">
+    </Content>
+    <Content Update="wwwroot\img\happy.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\img\mad.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\img\normal.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\img\close.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
 </ItemGroup>
 
