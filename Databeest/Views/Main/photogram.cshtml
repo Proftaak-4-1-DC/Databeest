@@ -5,6 +5,100 @@
         <title>Virus</title>
     </head>
     <body>
-
+    <div class="navBarPhotogram">
+        <img class="photogramImage" src="icons/photogram.png">
+        <div class="close">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+    </div>
+    <div class="photogramContainer">
+        <div class="PhotogramDisplay">
+            <div class="centerContent">
+                <img class="photogramImage" src="icons/photogram.png">
+                <h2>Photogram messenger</h2>
+            </div>
+            <div class="photogramAccount">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div>
+        </div>
+        <div class="appClass">
+            <div>
+                <div class="peopleConnections">
+                    <div class="navContainerLeftPhotogram">
+                        <div class="navPhotogram"></div>
+                        <div>
+                            <lu class="chatList">
+                                <li onclick="getEmma()">
+                                    <img src="chatIcons/emma.jpg">
+                                    <div class="userNameLastSeen">
+                                        <p>Emma</p>
+                                        <p class="lastSeenHoverEffect" style="font-size: 15px;">6 minuten geleden actief</p>
+                                    </div>
+                                </li>
+                                <li onclick="getPleun()">
+                                    <img src="chatIcons/pleun.jpg">
+                                    <div class="userNameLastSeen">
+                                        <p>Pleun</p>
+                                        <p class="lastSeenHoverEffect" style="font-size: 15px;">53 minuten geleden actief</p>
+                                    </div>
+                                </li>
+                                <li onclick="getLeon()">
+                                    <img src="chatIcons/leon.jpg">
+                                    <div class="userNameLastSeen">
+                                        <p>Leon</p>
+                                        <p class="lastSeenHoverEffect" style="font-size: 15px;">9 uur geleden actief</p>
+                                    </div>
+                                </li>
+                                <li onclick="getTess()">
+                                    <img src="chatIcons/tess.jpg">
+                                    <div class="userNameLastSeen">
+                                        <p>Tess</p>
+                                        <p class="lastSeenHoverEffect" style="font-size: 15px;">19 minuten geleden actief</p>
+                                    </div>
+                                </li>
+                                <li onclick="getDirk()">
+                                    <img src="chatIcons/dirk.jpg">
+                                    <div class="userNameLastSeen">
+                                        <p>Dirk</p>
+                                        <p class="lastSeenHoverEffect" style="font-size: 15px;">3 uur geleden actief</p>
+                                    </div>
+                                </li>
+                            </lu>
+                        </div>
+                    </div>
+                    <div class="navContainerRightPhotogram">
+                        <div class="navPhotogram">
+                            <div id="userInfo">
+                                <!-- UserProfile display. -->
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                            </svg>
+                        </div>
+                        <div class="chatDisplay">
+                            <div id="chatClass">
+                                <!-- UserChat display. -->
+                            </div>
+                            <div class="chatBar">
+                                <div class="typeBar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                                    </svg>
+                                    <input type="text" placeholder="Chatbericht sturen...">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 </html>
