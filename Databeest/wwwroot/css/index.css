@@ -4,6 +4,7 @@ body {
     background-size: cover;
     background-repeat: round;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 .d-none {
     display: none;
@@ -167,8 +168,12 @@ body {
 }
 /* Photogram NavBar end */
 /* Photogram left */
+ul.chatList {
+    padding: 0;
+    margin: 0;
+}
 .photogramContainer {
-    height: 90%;
+    height: calc(100% - 50px);
     width: 100%;
     overflow: hidden;
     display: flex;

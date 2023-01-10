@@ -43,6 +43,11 @@ namespace Databeest.Controllers
             return PartialView("Mailbox");
         }
 
+        public IActionResult Photogram()
+        {
+            return View();
+        }
+
         // MS generated
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
