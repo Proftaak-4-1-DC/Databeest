@@ -14,6 +14,7 @@
 	
   <ItemGroup>
     <None Remove="appsettings.json.example" />
+    <None Remove="Common\" />
   </ItemGroup>
 	
   <ItemGroup>
@@ -26,11 +27,16 @@
 
   <ItemGroup>
     <Content Update="wwwroot\**" ExcludeFromSingleFile="false">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
 </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\User\Login.cshtml" />
+    <None Include="Views\Main\Policy.cshtml" />
+    <None Include="wwwroot\css\virus.css" />
+    <None Include="wwwroot\img\bg-inlog.jpg" />
+    <None Include="wwwroot\img\bg-register.png" />
+    <None Include="wwwroot\img\icons\avatarpicture.jpg" />
     <None Include="wwwroot\img\icons\close.png" />
     <None Include="wwwroot\img\congrats.png" />
     <None Include="wwwroot\img\icons\drafts2.png" />
@@ -41,10 +47,7 @@
     <None Include="wwwroot\img\icons\search.png" />
     <None Include="wwwroot\img\icons\sent.png" />
     <None Include="wwwroot\img\icons\trash.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\img\NewFolder\" />
+    <None Include="wwwroot\img\icons\warning.png" />
   </ItemGroup>
 
 </Project>

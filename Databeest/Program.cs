@@ -1,8 +1,25 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.HttpOverrides;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Auth
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/User/Login";
+        options.LogoutPath = "/User/Logout";
+        options.AccessDeniedPath = "/User/AccessDenied";
+    });
+
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("User", policy => policy.RequireRole("User"));
+//});
+//
 
 var app = builder.Build();
 
@@ -23,13 +40,13 @@ if (!app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
+// Https geregeld via webserver
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+app.UseAuthentication();
 
-app.MapControllerRoute(name: "default", pattern: "{controller=Main}/{action=Index}");
-app.MapControllerRoute(name: "virus", pattern: "{controller=Main}/{action=Virus}");
-app.MapControllerRoute(name: "login", pattern: "{controller=Login}/{action=Login}");
+app.MapControllerRoute(name: "index", pattern: "{controller=Main}/{action=Index}");
 
 app.Run();

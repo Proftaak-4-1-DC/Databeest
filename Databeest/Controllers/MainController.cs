@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Databeest.Common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Databeest.Controllers
 {
@@ -9,7 +10,6 @@ namespace Databeest.Controllers
     {
         // MS generated
         private readonly ILogger<MainController> _logger;
-        private SqlManager SqlManager  = new SqlManager();
 
         public MainController(ILogger<MainController> logger)
         {
@@ -17,14 +17,20 @@ namespace Databeest.Controllers
         }
         //
 
-        /************************************************************************/
-        /* Index                                                                */
-        /************************************************************************/
+        [Authorize]
         public IActionResult Index()
         {
-            SqlManager.OpenConnection();
-
             return View();
+        }
+
+        public IActionResult Index2()
+        {
+            return View("Index");
+        }
+
+        public IActionResult Policy()
+        {
+            return PartialView("Partials/_Policy");
         }
 
         public IActionResult Virus()
@@ -34,7 +40,7 @@ namespace Databeest.Controllers
 
         public IActionResult Mailbox()
         {
-            return View();
+            return PartialView("Mailbox");
         }
 
         // MS generated

@@ -1,13 +1,12 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-}
 body {
     font-size: 16px;
     background-image: url("../img/layout/background_desktop.jpg");
     background-size: cover;
     background-repeat: round;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.d-none {
+    display: none;
 }
 .contentApps {
     height: calc(100vh - 25px);
@@ -35,13 +34,11 @@ body {
     text-align: center;
     color: black;
 }
-
 .dateTime {
     padding: 8px;
     margin: 0 20px;
     text-align: right;
 }
-
 .containerTaskbar {
     display: flex;
     top: 0px;
@@ -52,13 +49,11 @@ body {
     background-color: #254f6b;
     padding: 0px 20px;
 }
-
 .containerTaskbar img:hover {
     background-color: #275d81;
     border-radius: 5px;
     transition: all 0.2s ease;
 }
-
 .imageClass {
     padding: 8px;
     border-radius: 12px;
@@ -153,12 +148,10 @@ body {
     text-align: center;
 }
 /* WifiPicker end */
-
 .svgClass {
     height: 25px;
     width: 25px;
 }
-
 
 /* Photogram NavBar */
 .navBarPhotogram {
@@ -398,4 +391,95 @@ body {
     padding: 20px;
 }
 /* Photogram right end */
+#backgroundre {
+    background-image: url("../img/bg-register.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.inlogtext {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.avatar {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profielfoto {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.mainContainer {
+    position: relative;
+    background-image: url("../img/bg-inlog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loginText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+.layout {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+#usernameblockid, #passwordblockid, #reenterpasswordid {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: white;
+    opacity: 80%;
+}
+
+#buttonlogin {
+    margin: 10%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: none;
+}
+
+.layoutprivacycheckbox {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#noaccount {
+    text-decoration: none;
+    color: white;
+    text-shadow: black 2px 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.forgetpassword {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: black 2px 2px;
+}
+
+p.title {
+    text-transform: uppercase;
+}

@@ -1,0 +1,25 @@
+﻿@model Databeest.Models.User
+@{
+    ViewData["Title"] = "Registreren";
+    Layout = "_LayoutNotLoggedIn";
+}
+
+<div class="mainContainer">
+    <form class="layout" id="register" method="post" action="/User/Register">
+        <div class="inlogtext">
+            <p class="title">@ViewData["Title"]</p>
+        </div>
+        <div class="avatar">
+            <img class="profielfoto" src="~/img/icons/pf databeest.png" alt="Profielfoto">
+        </div>
+        <div class="logintext">
+            <input id="usernameblockid" type="text" placeholder="Username" name="Username" required>
+            <input id="passwordblockid" type="password" placeholder="Password" name="Password" required>
+            <input id="reenterpasswordid" type="password" placeholder="Re-Password" name="PasswordConfirm" required>
+            @ViewBag.Message
+            <button id="buttonlogin">
+                <img id="next" src="~/img/icons/buttonlogin.png" alt="loginknop" height="25">
+            </button>
+        </div>
+    </form>
+</div>
