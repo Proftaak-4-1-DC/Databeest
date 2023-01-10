@@ -8,6 +8,9 @@ body {
 .d-none {
     display: none;
 }
+.contentApps {
+    height: calc(100vh - 25px);
+}
 .container {
   display: flex;
   padding: 10px 20px;
@@ -150,6 +153,244 @@ body {
     width: 25px;
 }
 
+/* Photogram NavBar */
+.navBarPhotogram {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    background-color: #19384C;
+}
+
+.close {
+    width: 50px;
+}
+/* Photogram NavBar end */
+/* Photogram left */
+.photogramContainer {
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    background-image: url("img/background_desktop.jpg");
+}
+
+.PhotogramDisplay {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-right: black solid 1px;
+}
+
+.centerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.photogramImage {
+    border-radius: 30px
+}
+
+.photogramAccount {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    bottom: 10%;
+    border: black solid 1px;
+}
+
+/* Photogram left end */
+/* Photogram right */
+.appClass {
+    background-color: white;
+    border-radius: 10px;
+    max-height: fit-content;
+    width: 100%;
+    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.peopleConnections {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.navContainerLeftPhotogram {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+}
+
+.navContainerRightPhotogram {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-left: black solid 1px;
+}
+
+.navPhotogram {
+    display: flex;
+    justify-content: space-between;
+    min-height: 50px;
+    height: 10%;
+    border-bottom: black solid 1px;
+}
+
+#userInfo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-left: 10px;
+}
+
+    #userInfo img {
+        min-height: 40px;
+        height: 100%;
+        border-radius: 100px;
+    }
+
+#userInfoId {
+    height: 50px;
+}
+
+.userNameLastSeen {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+    .userNameLastSeen p {
+        margin: 0px;
+        font-size: 20px;
+    }
+
+.lastSeenHoverEffect {
+    color: rgb(155, 153, 153);
+    width: 100%;
+}
+
+.chatList li {
+    height: 14,5%;
+    display: flex;
+    list-style-type: none;
+    padding: 15px;
+    border-bottom: black solid 1px;
+}
+
+    .chatList li:hover {
+        color: white;
+        background: rgb(239,44,130, 0.3);
+        background: linear-gradient(180deg, rgba(239,44,130) 0%, rgba(252,53,110) 50%, rgba(255,75,84) 100%);
+    }
+
+        .chatList li:hover .lastSeenHoverEffect {
+            color: white;
+        }
+
+.chatList img {
+    height: 50px;
+    border-radius: 100px;
+}
+
+.chatList p {
+    font-size: 20px;
+    padding-left: 6%;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.chatDisplay {
+    height: 90%;
+    background-image: linear-gradient(135deg, rgba(36, 9, 87, 0.1) 25%, transparent 25%), linear-gradient(225deg, rgba(36, 9, 87, 0.1) 25%, transparent 25%), linear-gradient(45deg, rgba(36, 9, 87, 0.1) 25%, transparent 25%), linear-gradient(315deg, rgba(36, 9, 87, 0.1) 25%, #ffffff 25%);
+    background-position: 40px 0, 40px 0, 0 0, 0 0;
+    background-size: 40px 40px;
+    background-repeat: repeat;
+}
+
+#chatClass {
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    justify-content: space-between;
+    gap: 2%;
+}
+
+.chatBar {
+    height: 10%;
+    width: 100%;
+}
+
+.typeBar {
+    display: flex;
+    justify-content: space-between;
+    border: #19384C solid 1px;
+    background-color: white;
+    border-radius: 15px;
+    height: 80%;
+    margin: 5px;
+}
+
+    .typeBar input {
+        border: none;
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
+        padding-left: 10px;
+        font-size: 20px;
+        margin: auto;
+    }
+
+    .typeBar svg {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+#userChatBarSVG {
+    height: 40px;
+}
+
+#userChatBarSVG2 {
+    height: 40px;
+}
+
+.userSend {
+    opacity: 1;
+    padding: 15px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+
+.userRecieved {
+    opacity: none;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+}
+
+.emptySpace {
+    padding: 20px;
+}
+/* Photogram right end */
 #backgroundre {
     background-image: url("../img/bg-register.png");
     background-size: cover;
