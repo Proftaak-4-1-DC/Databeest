@@ -3,61 +3,119 @@ using MySql.Data.MySqlClient;
 
 namespace Databeest.Common
 {
-    public class UserDB
+    public class UserDB : DB
     {
-        static SqlManager sqlManager { get; set; } = new SqlManager();
+        public UserDB()
+        {}
 
-        UserDB()
-        { }
-
-        public static void Create(User user)
+        public bool Create(User user)
         {
-            sqlManager.OpenConnection();
+            if (Exists(user))
+                return false;
+
+            OpenConnection();
 
             string query = "INSERT INTO users (username, password, email) VALUES ('" + user.Username + "', '" + user.Password + "', '" + user.Email + "')";
-            sqlManager.Command = new MySqlCommand(query);
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.ExecuteNonQuery();
 
-            sqlManager.CloseConnection();
+            CloseConnection();
+
+            return true;
         }
 
         // At this moment, we only need to select one user
-        public static User Select(User user)
+        public  User Select(User user)
         {
             User resultUser = new User();
             
-            sqlManager.OpenConnection();
+            OpenConnection();
 
             string query = "SELECT * FROM users WHERE username = '" + user.Username + "'";
-            sqlManager.Command = new MySqlCommand(query);
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            MySqlDataReader dataReader = command.ExecuteReader();
 
-            sqlManager.CloseConnection();
+            while (dataReader.Read())
+            {
+                resultUser.Username = dataReader.GetString("username");
+                resultUser.Email = dataReader.GetString("email");
+                resultUser.Score = dataReader.GetInt32("score");
+            }
+
+            CloseConnection();
+
+            return resultUser;
         }
 
-        public static void Update(string username, User newUser)
+        public User Select(string username)
         {
-            sqlManager.OpenConnection();
+            User user = new User();
+            user.Username = username;
 
-            // Do select first to check if user exists
-
-            // Update user
-            string query = "UPDATE users SET 'accepted_policy' = '" + newUser.AcceptedPolicy + "', 'score' = '" + newUser.Score + "' WHERE username='" + username + "'";
-            sqlManager.Command = new MySqlCommand(query);
-
-            sqlManager.CloseConnection();
+            return Select(user);
         }
 
-        public static void Delete(User user)
+        public bool Exists(User user)
         {
-            sqlManager.OpenConnection();
+            User tempUser = Select(user);
+            if (tempUser.Username == user.Username)
+                return true;
 
-            // Do select first to check if user exists
+            return false;
+        }
+
+        public bool Exists(string username)
+        {
+            User user = Select(username);
+            if (user.Username == username)
+                return true;
+
+            return false;
+        }
+
+        public void Update(User user)
+        {
+            if (!Exists(user))
+                return;
+
+            OpenConnection();
+
+            string query = "UPDATE users SET 'score' = '" + user.Score + "' WHERE username='" + user.Username + "'";
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public void Update(string username, int score)
+        {
+            User user = new User();
+            user.Username = username;
+            user.Score = score;
             
+            Update(user);
+        }
 
-            // Delete user
+        public void Delete(User user)
+        {
+            // Do select first to check if user exists
+            if (!Exists(user))
+                return;
+
+            OpenConnection();
+
             string query = "";
-            sqlManager.Command = new MySqlCommand(query);
+            MySqlCommand command = new MySqlCommand(query, Connection);
 
-            sqlManager.CloseConnection();
+            CloseConnection();
+        }
+
+        public void Delete(string username)
+        {
+            User user = new User();
+            user.Username = username;
+            
+            Delete(user);
         }
     }
 }

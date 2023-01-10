@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Databeest.Common;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Databeest.Controllers
 {
@@ -9,7 +10,6 @@ namespace Databeest.Controllers
     {
         // MS generated
         private readonly ILogger<MainController> _logger;
-        private SqlManager SqlManager  = new SqlManager();
 
         public MainController(ILogger<MainController> logger)
         {
@@ -17,38 +17,15 @@ namespace Databeest.Controllers
         }
         //
 
-        /************************************************************************/
-        /* Index                                                                */
-        /************************************************************************/
+        [Authorize]
         public IActionResult Index()
         {
-            return View("Partials/_Login");
-            return View("Partials/_Index");
-            //SqlManager.OpenConnection();
+            return View();
         }
 
-        [HttpPost]
-        public IActionResult IndexPost()
+        public IActionResult Index2()
         {
-            return RedirectToAction(nameof(Index));
-        }
-
-        public IActionResult Register()
-        {
-            return PartialView("Partials/_Register");
-        }
-
-        [HttpPost]
-        public IActionResult RegisterPost(User user)
-        {
-           user = new User(user.Username, user.Password);
-           UserDB.Create(user);
-           return View();
-        }
-
-        public IActionResult Login()
-        {
-            return PartialView("Partials/_Login");
+            return View("Index");
         }
 
         public IActionResult Policy()
@@ -58,12 +35,12 @@ namespace Databeest.Controllers
 
         public IActionResult Virus()
         {
-            return PartialView("_Virus");
+            return View();
         }
 
         public IActionResult Mailbox()
         {
-            return PartialView("_Mailbox");
+            return PartialView("Mailbox");
         }
 
         // MS generated

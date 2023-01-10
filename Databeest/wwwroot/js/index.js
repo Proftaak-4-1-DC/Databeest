@@ -17,47 +17,6 @@ $(function () {
         $('#homeOpener').toggleClass('d-none');
     });
 
-    // Navigation
-    function goToPage(param) {
-        $.get(param, function (data) {
-            $('.contentApps').html(data);
-        })
-    }
-
-    $('#mailApp').on('click', function () {
-        goToPage('/Main/Mailbox')
-    });
-    
-    // Register --> Algemene Voorwaarden
-    $('#policy').on('click', function() {
-        goToPage('/Main/Policy');
-    });
-
-    // Login --> Register
-    $('#noaccount').on('click', function() {
-        goToPage('/Main/Register');
-    });
-
-    // Login --> Index
-    $('form#login #next').on('click', function () {
-        $.post('/Main/IndexPost', function (data) {
-            console.log(data);
-            if (data == 'Ok') {
-                console.log('Ok2');
-                goToPage('/Main/Index');
-            }
-        })
-    });
-
-    // Register --> Create account --> Index
-    $('form#register #next').on('click', function () {
-        $.ajax({
-            type: 'POST',
-            url: '/Main/RegisterPost',
-            data: $('form#register').serialize(),
-        });
-    });
-
     //////////////////////////////////////////////////
     // Mailbox                                      //
     //////////////////////////////////////////////////
