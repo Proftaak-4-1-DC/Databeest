@@ -9,7 +9,9 @@ body {
     background-size: cover;
     background-repeat: round;
 }
-
+.contentApps {
+    height: calc(100vh - 25px);
+}
 .container {
   display: flex;
   padding: 10px 20px;
@@ -157,6 +159,7 @@ body {
     width: 25px;
 }
 
+
 /* Photogram NavBar */
 .navBarPhotogram {
     display: flex;
@@ -220,7 +223,7 @@ body {
     border-radius: 10px;
     max-height: fit-content;
     width: 100%;
-    margin: auto;
+    margin: 5%;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -228,7 +231,7 @@ body {
 .peopleConnections {
     display: flex;
     flex-direction: row;
-    height: 80%;
+    height: 100%;
 }
 
 .navContainerLeftPhotogram {
@@ -267,6 +270,10 @@ body {
         height: 100%;
         border-radius: 100px;
     }
+
+#userInfoId {
+    height: 50px;
+}
 
 .userNameLastSeen {
     margin: auto;
@@ -329,7 +336,8 @@ body {
     display: flex;
     flex-direction: row;
     height: 90%;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 2%;
 }
 
 .chatBar {
@@ -354,6 +362,7 @@ body {
         border-radius: 20px;
         padding-left: 10px;
         font-size: 20px;
+        margin: auto;
     }
 
     .typeBar svg {
@@ -361,6 +370,14 @@ body {
         margin: 0px;
         padding: 0px;
     }
+
+#userChatBarSVG {
+    height: 40px;
+}
+
+#userChatBarSVG2 {
+    height: 40px;
+}
 
 .userSend {
     opacity: 1;
@@ -381,3 +398,4 @@ body {
     padding: 20px;
 }
 /* Photogram right end */
+
