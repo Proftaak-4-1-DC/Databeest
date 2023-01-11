@@ -4,22 +4,26 @@
     Layout = "_LayoutNotLoggedIn";
 }
 
-<div class="mainContainer">
-    <form class="layout" id="register" method="post" action="/User/Register">
-        <div class="inlogtext">
-            <p class="title">@ViewData["Title"]</p>
-        </div>
-        <div class="avatar">
-            <img class="profielfoto" src="~/img/icons/pf databeest.png" alt="Profielfoto">
-        </div>
-        <div class="logintext">
-            <input id="usernameblockid" type="text" placeholder="Username" name="Username" required>
-            <input id="passwordblockid" type="password" placeholder="Password" name="Password" required>
-            <input id="reenterpasswordid" type="password" placeholder="Re-Password" name="PasswordConfirm" required>
-            @ViewBag.Message
-            <button id="buttonlogin">
-                <img id="next" src="~/img/icons/buttonlogin.png" alt="loginknop" height="25">
-            </button>
-        </div>
-    </form>
+<div class="heelbody">
+    <div class="mainContainer">
+        <form class="layout" method="post" action="/User/Register">
+            <div class="inlogtext">
+                <p>@ViewData["Title"]</p>
+            </div>
+            <div class="avatar">
+                <img class="profielfoto" src="~/img/icons/pf databeest.png" alt="profielfoto">
+            </div>
+            <div class="loginText">
+                <input id="usernameblockid" type="text" placeholder="Username" name="Username" required>
+                <input id="passwordblockid" type="password" placeholder="Password" name="Password" required>
+                <input id="reenterpasswordid" type="password" placeholder="Re-Password" name="PasswordConfirm" required>
+                @ViewBag.Message
+                <button id="buttonlogin" type="submit"><img src="images/Buttonlogin.png" alt="loginknop" height="25"></button>
+            </div>
+            <div class="layoutprivacycheckbox">
+                <input type="checkbox" name="voorwaardeprivacy" value="privacyvoorwaarde" required>
+                <label for="voorwaardeprivacy">Ik ga akkoord met de <a id="nohyperlink" href="/User/Policy">privacyvoorwaarde</a></label><br>
+            </div>
+        </form>
+    </div>
 </div>

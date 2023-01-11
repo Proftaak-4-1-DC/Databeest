@@ -19,6 +19,11 @@ namespace Databeest.Controllers
         }
         //
 
+        public IActionResult Policy()
+        {
+            return View();
+        }
+
         public IActionResult Login()
         {
             return View();

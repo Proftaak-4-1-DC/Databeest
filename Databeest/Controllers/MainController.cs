@@ -28,11 +28,6 @@ namespace Databeest.Controllers
             return View("Index");
         }
 
-        public IActionResult Policy()
-        {
-            return PartialView("Partials/_Policy");
-        }
-
         public IActionResult Virus()
         {
             return View();
