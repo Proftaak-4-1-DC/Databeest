@@ -364,3 +364,35 @@ html {
       margin-top: 5%;
   }  
   
+  /* Fake Google Password Reset */
+
+  .fake-google-container{
+    width: 100vw;
+    max-height: 80vh;
+    height: 80vh;
+    background-color: #fff; 
+    padding-top: 3%
+  }
+  .fake-google-container .fake-google-box {
+    border: 2px solid #E7E7E7;
+    width: 30%;
+    margin: auto;
+    border-radius: 5px;
+    height: 65vh;
+  }
+  .fake-google-container .fake-google-box img{
+    width: 15%;
+  }
+  .fake-google-container .fake-google-input-box{
+    display: flex;
+    flex-direction: column;
+  }
+  .fake-google-container .fake-google-input-box input{
+    width: 80%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border:none;
+    border-bottom: 1px solid #E7E7E7;
+    padding: 2%;
+  }

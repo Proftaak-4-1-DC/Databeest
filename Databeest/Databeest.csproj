@@ -26,7 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\**" ExcludeFromSingleFile="false">
+    <Content Update="wwwroot\**" ExcludeFromSingleFile="true">
+    </Content>
+    <Content Update="wwwroot\img\google-logo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
 </ItemGroup>
 
