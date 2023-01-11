@@ -390,4 +390,66 @@ html {
     padding: 1%;
     cursor: pointer;
 }
-  
+
+  /* Databeest overlay  */
+  .databeest-overlay-container{
+    background-color: #f1cf9fb0;
+    height: 90vh;
+    max-height: 90vh;
+    position: absolute;
+    z-index: 3 !important;
+    width: 100%;
+  }
+  .databeest-overlay-container .bubble-box-container{
+    padding-left: 9%;
+    z-index: 2; 
+    bottom: 25%;
+    position: absolute;
+  }
+
+  .databeest-overlay-container .bubble {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    width: 300px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 24px;
+    text-align: center;
+    color: #000;
+    z-index: 3;
+  }
+
+.databeest-overlay-container .bubble-onder:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #fff;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    left: 32px;
+    bottom: -24px;
+    z-index: 3;
+    }
+    .databeest-overlay-container .databeest-img-container{
+        padding-left: 2%;
+        z-index: 3;
+        position: absolute;
+        bottom: 2%;
+    }
+
+    .databeest-overlay-container .databeest-img-container img {
+        width: 23%;
+        z-index: 3;
+    }
+
+   .databeest-overlay-container .bubble-close{
+    width: 16px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+   } 
