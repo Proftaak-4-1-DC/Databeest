@@ -453,3 +453,59 @@ html {
     right: 40px;
     cursor: pointer;
    } 
+
+  /* Fake Google Password Reset */
+
+  .fake-google-container{
+    width: 100vw;
+    max-height: 71vh;
+    height: 71vh;
+    background-color: #fff; 
+    padding-top: 3%
+  }
+  .fake-google-container .fake-google-box {
+    border: 2px solid #E7E7E7;
+    width: 30%;
+    margin: auto;
+    border-radius: 5px;
+    height: 65vh;
+  }
+  .fake-google-container .fake-google-box img{
+    width: 25%;
+  }
+  .fake-google-container .fake-google-input-box{
+    display: flex;
+    flex-direction: column;
+  }
+  .fake-google-container .fake-google-input-box input{
+    width: 95%;
+    /* margin: auto; */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border:none;
+    border-bottom: 1px solid #E7E7E7;
+    padding: 2%;
+  }
+
+  .fake-google-container a{
+    color: white;
+    background: #1a73e8;
+    border-radius: 4px;
+    height: 28px;
+    padding: 0 24px;
+    display: table-cell;
+    font-size: 14px;
+    letter-spacing: .5px;
+    float: right;
+    line-height: 28px;
+    margin-top: 5%;
+  }
+
+  .fake-google-container a:hover{
+    background-color: #174ea6;
+    cursor: pointer;
+  }
+
+  .fake-google-container .fake-google-box .box-content{
+    padding: 8%;
+  }
