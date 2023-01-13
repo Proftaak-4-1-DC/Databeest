@@ -32,13 +32,13 @@ namespace Databeest.Common
             Connection = new MySqlConnection(ConnectionString);
         }
 
-        public void OpenConnection()
+        protected void OpenConnection()
         {
             if (!String.IsNullOrEmpty(ConnectionString) && Connection.State != System.Data.ConnectionState.Open)
                 Connection.Open();
         }
 
-        public void CloseConnection()
+        protected void CloseConnection()
         {
             if (!String.IsNullOrEmpty(ConnectionString) && Connection.State != System.Data.ConnectionState.Closed)
                 Connection.Close();
