@@ -163,3 +163,7 @@ function countdownVirusTimer(){
     }, 1000);
 }     
 countdownVirusTimer();
+
+function goHome() {
+    window.location.replace("Main/Index");
+}
