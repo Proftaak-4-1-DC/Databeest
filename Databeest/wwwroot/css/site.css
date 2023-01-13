@@ -393,12 +393,17 @@ html {
 
   /* Databeest overlay  */
   .databeest-overlay-container{
-    background-color: #f1cf9fb0;
     height: 90vh;
     max-height: 90vh;
     position: absolute;
     z-index: 3 !important;
     width: 100%;
+  }
+  .databeest-overlay-container.bad{
+    background-color: #ff00007a;
+  }
+  .databeest-overlay-container.good{
+    background-color: #73f04da6;
   }
   .databeest-overlay-container .bubble-box-container{
     padding-left: 9%;
