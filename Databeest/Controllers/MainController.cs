@@ -9,7 +9,7 @@ namespace Databeest.Controllers
     {
         // MS generated
         private readonly ILogger<MainController> _logger;
-        private SqlManager SqlManager  = new SqlManager();
+        //private SqlManager SqlManager  = new SqlManager();
 
         public MainController(ILogger<MainController> logger)
         {
@@ -22,7 +22,7 @@ namespace Databeest.Controllers
         /************************************************************************/
         public IActionResult Index()
         {
-            return View("Partials/_Login");
+            return View("Partials/_Virus");
             return View("Partials/_Index");
             //SqlManager.OpenConnection();
         }
@@ -38,13 +38,13 @@ namespace Databeest.Controllers
             return PartialView("Partials/_Register");
         }
 
-        [HttpPost]
-        public IActionResult RegisterPost(User user)
-        {
-           user = new User(user.Username, user.Password);
-           UserDB.Create(user);
-           return View();
-        }
+        //[HttpPost]
+        //public IActionResult RegisterPost(User user)
+        //{
+        //   user = new User(user.Username, user.Password);
+        //   UserDB.Create(user);
+        //   return View();
+        //}
 
         public IActionResult Login()
         {
