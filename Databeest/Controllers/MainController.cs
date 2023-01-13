@@ -35,7 +35,7 @@ namespace Databeest.Controllers
 
         public IActionResult Mailbox()
         {
-            return PartialView("_OverlayGood");
+            return PartialView("Mailbox");
         }
 
         public IActionResult Photogram()
