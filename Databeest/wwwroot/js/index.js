@@ -49,10 +49,10 @@ $(function () {
     });
 
     // Open selected mail on right side function
-    function MailOpen(id) {
-        $('#' + id).show();
-        $('.mailbox-container').not('#' + id).hide();
-    }
+    $('.inbox').on('click', function () {
+        $('#i' + $(this).attr('id')).show();
+        $('.mailbox-container').not('#i' + $(this).attr('id')).hide();
+    });
 
     function showLeft(id) {
         $('#' + id).show();
