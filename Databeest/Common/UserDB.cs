@@ -15,8 +15,13 @@ namespace Databeest.Common
 
             OpenConnection();
 
-            string query = "INSERT INTO users (username, password, email) VALUES ('" + user.Username + "', '" + user.Password + "', '" + user.Email + "')";
+            string query = "INSERT INTO users (username, password, email) VALUES ('@username', '@password', '@email')";
+
             MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("@username", user.Username);
+            command.Parameters.AddWithValue("@password", user.Password);
+            command.Parameters.AddWithValue("@email", user.Email);
+
             command.ExecuteNonQuery();
 
             CloseConnection();
@@ -31,13 +36,18 @@ namespace Databeest.Common
             
             OpenConnection();
 
-            string query = "SELECT * FROM users WHERE username = '" + user.Username + "'";
+            string query = "SELECT * FROM users WHERE username = '@username'";
+
             MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("@username", user.Username);
+
             MySqlDataReader dataReader = command.ExecuteReader();
 
             while (dataReader.Read())
             {
+                resultUser.Id = dataReader.GetInt32("id");
                 resultUser.Username = dataReader.GetString("username");
+                resultUser.Password = dataReader.GetString("password");
                 resultUser.Email = dataReader.GetString("email");
                 resultUser.Score = dataReader.GetInt32("score");
             }
@@ -80,8 +90,12 @@ namespace Databeest.Common
 
             OpenConnection();
 
-            string query = "UPDATE users SET 'score' = '" + user.Score + "' WHERE username='" + user.Username + "'";
+            string query = "UPDATE users SET 'score' = '@score' WHERE username='@username'";
+
             MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("score", user.Score);
+            command.Parameters.AddWithValue("username", user.Username);
+
             command.ExecuteNonQuery();
 
             CloseConnection();
