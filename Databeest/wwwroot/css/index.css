@@ -10,7 +10,7 @@ body {
     display: none;
 }
 .contentApps {
-    height: calc(100vh - 25px);
+    height: calc(100vh - 81px);
 }
 .container {
   display: flex;
