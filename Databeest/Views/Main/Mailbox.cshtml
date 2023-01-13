@@ -81,6 +81,11 @@
                 <p>Nieuwsbrief</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
+            <div class="inbox" onclick="MailOpen('i7')">
+                <p>Google Inc.</p>
+                <p>Wachtwoord resetten</p>
+                <img class="trash" src="~/img/icons/trash.png">
+            </div>
         </div>
 
         <!-- SENT -->
@@ -253,6 +258,28 @@
                         Davy van Weert <br>
                         Directeur River College
 
+                    </p>
+                </div>
+            </div>
+
+            <div class="mailbox-container" id="i7" style="display: none ;">
+                <div class="top-openmail-container">
+                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <p class="afzender-openmail">Afzender: <span>Google Inc</span></p>
+                    <p class="hide">no-reply@googlle.com</p>
+                    <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                </div>
+
+                <h2 class="mail-title">Wachtwoord resetten</h2>
+                <div class="mail-text">
+                    <p>
+                        Beste,
+                        <br><br>
+                        {naam persoon}
+                        <br><br>
+                        Er is mogelijk ongewenst gebruik gemaakt van uw account. Wij raden aan om met de onderstaande link uw wachtwoord te resetten.
+                        <br><br>
+                        <a href="http://googlle.com/change-password">Google wachtwoord reset link</a>
                     </p>
                 </div>
             </div>
