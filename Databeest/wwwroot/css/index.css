@@ -10,7 +10,7 @@ body {
     display: none;
 }
 .contentApps {
-    height: calc(100vh - 25px);
+    height: calc(100vh - 81px);
 }
 .container {
   display: flex;
@@ -409,10 +409,16 @@ ul.chatList {
 }
 
 .inlogtext {
+    
     text-align: center;
     font-size: 2.5rem;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.inlogtext p {
+    margin-block: 0;
+    padding-top: 20px;
 }
 
 .avatar {
@@ -432,6 +438,15 @@ ul.chatList {
     background-image: url("../img/bg-inlog.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    height:100vh;
+}
+
+.achtergrondregister {
+    position: relative;
+    background-image: url("../img/bg-register.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .loginText {
@@ -441,7 +456,6 @@ ul.chatList {
 }
 
 .layout {
-    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -473,7 +487,31 @@ ul.chatList {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.layoutprivacycheckbox a {
+    color: white;
+}
 
+.goback {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-top:20px;
+}
+
+    .goback a {
+        text-decoration: none;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        padding: 5px;
+        align-self: center
+    }
+
+ .gaterug {
+     margin-top: 2px;
+  }
 #noaccount {
     text-decoration: none;
     color: white;
@@ -501,17 +539,45 @@ ul.chatList {
     width: 10%;
     display: flex;
     margin-right: auto;
+    padding: 10px;
+    margin-bottom: -60px;
+}
+
+.volledigepagina {
+    background: white
 }
 
 .paginaprivacy h2 {
     text-align: center;
-    margin-top: -45px;
 }
 
 .paginaprivacy {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
+
+}
+
+.gobackprivacy {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: right;
+    margin-top: -100px;
+}
+
+    .gobackprivacy a {
+        text-decoration: none;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+        padding: 5px;
+        align-self: center;
+    }
+
+.gaterugprivacy {
+    margin-top: 2px;
 }
 
 p.title { /* Geen hoofdletters nodig in p tag ;) wordt dynamisch ingevuld namelijk */

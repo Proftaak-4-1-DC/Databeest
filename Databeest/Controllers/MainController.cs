@@ -38,6 +38,11 @@ namespace Databeest.Controllers
             return View();
         }
 
+        public IActionResult NoWifi()
+        {
+            return View();
+        }
+
         // MS generated
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

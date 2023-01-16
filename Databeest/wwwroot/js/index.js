@@ -54,24 +54,33 @@ $(function () {
         $('.mailbox-container').not('#i' + $(this).attr('id')).hide();
     });
 
-    function showLeft(id) {
-        $('#' + id).show();
-        $('.inbox-hide').not('#' + id).hide();
+    // auto add class selected to inbox on load
+    $('#inbox').addClass('selected');
+    
+    // Open selected inbox / sent / draft box
+    $('#inbox').on('click', function () {
+        $('#b1').show();
+        $('.inbox-container').not('#b1').hide();
+        $(this).addClass('selected');
+        $('.mail-left-box').not(this).removeClass('selected');
+    });
 
-        // Gives class selected to first mail in inbox / sent 
-        $(".inbox-container").each(function( index ) {
-            $(this).children().first().addClass("selected");
-        });
+    $('#sent').on('click', function () {
+        $('#b2').show();
+        $('.inbox-container').not('#b2').hide();
+        $(this).addClass('selected');
+        $('.mail-left-box').not(this).removeClass('selected');
+    });
 
-        if (id == 'b1') {
-            $('#' + 'i1').show();
-            $('.mailbox-container').not('#' + 'i1').hide();
-        
-        }
-        if (id == 'b2') {
-            $('#' + 'i8').show();
-            $('.mailbox-container').not('#' + 'i8').hide();  
-        }
+    $('#draft').on('click', function () {
+        $('#b3').show();
+        $('.inbox-container').not('#b3').hide();
+        $(this).addClass('selected');
+        $('.mail-left-box').not(this).removeClass('selected');
+    });
+
+    if ($('.paginaprivacy').length > 0) {
+        $('body').css('background-image', 'none');
     }
 });
 

@@ -1,4 +1,6 @@
-﻿namespace Databeest.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Databeest.Models
 {
     public enum TaskStatus
     {
@@ -9,13 +11,30 @@
 
     public class Task
     {
-        public string Name { get; set; }
-        public TaskStatus status { get; set; } = TaskStatus.NotStarted;
-        public int Points { get; set; }
+        [DataType(DataType.Text)]
+        public string? Name { get; set; }
 
-        Task(string name)
+        public TaskStatus Status { get; set; } = TaskStatus.NotStarted;
+        public int? Points { get; set; }
+
+        public Task()
+        { }
+
+        public Task(string name)
         {
             Name = name;
+        }
+
+        public Task(string name, TaskStatus status, int points)
+        {
+            Name = name;
+            Status = status;
+            Points = points;
+        }
+
+        public void FinishTask()
+        {
+            
         }
     }
 }

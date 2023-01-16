@@ -37,7 +37,8 @@ html {
   }
   
   .app-bar {
-      background-color: rgba(25, 56, 76, 0.8);
+      background-color: rgb(61 90 109);
+      height: 40px;
       width: 100%;
       z-index: 1;
       display: flex;
@@ -77,8 +78,7 @@ html {
   
   .mail-container {
       width: 100vw;
-      max-height: 83vh;
-      height: 83vh;
+      height: calc(100% - 54px); /* 40px top-bar + 2x 7px padding */
       display: flex;
       background-image: url(../img/full-mail.jpeg);
       background-size: cover;
@@ -122,10 +122,14 @@ html {
       color: #fff;
   }
   
-  .mail-container .compose:hover, .mail-left-box:hover {
+  .mail-container .compose:hover, .mail-left-box:hover, #inbox:hover, #sent:hover, #draft:hover, .mail-container .inbox:hover {
         background-color: #CAA672;
+        color: #fff;
     }
-  
+
+    .mail-container .inbox:hover img{
+        filter: invert(1);
+    }
     .mail-container .compose:hover {
           border: 1px solid #CAA672;
       }
@@ -233,8 +237,6 @@ html {
   /* MAIL CONTENT */
   
   .mail-container .inbox-container {
-      margin-top: 10%;
-      /* margin-left: 5%; */
       width: 100%;
       display: flex;
       justify-content: center;
@@ -289,6 +291,11 @@ html {
       width: 40%;
   }
   
+  .mail-container .different-boxes-wrapper{
+    max-height: 75%;
+    overflow-y: scroll;
+    margin-top: 10%;        
+}
   .mail-container .mail-box {
       background-color: #fff;
       height: 90%;
@@ -538,3 +545,6 @@ html {
     margin: 0 auto;
     font-size: 1.5em;
 }
+
+
+
