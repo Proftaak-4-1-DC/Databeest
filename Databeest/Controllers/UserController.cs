@@ -29,6 +29,42 @@ namespace Databeest.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(User user)
+        {
+            UserDB userDB = new UserDB();
+
+            if (!userDB.Exists(user))
+            {
+                ViewBag.Message = "Gebruiker bestaat niet!";
+                return View();
+            }
+
+            User dbUser = userDB.Select(user);
+            if (dbUser.Password != user.Password && dbUser.Username == user.Username)
+            {
+                ViewBag.Message = "Wachtwoord komt niet overeen!";
+                return View();
+            }
+
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim("Username", user.Username)
+            };
+
+            ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(identity),
+                new AuthenticationProperties()
+            );
+
+            _logger.LogInformation($"User {user.Username} logged in");
+
+            return Redirect("/Main/Index");
+        }
+
         public IActionResult Register()
         {
             return View();
@@ -48,34 +84,23 @@ namespace Databeest.Controllers
                 {
                     userDB.Create(newUser);
 
-                    List<Claim> claims = new List<Claim>
-                    {
-                        new Claim("Username", newUser.Username)
-                    };
-
-                    ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-                    await HttpContext.SignInAsync(
-                        CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(identity),
-                        new AuthenticationProperties()
-                    );
-
-                    _logger.LogInformation($"User {newUser.Username} logged in");
-
-                    return RedirectToAction(nameof(MainController.Index));
+                    return Redirect("/User/Login");
                 }
                 return View();
             } else
             {
+                ViewBag.Message = "Ehm, er klopt iets niet. Ohnee!";
                 return View();
             }
         }
 
         [Authorize]
-        public IActionResult Logout()
+        [HttpPost]
+        public async Task<IActionResult> Logout()
         {
-            return View();
+            await HttpContext.SignOutAsync();
+
+            return Redirect("/User/Login");
         }
     }
 }

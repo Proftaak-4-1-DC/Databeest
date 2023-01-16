@@ -49,7 +49,6 @@ $(function () {
     });
 
     // Open selected mail on right side function
-    
     $('.inbox').on('click', function () {
         $('#i' + $(this).attr('id')).show();
         $('.mailbox-container').not('#i' + $(this).attr('id')).hide();

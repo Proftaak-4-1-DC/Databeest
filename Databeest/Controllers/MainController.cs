@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Databeest.Controllers
 {
+    [Authorize(Policy = "User")]
     public class MainController : Controller
     {
         // MS generated
@@ -17,15 +18,9 @@ namespace Databeest.Controllers
         }
         //
 
-        [Authorize]
         public IActionResult Index()
         {
             return View();
-        }
-
-        public IActionResult Index2()
-        {
-            return View("Index");
         }
 
         public IActionResult Virus()

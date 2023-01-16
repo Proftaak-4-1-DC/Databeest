@@ -15,11 +15,10 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = "/User/AccessDenied";
     });
 
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy("User", policy => policy.RequireRole("User"));
-//});
-//
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("User", policy => policy.RequireClaim("Username"));
+});
 
 var app = builder.Build();
 
@@ -44,8 +43,8 @@ if (!app.Environment.IsDevelopment())
 //app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(name: "index", pattern: "{controller=Main}/{action=Index}");
 
