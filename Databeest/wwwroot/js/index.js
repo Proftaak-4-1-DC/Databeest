@@ -73,6 +73,10 @@ $(function () {
             $('.mailbox-container').not('#' + 'i7').hide();  
         }
     }
+
+    if ($('.paginaprivacy').length > 0) {
+        $('body').css('background-image', 'none');
+    }
 });
 
 function composePopup() {

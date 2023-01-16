@@ -60,8 +60,6 @@ namespace Databeest.Controllers
                 new AuthenticationProperties()
             );
 
-            _logger.LogInformation($"User {user.Username} logged in");
-
             return Redirect("/Main/Index");
         }
 

@@ -15,7 +15,7 @@ namespace Databeest.Common
 
             OpenConnection();
 
-            string query = "INSERT INTO users (username, password, email) VALUES ('@username', '@password', '@email')";
+            string query = "INSERT INTO users (username, password, email) VALUES (@username, @password, @email)";
 
             MySqlCommand command = new MySqlCommand(query, Connection);
             command.Parameters.AddWithValue("@username", user.Username);
@@ -36,7 +36,7 @@ namespace Databeest.Common
             
             OpenConnection();
 
-            string query = "SELECT * FROM users WHERE username = '@username'";
+            string query = "SELECT * FROM users WHERE username = @username";
 
             MySqlCommand command = new MySqlCommand(query, Connection);
             command.Parameters.AddWithValue("@username", user.Username);
@@ -90,7 +90,7 @@ namespace Databeest.Common
 
             OpenConnection();
 
-            string query = "UPDATE users SET 'score' = '@score' WHERE username='@username'";
+            string query = "UPDATE users SET score = @score WHERE username=@username";
 
             MySqlCommand command = new MySqlCommand(query, Connection);
             command.Parameters.AddWithValue("score", user.Score);
