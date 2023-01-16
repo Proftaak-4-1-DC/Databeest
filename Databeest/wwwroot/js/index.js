@@ -49,10 +49,11 @@ $(function () {
     });
 
     // Open selected mail on right side function
-    function MailOpen(id) {
-        $('#' + id).show();
-        $('.mailbox-container').not('#' + id).hide();
-    }
+    
+    $('.inbox').on('click', function () {
+        $('#i' + $(this).attr('id')).show();
+        $('.mailbox-container').not('#i' + $(this).attr('id')).hide();
+    });
 
     function showLeft(id) {
         $('#' + id).show();
@@ -69,8 +70,8 @@ $(function () {
         
         }
         if (id == 'b2') {
-            $('#' + 'i7').show();
-            $('.mailbox-container').not('#' + 'i7').hide();  
+            $('#' + 'i8').show();
+            $('.mailbox-container').not('#' + 'i8').hide();  
         }
     }
 });
