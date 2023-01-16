@@ -79,6 +79,20 @@ $(function () {
         $('.mail-left-box').not(this).removeClass('selected');
     });
 
+    // Remove selected email with trash icon
+    $('.trash').on('click', function () {
+        $(this).closest('.inbox').remove();
+        $('.mailbox-container').hide();
+    });
+
+    $('.trash-openmail').on('click', function () {
+        $(this).closest('.inbox').remove();
+        $('.mailbox-container').hide();
+        let deleteMail = $(this).closest('.mailbox-container').attr('id').replace('i', '');
+        $('#' + deleteMail).remove();
+    });
+      
+
     if ($('.paginaprivacy').length > 0) {
         $('body').css('background-image', 'none');
     }
