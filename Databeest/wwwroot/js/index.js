@@ -69,8 +69,8 @@ $(function () {
         
         }
         if (id == 'b2') {
-            $('#' + 'i7').show();
-            $('.mailbox-container').not('#' + 'i7').hide();  
+            $('#' + 'i8').show();
+            $('.mailbox-container').not('#' + 'i8').hide();  
         }
     }
 
