@@ -57,6 +57,7 @@ html {
   .app-bar-close {
       padding-right: 1.5%;
       padding-bottom: .3%;
+      cursor: pointer;
   }
   
       .app-bar-close img {

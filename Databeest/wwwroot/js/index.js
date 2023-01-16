@@ -96,6 +96,11 @@ $(function () {
     if ($('.paginaprivacy').length > 0) {
         $('body').css('background-image', 'none');
     }
+
+    // Close app bar and redirect to home page
+    $('.app-bar-close').on('click', function () {
+        window.location.replace("/Main/Index");
+    });
 });
 
 function composePopup() {
