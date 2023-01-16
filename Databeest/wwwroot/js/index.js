@@ -97,10 +97,6 @@ $(function () {
         $('body').css('background-image', 'none');
     }
 
-    // Close app bar and redirect to home page
-    $('.app-bar-close').on('click', function () {
-        window.location.replace("/Main/Index");
-    });
 });
 
 function composePopup() {
@@ -150,3 +146,11 @@ function countdownVirusTimer(){
     }, 1000);
 }     
 countdownVirusTimer();
+
+function goHome(page) {
+    if (page == null) {
+        window.location.replace("/Main/Index");
+    } else {
+        window.location.replace("/Main/" + page);
+    }
+}
