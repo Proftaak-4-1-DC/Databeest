@@ -43,6 +43,11 @@ namespace Databeest.Controllers
             return View();
         }
 
+        public IActionResult FakeGoogle()
+        {
+            return View();
+        }
+
         // MS generated
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

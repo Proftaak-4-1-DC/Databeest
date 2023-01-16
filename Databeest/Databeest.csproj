@@ -28,10 +28,6 @@
   <ItemGroup>
     <Content Update="wwwroot\**" ExcludeFromSingleFile="true">
     </Content>
-    <Content Update="wwwroot\img\mark.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
 </ItemGroup>
 
   <ItemGroup>

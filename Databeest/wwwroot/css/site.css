@@ -462,12 +462,15 @@ html {
 
   /* Fake Google Password Reset */
 
+.fake-container {
+    height: calc(100% - 54px);
+}
+
   .fake-google-container{
     width: 100vw;
-    max-height: 71vh;
-    height: 71vh;
+    height: calc(100% - 20px);
     background-color: #fff; 
-    padding-top: 3%
+    padding-top: 20px;
   }
   .fake-google-container .fake-google-box {
     border: 2px solid #E7E7E7;
@@ -520,8 +523,7 @@ html {
 
 .no-wifi-container{
     width: 100vw;
-    max-height: 80vh;
-    height: 80vh;
+    height: calc(100% - 54px);
     text-align: center;
     color: #000 !important;
     background-color: #fff;

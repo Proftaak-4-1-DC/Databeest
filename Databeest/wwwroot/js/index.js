@@ -13,7 +13,7 @@ $(function () {
         $('#wifiPicker').toggleClass('d-none');
     });
 
-    $('.hoverSelect button').on('click', function () {
+    $('#logout button').on('click', function () {
         $('#homeOpener').toggleClass('d-none');
     });
 
