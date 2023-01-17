@@ -2,6 +2,8 @@
 using Task = Databeest.Models.Task;
 using TaskStatus = Databeest.Models.TaskStatus;
 using MySql.Data.MySqlClient;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Databeest.Common
 {
@@ -50,6 +52,8 @@ namespace Databeest.Common
                 task.Points = dataReader.GetInt32("points");
                 task.DescriptionBad = dataReader.GetString("description_bad");
                 task.DescriptionGood = dataReader.GetString("description_good");
+                task.ShortBad = dataReader.GetString("short_bad");
+                task.ShortGood = dataReader.GetString("short_good");
 
                 tasks.Add(task);
             }
@@ -79,6 +83,37 @@ namespace Databeest.Common
                 task.Points = dataReader.GetInt32("points");
                 task.DescriptionBad = dataReader.GetString("description_bad");
                 task.DescriptionGood = dataReader.GetString("description_good");
+                task.ShortBad = dataReader.GetString("short_bad");
+                task.ShortGood = dataReader.GetString("short_good");
+            }
+
+            CloseConnection();
+
+            return task;
+        }
+
+        public Task Select(int taskid)
+        {
+            Task task = new Task();
+
+            OpenConnection();
+
+            string query = "SELECT * FROM tasks WHERE id = @taskid";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("@taskid", taskid);
+
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                task.Id = taskid;
+                task.Name = dataReader.GetString("name");
+                task.Points = dataReader.GetInt32("points");
+                task.DescriptionBad = dataReader.GetString("description_bad");
+                task.DescriptionGood = dataReader.GetString("description_good");
+                task.ShortBad = dataReader.GetString("short_bad");
+                task.ShortGood = dataReader.GetString("short_good");
             }
 
             CloseConnection();
@@ -88,6 +123,7 @@ namespace Databeest.Common
 
         public Task SelectUserTask(User user, string taskname)
         {
+            // We get the general task
             Task task = Select(taskname);
 
             OpenConnection();
@@ -98,18 +134,43 @@ namespace Databeest.Common
             command.Parameters.AddWithValue("@userid", user.Id);
             command.Parameters.AddWithValue("@taskid", task.Id);
 
-            Task resultTask = new Task();
             MySqlDataReader dataReader = command.ExecuteReader();
 
             while (dataReader.Read())
             {
-                resultTask.Status = (TaskStatus)dataReader.GetInt32("status");
-                resultTask.Id = dataReader.GetInt32("id");
+                // And then fill the user specific data
+                task.Status = (TaskStatus)dataReader.GetInt32("status");
             }
 
             CloseConnection();
 
-            return resultTask;
+            return task;
+        }
+
+        public Task SelectUserTask(User user, int taskid)
+        {
+            // We get the general task
+            Task task = Select(taskid);
+
+            OpenConnection();
+
+            string query = "SELECT * FROM user_task WHERE user_id=@userid AND task_id=@taskid";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("@userid", user.Id);
+            command.Parameters.AddWithValue("@taskid", taskid);
+
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                // And then fill the user specific data
+                task.Status = (TaskStatus)dataReader.GetInt32("status");
+            }
+
+            CloseConnection();
+
+            return task;
         }
 
         public void UpdateUserTask(User user, Task task)
@@ -122,6 +183,54 @@ namespace Databeest.Common
             command.Parameters.AddWithValue("status", (int)task.Status);
             command.Parameters.AddWithValue("userid", user.Id);
             command.Parameters.AddWithValue("taskid", task.Id);
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public void UpdateUserTask(User user, int taskid, TaskStatus status)
+        {
+            OpenConnection();
+
+            string query = "UPDATE user_task SET status=@status WHERE user_id=@userid AND task_id=@taskid";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("status", (int)status);
+            command.Parameters.AddWithValue("userid", user.Id);
+            command.Parameters.AddWithValue("taskid", taskid);
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public void UpdateUserTask(int userid, Task task)
+        {
+            OpenConnection();
+
+            string query = "UPDATE user_task SET status=@status WHERE user_id=@userid AND task_id=@taskid";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("status", (int)task.Status);
+            command.Parameters.AddWithValue("userid", userid);
+            command.Parameters.AddWithValue("taskid", task.Id);
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public void UpdateUserTask(int userid, int taskid, TaskStatus status)
+        {
+            OpenConnection();
+
+            string query = "UPDATE user_task SET status=@status WHERE user_id=@userid AND task_id=@taskid";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("status", (int)status);
+            command.Parameters.AddWithValue("userid", userid);
+            command.Parameters.AddWithValue("taskid", taskid);
 
             command.ExecuteNonQuery();
 

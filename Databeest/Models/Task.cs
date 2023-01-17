@@ -25,6 +25,12 @@ namespace Databeest.Models
         [DataType(DataType.Text)]
         public string? DescriptionGood { get; set; }
 
+        [DataType(DataType.Text)]
+        public string? ShortBad { get; set; }
+
+        [DataType(DataType.Text)]
+        public string? ShortGood { get; set; }
+
         public Task()
         { }
 

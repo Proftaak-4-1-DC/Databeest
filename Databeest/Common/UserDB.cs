@@ -69,6 +69,33 @@ namespace Databeest.Common
             return Select(user);
         }
 
+        public User Select(uint id)
+        {
+            User user = new User();
+
+            OpenConnection();
+
+            string query = "SELECT * FROM users WHERE id = @id";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("@id", id);
+
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                user.Id = dataReader.GetInt32("id");
+                user.Username = dataReader.GetString("username");
+                user.Password = dataReader.GetString("password");
+                user.Email = dataReader.GetString("email");
+                user.Score = dataReader.GetInt32("score");
+            }
+
+            CloseConnection();
+
+            return user;
+        }
+
         public bool Exists(User user)
         {
             User tempUser = Select(user);
