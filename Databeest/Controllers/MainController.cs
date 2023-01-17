@@ -113,7 +113,6 @@ namespace Databeest.Controllers
             taskDB.UpdateUserTask(user, id, TaskStatus.Good);
             Task task = taskDB.SelectUserTask(user, id);
 
-
             return PartialView(task);
         }
 
@@ -121,7 +120,15 @@ namespace Databeest.Controllers
         [Route("/Main/OverlayBad/{id}")]
         public async Task<IActionResult> OverlayBad(int id)
         {
-            return PartialView();
+            PrepView();
+            User user = GetAuthUser();
+
+            TaskDB taskDB = new TaskDB();
+
+            taskDB.UpdateUserTask(user, id, TaskStatus.Good);
+            Task task = taskDB.SelectUserTask(user, id);
+
+            return PartialView(task);
         }
 
 

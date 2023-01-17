@@ -164,7 +164,7 @@ function getTime() {
 // Virus countdown timer 
 if ($('#virus-timer').length > 0) {
 function countdownVirusTimer(){
-    let virusTimer = 120;
+    let virusTimer = 30;
     let virusTimerText = virusTimer;
     document.getElementById("virus-timer").innerHTML = virusTimerText + " seconds";
     let virusTimerInterval = setInterval(function(){
@@ -174,6 +174,7 @@ function countdownVirusTimer(){
         if(virusTimer == 0){
             clearInterval(virusTimerInterval);
             document.getElementById("virus-timer").innerHTML = "0";
+            document.getElementById("virus-close").click();
         }
     }, 1000);
 }     

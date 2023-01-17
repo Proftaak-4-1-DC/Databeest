@@ -59,10 +59,6 @@ html {
       padding-bottom: .3%;
       cursor: pointer;
   }
-
-  .virus-top-bar .app-bar-icon, .virus-top-bar .app-bar-close {
-    margin-bottom: 1%;
-  }
   
       .app-bar-close img {
         width: 20px;
@@ -384,10 +380,10 @@ html {
   /* VIRUS PAGE CSS */
 .virus-container {
     width: 100vw;
-    max-height: 80vh;
-    height: 80vh;
+    height: calc(100% - 54px);
     background-color: #FF0000;
     text-align: center;
+    color: white;
 }
 .virus-container h1{
     font-size: 3em;
