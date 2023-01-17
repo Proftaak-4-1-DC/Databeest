@@ -236,6 +236,9 @@ html {
       }
   
   /* MAIL CONTENT */
+  .mail-container a{
+    cursor: pointer;
+  }
   
   .mail-container .inbox-container {
       width: 100%;

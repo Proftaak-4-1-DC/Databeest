@@ -26,7 +26,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\**" ExcludeFromSingleFile="false">
+    <Content Update="wwwroot\**" ExcludeFromSingleFile="true">
+    </Content>
+    <Content Update="wwwroot\audio\positive.mp3">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\audio\negative.mp3">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
 </ItemGroup>
 
