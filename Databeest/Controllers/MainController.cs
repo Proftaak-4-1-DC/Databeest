@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Databeest.Common;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.VisualBasic;
 
 namespace Databeest.Controllers
 {
@@ -48,12 +49,16 @@ namespace Databeest.Controllers
             return View();
         }
 
-        public IActionResult OverlayGood()
+        [HttpPost]
+        [Route("/Main/OverlayGood/{id}")]
+        public async Task<IActionResult> OverlayGood(int id)
         {
             return PartialView();
         }
 
-        public IActionResult OverlayBad()
+        [HttpPost]
+        [Route("/Main/OverlayBad/{id}")]
+        public async Task<IActionResult> OverlayBad(int id)
         {
             return PartialView();
         }
