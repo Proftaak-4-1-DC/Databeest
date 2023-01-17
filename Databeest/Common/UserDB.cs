@@ -1,4 +1,6 @@
 ﻿using Databeest.Models;
+using Databeest.Common;
+using Task = Databeest.Models.Task;
 using MySql.Data.MySqlClient;
 
 namespace Databeest.Common
@@ -8,10 +10,10 @@ namespace Databeest.Common
         public UserDB()
         {}
 
-        public bool Create(User user)
+        public User Create(User user)
         {
             if (Exists(user))
-                return false;
+                return new User();
 
             OpenConnection();
 
@@ -26,11 +28,13 @@ namespace Databeest.Common
 
             CloseConnection();
 
-            return true;
+            User dbUser = Select(user);
+
+            return dbUser;
         }
 
         // At this moment, we only need to select one user
-        public  User Select(User user)
+        public User Select(User user)
         {
             User resultUser = new User();
             
@@ -90,7 +94,7 @@ namespace Databeest.Common
 
             OpenConnection();
 
-            string query = "UPDATE users SET score = @score WHERE username=@username";
+            string query = "UPDATE users SET score=@score WHERE username=@username";
 
             MySqlCommand command = new MySqlCommand(query, Connection);
             command.Parameters.AddWithValue("score", user.Score);

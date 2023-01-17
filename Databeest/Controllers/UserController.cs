@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Task = Databeest.Models.Task;
+using TaskStatus = Databeest.Models.TaskStatus;
 
 namespace Databeest.Controllers
 {
@@ -80,7 +82,29 @@ namespace Databeest.Controllers
                     ViewBag.Message = "Gebruikersnaam bestaat al!";
                 else
                 {
-                    userDB.Create(newUser);
+                    User createdUser = userDB.Create(newUser);
+
+                    if (createdUser.Id == -1)
+                    {
+                        ViewBag.Message = "Ehm, er klopt iets niet. Ohnee!";
+                        return View();
+                    }
+
+                    // This is where the first task has been completed: Password strength
+                    TaskDB taskDB = new TaskDB();
+
+                    taskDB.CreateUserTasks(createdUser);
+                    Task task = taskDB.SelectUserTask(createdUser, "Wachtwoord Sterkte");
+                    
+                    // Regex check
+                    bool strongPassword = newUser.IsStrongPassword();
+                    if (strongPassword)
+                        task.Status = TaskStatus.Good;
+                    else
+                        task.Status = TaskStatus.Bad;
+
+                    taskDB.UpdateUserTask(createdUser, task);
+                    //
 
                     return Redirect("/User/Login");
                 }
