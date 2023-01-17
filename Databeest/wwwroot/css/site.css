@@ -58,10 +58,6 @@ html {
       padding-right: 1.5%;
       padding-bottom: .3%;
   }
-
-  .virus-top-bar .app-bar-icon, .virus-top-bar .app-bar-close {
-    margin-bottom: 1%;
-  }
   
       .app-bar-close img {
         width: 20px;
@@ -377,6 +373,7 @@ html {
     height: 80vh;
     background-color: #FF0000;
     text-align: center;
+    color: white;
 }
 .virus-container h1{
     font-size: 3em;
