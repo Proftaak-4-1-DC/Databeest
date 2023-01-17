@@ -5,7 +5,7 @@
 
 <div class="app-bar">
     <img class="app-bar-icon" src="~/img/layout/mail.png">
-    <a href="#" class="app-bar-close"><img src="~/img/icons/close.png"></a>
+    <a onclick="goHome()" class="app-bar-close"><img src="~/img/icons/close.png"></a>
 </div>
 
 <div class="mail-container">
@@ -48,7 +48,7 @@
             <input id="search-bar" type="text" name="search" placeholder="Search mail">
             <img src="~/img/icons/search.png">
         </div>
-       
+       <div class="different-boxes-wrapper">
         <!-- INBOX -->
         <div id="b1" class="inbox-container inbox-hide">
             <div class="inbox selected" id="1">
@@ -81,21 +81,31 @@
                 <p>Nieuwsbrief</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
-            <div class="inbox" onclick="MailOpen('i7')">
+            <div class="inbox" id="7">
                 <p>Google Inc.</p>
                 <p>Wachtwoord resetten</p>
+                <img class="trash" src="~/img/icons/trash.png">
+            </div>
+            <div class="inbox" id="8">
+                <p>Directeur River College</p>
+                <p>Schoolspullen kopen</p>
+                <img class="trash" src="~/img/icons/trash.png">
+            </div>
+            <div class="inbox" id="9">
+                <p>Directeur River College</p>
+                <p>Inschrijving voltooid</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
         </div>
 
         <!-- SENT -->
         <div id="b2" class="inbox-container inbox-hide" style="display:none;">
-            <div class="inbox" onclick="MailOpen('i8')">
+            <div class="inbox" id="10">
                 <p>Directeur River College</p>
                 <p>Aanmelden opendag</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
-            <div class="inbox" onclick="MailOpen('i9')">
+            <div class="inbox" id="11">
                 <p>Leon vd pavert</p>
                 <p>Les uitval mevrouw Dorst</p>
                 <img class="trash" src="~/img/icons/trash.png">
@@ -108,6 +118,7 @@
                 <p>Nog geen berichten</p>
                 <p>Nog geen berichten</p>
             </div>
+        </div>
         </div>
     </div>
     <div class="mail-right">
@@ -284,8 +295,64 @@
                 </div>
             </div>
 
-            <!-- OPEN MAIL SENT-BOX -->
             <div class="mailbox-container" id="i8" style="display: none ;">
+                <div class="top-openmail-container">
+                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <p class="afzender-openmail">Afzender: <span>Directeur River College</span></p>
+                    <p class="hide">jderonxerdjaoe@gmail.com</p>
+                    <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                </div>
+
+                <h2 class="mail-title">Schoolspulen kopen</h2>
+                <div class="mail-text">
+                    <p>
+                        Beste,
+                        <br><br>
+                        {naam persoon}
+                        <br><br>
+                        Op deze pagina kun jij je schoolspullen kopen.
+                        <br><br>
+                        <a href="#">http://schoollspullen.nl</a>
+                        <br><br>
+                        Met vriendelijke groet,
+                        <br><br>
+                        Davy van Weert <br>
+                        Directeur River College
+
+                    </p>
+                </div>
+            </div>
+
+             <div class="mailbox-container" id="i9" style="display: none ;">
+                <div class="top-openmail-container">
+                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <p class="afzender-openmail">Afzender: <span>Directeur River College</span></p>
+                    <p class="hide">r.vweert@rivercollege.nl</p>
+                    <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
+                </div>
+
+                <h2 class="mail-title">Inschrijving voltooid</h2>
+                <div class="mail-text">
+                    <p>
+                        Beste,
+                        <br><br>
+                        {naam persoon}
+                        <br><br>
+                        Doormiddel van deze mail willen we je laten weten dat je inschrijving voltooid is.
+                        <br><br>
+                        Je zit in klas 1C en je mentor is meneer Pieters.
+                        <br><br>
+                        Met vriendelijke groet,
+                        <br><br>
+                        Davy van Weert <br>
+                        Directeur River College
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- OPEN MAIL SENT-BOX -->
+            <div class="mailbox-container" id="i10" style="display: none ;">
                 <div class="top-openmail-container">
                     <img src="~/img/icons/trash.png" class="trash-openmail">
                     <p class="afzender-openmail">Afzender: <span>U</span></p>
@@ -313,7 +380,7 @@
                 </div>
             </div>
 
-            <div class="mailbox-container" id="i9" style="display: none ;">
+            <div class="mailbox-container" id="i11" style="display: none ;">
                 <div class="top-openmail-container">
                     <img src="~/img/icons/trash.png" class="trash-openmail">
                     <p class="afzender-openmail">Afzender: <span>U</span></p>

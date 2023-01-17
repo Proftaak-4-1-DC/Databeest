@@ -57,6 +57,7 @@ html {
   .app-bar-close {
       padding-right: 1.5%;
       padding-bottom: .3%;
+      cursor: pointer;
   }
 
   .virus-top-bar .app-bar-icon, .virus-top-bar .app-bar-close {
@@ -126,10 +127,14 @@ html {
       color: #fff;
   }
   
-  .mail-container .compose:hover, .mail-left-box:hover {
+  .mail-container .compose:hover, .mail-left-box:hover, #inbox:hover, #sent:hover, #draft:hover, .mail-container .inbox:hover {
         background-color: #CAA672;
+        color: #fff;
     }
-  
+
+    .mail-container .inbox:hover img{
+        filter: invert(1);
+    }
     .mail-container .compose:hover {
           border: 1px solid #CAA672;
       }
@@ -237,8 +242,6 @@ html {
   /* MAIL CONTENT */
   
   .mail-container .inbox-container {
-      margin-top: 10%;
-      /* margin-left: 5%; */
       width: 100%;
       display: flex;
       justify-content: center;
@@ -293,6 +296,11 @@ html {
       width: 40%;
   }
   
+  .mail-container .different-boxes-wrapper{
+    max-height: 75%;
+    overflow-y: scroll;
+    margin-top: 10%;        
+}
   .mail-container .mail-box {
       background-color: #fff;
       height: 90%;
