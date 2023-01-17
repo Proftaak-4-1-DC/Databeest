@@ -239,11 +239,7 @@ html {
           padding-top: 3%;
       }
   
-  /* MAIL CONTENT */
-  .mail-container a{
-    cursor: pointer;
-  }
-  
+  /* MAIL CONTENT */ 
   .mail-container .inbox-container {
       width: 100%;
       display: flex;
@@ -379,6 +375,7 @@ html {
       float: right;
       margin-right: 5%;
       margin-top: 5%;
+      cursor: pointer;
   } 
   
   /* VIRUS PAGE CSS */
