@@ -22,20 +22,33 @@ namespace Databeest.Controllers
         }
         //
 
+        private void PrepView()
+        {
+            User user = GetAuthUser();
+            ViewData["Username"] = user.Username;
+            ViewData["Email"] = user.Email;
+        }
+
         public IActionResult Index()
         {
+            PrepView();
+
             return View();
         }
 
         public IActionResult Mailbox()
         {
-            return PartialView("Mailbox");
+            PrepView();
+
+            return View("Mailbox");
         }
 
         public IActionResult Photogram()
         {
-            TaskDB taskDB = new TaskDB();
+            PrepView();
             User user = GetAuthUser();
+
+            TaskDB taskDB = new TaskDB();
             Task task = taskDB.SelectUserTask(user, "Photogram");
 
             return View(task);
@@ -43,8 +56,10 @@ namespace Databeest.Controllers
 
         public IActionResult Interwebs()
         {
-            TaskDB taskDB = new TaskDB();
+            PrepView();
             User user = GetAuthUser();
+
+            TaskDB taskDB = new TaskDB();
             Task task = taskDB.SelectUserTask(user, "WiFi");
 
             // If wifi is connected (either public or private) go to virus page, otherwise, no wifi
@@ -56,8 +71,10 @@ namespace Databeest.Controllers
 
         public IActionResult Virus()
         {
-            TaskDB taskDB = new TaskDB();
+            PrepView();
             User user = GetAuthUser();
+
+            TaskDB taskDB = new TaskDB();
             Task task = taskDB.SelectUserTask(user, "Virus");
 
             return View(task);
@@ -65,16 +82,22 @@ namespace Databeest.Controllers
 
         public IActionResult NoWifi()
         {
+            PrepView();
+
             return View();
         }
 
         public IActionResult FakeGoogle()
         {
+            PrepView();
+
             return View();
         }
 
         public IActionResult OverlayDone()
         {
+            PrepView();
+
             return View();
         }
 
@@ -82,8 +105,10 @@ namespace Databeest.Controllers
         [Route("/Main/OverlayGood/{id}")]
         public async Task<IActionResult> OverlayGood(int id)
         {
-            TaskDB taskDB = new TaskDB();
+            PrepView();
             User user = GetAuthUser();
+
+            TaskDB taskDB = new TaskDB();
 
             taskDB.UpdateUserTask(user, id, TaskStatus.Good);
             Task task = taskDB.SelectUserTask(user, id);
@@ -104,7 +129,8 @@ namespace Databeest.Controllers
         {
             UserDB userDB = new UserDB();
 
-            ClaimsIdentity identity = (ClaimsIdentity)User.Identity;
+            ClaimsIdentity? identity = (ClaimsIdentity)User.Identity;
+
             Claim claim = identity.FindFirst("Username");
             User user = userDB.Select(claim.Value);
 
