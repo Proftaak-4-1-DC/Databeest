@@ -122,3 +122,4 @@ function countdownVirusTimer(){
     }, 1000);
 }     
 countdownVirusTimer();
+
