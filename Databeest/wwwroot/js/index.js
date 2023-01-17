@@ -13,7 +13,7 @@ $(function () {
         $('#wifiPicker').toggleClass('d-none');
     });
 
-    $('.hoverSelect button').on('click', function () {
+    $('#logout button').on('click', function () {
         $('#homeOpener').toggleClass('d-none');
     });
 
@@ -97,6 +97,37 @@ $(function () {
         $('body').css('background-image', 'none');
     }
 
+    $('.goodbeast').on('click', function () {
+        // Pakt data-id uit het geklikte element:
+        // <div data-id="1"></div> --> id = 1
+        let id = $(this).attr('data-id');
+
+        $.ajax({
+            type: "POST",
+            url: "/Main/OverlayGood/" + id, // /Main/OverlayGood/1
+            success: function (data) {
+                $(".contentApps").prepend(data)
+                let myMusic = new Audio("/sound/positive.mp3");
+                myMusic.play();
+            },
+        });
+    });
+
+    $('.badbeast').on('click', function () {
+        // Pakt data-id uit het geklikte element:
+        // <div data-id="1"></div> --> id = 1
+        let id = $(this).attr('data-id');
+
+        $.ajax({
+            type: "POST",
+            url: "/Main/OverlayBad/" + id, // /Main/OverlayBad/1
+            success: function (data) {
+                $(".contentApps").prepend(data)
+                let myMusic = new Audio("/sound/negative.mp3");
+                myMusic.play();
+            },
+        });
+    });
 });
 
 function composePopup() {

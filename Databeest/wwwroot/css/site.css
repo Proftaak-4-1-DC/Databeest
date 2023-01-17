@@ -59,6 +59,10 @@ html {
       padding-bottom: .3%;
       cursor: pointer;
   }
+
+  .virus-top-bar .app-bar-icon, .virus-top-bar .app-bar-close {
+    margin-bottom: 1%;
+  }
   
       .app-bar-close img {
         width: 20px;
@@ -391,7 +395,7 @@ html {
     padding-top: 5%;
 }
 .virus-container .virus-bottom-text{
-    padding-top: 5%;
+    padding-top: 3%;
 }
 .virus-container .virus-button-container{
     padding-top: 5%;
@@ -406,12 +410,17 @@ html {
 
   /* Databeest overlay  */
   .databeest-overlay-container{
-    background-color: #f1cf9fb0;
-    height: 90vh;
-    max-height: 90vh;
+    top: 0px;
+    height: 100vh;
     position: absolute;
     z-index: 3 !important;
     width: 100%;
+  }
+  .databeest-overlay-container.bad{
+    background-color: #ff00007a;
+  }
+  .databeest-overlay-container.good{
+    background-color: #73f04da6;
   }
   .databeest-overlay-container .bubble-box-container{
     padding-left: 9%;
@@ -469,12 +478,15 @@ html {
 
   /* Fake Google Password Reset */
 
+.fake-container {
+    height: calc(100% - 54px);
+}
+
   .fake-google-container{
     width: 100vw;
-    max-height: 71vh;
-    height: 71vh;
+    height: calc(100% - 20px);
     background-color: #fff; 
-    padding-top: 3%
+    padding-top: 20px;
   }
   .fake-google-container .fake-google-box {
     border: 2px solid #E7E7E7;
@@ -527,8 +539,7 @@ html {
 
 .no-wifi-container{
     width: 100vw;
-    max-height: 80vh;
-    height: 80vh;
+    height: calc(100% - 54px);
     text-align: center;
     color: #000 !important;
     background-color: #fff;
@@ -550,5 +561,18 @@ html {
     font-size: 1.5em;
 }
 
+.virus-container .virus-img{
+    width: 10%;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    filter: invert(1);
+}
 
-
+.virus-container .virus-img2{
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    filter: invert(1);
+}
