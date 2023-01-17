@@ -48,6 +48,16 @@ namespace Databeest.Controllers
             return View();
         }
 
+        public IActionResult OverlayGood()
+        {
+            return View();
+        }
+
+        public IActionResult OverlayBad()
+        {
+            return View();
+        }
+
         // MS generated
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
