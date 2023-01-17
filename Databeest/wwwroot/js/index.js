@@ -97,6 +97,14 @@ $(function () {
         $('body').css('background-image', 'none');
     }
 
+    $('.hoi').on('click', function () {
+        $.get("/Main/OverlayGood", function (data) {
+            $(".contentApps").prepend(data)
+            let myMusic = new Audio("sounds/positive.mp3");
+            myMusic.play();
+            console.log(data);
+        });
+    });
 });
 
 function composePopup() {

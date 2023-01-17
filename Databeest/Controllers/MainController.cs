@@ -50,12 +50,12 @@ namespace Databeest.Controllers
 
         public IActionResult OverlayGood()
         {
-            return View();
+            return PartialView();
         }
 
         public IActionResult OverlayBad()
         {
-            return View();
+            return PartialView();
         }
 
         // MS generated

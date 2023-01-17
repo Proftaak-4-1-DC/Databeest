@@ -407,8 +407,8 @@ html {
 
   /* Databeest overlay  */
   .databeest-overlay-container{
-    height: 90vh;
-    max-height: 90vh;
+    top: 0px;
+    height: 100vh;
     position: absolute;
     z-index: 3 !important;
     width: 100%;
