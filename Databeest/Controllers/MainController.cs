@@ -27,15 +27,6 @@ namespace Databeest.Controllers
             return View();
         }
 
-        public IActionResult Virus()
-        {
-            TaskDB taskDB = new TaskDB();
-            User user = GetAuthUser();
-            Task task = taskDB.SelectUserTask(user, "Virus");
-
-            return View(task);
-        }
-
         public IActionResult Mailbox()
         {
             return PartialView("Mailbox");
@@ -63,12 +54,26 @@ namespace Databeest.Controllers
                 return Redirect("/Main/NoWifi");
         }
 
+        public IActionResult Virus()
+        {
+            TaskDB taskDB = new TaskDB();
+            User user = GetAuthUser();
+            Task task = taskDB.SelectUserTask(user, "Virus");
+
+            return View(task);
+        }
+
         public IActionResult NoWifi()
         {
             return View();
         }
 
         public IActionResult FakeGoogle()
+        {
+            return View();
+        }
+
+        public IActionResult OverlayDone()
         {
             return View();
         }
@@ -93,6 +98,7 @@ namespace Databeest.Controllers
         {
             return PartialView();
         }
+
 
         private User GetAuthUser()
         {
