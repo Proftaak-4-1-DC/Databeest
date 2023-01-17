@@ -1,5 +1,46 @@
 @section Scripts {
     <script>
+ 
+        // Delete chat function.
+
+        function trashEmma(event) {
+            const trash = document.getElementById("deleteMessageEmma");
+            trash.remove();                 // Delete the message.
+            event.stopPropagation();        // Stop onclick event dubble.
+            number = 0;
+            switchData(number);
+        }
+        function trashPleun(event) {
+            const trash = document.getElementById("deleteMessagePleun");
+            trash.remove();                 // Delete the message.
+            event.stopPropagation();        // Stop onclick event dubble.
+            number = 0;
+            switchData(number);
+        }
+        function trashLeon(event) {
+            const trash = document.getElementById("deleteMessageLeon");
+            trash.remove();                 // Delete the message.
+            event.stopPropagation();        // Stop onclick event dubble.
+            number = 0;
+            switchData(number);
+        }
+        function trashTess(event) {
+            const trash = document.getElementById("deleteMessageTess");
+            trash.remove();                 // Delete the message.
+            event.stopPropagation();        // Stop onclick event dubble.
+            number = 0;
+            switchData(number);
+        }
+        function trashDirk(event) {
+            const trash = document.getElementById("deleteMessageDirk");
+            trash.remove();                 // Delete the message.
+            event.stopPropagation();        // Stop onclick event dubble.
+            number = 0;
+            switchData(number);
+        }
+
+        // Chat functions
+
         let number = 1;
 
         function getEmma() {
@@ -24,9 +65,9 @@
         }
 
         function switchData(number) {
-            let getProfileDiv = document.getElementById("userInfo")
+            let getProfileDiv = document.getElementById("userInfo");
+            let getDiv = document.getElementById("chatClass");
 
-            let getDiv = document.getElementById("chatClass")
             switch (number) {
                 case 1:
                     getProfileDiv.innerHTML = `
@@ -60,31 +101,31 @@
                 case 2:
                     getProfileDiv.innerHTML = `
                         <img class="imgClassPhotogram" src="/img/photogramImages/pleun.jpg">
-                        <div class="userNameLastSeen">
-                            <p> Pleun </p>
-                            <p class="lastSeenHoverEffect">53 minuten geleden actief</p>
-                        </div>`
+                    <div class="userNameLastSeen">
+                    <p> Pleun </p>
+                    <p class="lastSeenHoverEffect">53 minuten geleden actief</p>
+                    </div>`
                     getDiv.innerHTML = `
-                        <div>
-                            <p class="userRecieved">Hey, weet jij nog welke dag de opendag is?</p>
-                            <p class="emptySpace"></p>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Ga jij helpen?</p>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Kom anders samen helpen</p>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Ja dan heb je meteen je vrijwilligers uren gehaald</p>
-                            <p class="userRecieved">Zijn we daar ook weer vanaf</p>
-                        </div>
-                        <div>
-                            <p class="emptySpace"></p>
-                            <p class="userSend">Ff kijke </p>
-                            <p class="userSend">Ze stuurde een mailtje dat het 21 feb is</p>
-                            <p class="emptySpace"></p>
-                            <p class="userSend">Heb nog niet gereageerd</p>
-                            <p class="emptySpace"></p>
-                            <p class="userSend">Ja kan wel</p>
-                        </div>`;
+                    <div>
+                        <p class="userRecieved">Hey, weet jij nog welke dag de opendag is?</p>
+                        <p class="emptySpace"></p>
+                        <p class="emptySpace"></p>
+                        <p class="userRecieved">Ga jij helpen?</p>
+                        <p class="emptySpace"></p>
+                        <p class="userRecieved">Kom anders samen helpen</p>
+                        <p class="emptySpace"></p>
+                        <p class="userRecieved">Ja dan heb je meteen je vrijwilligers uren gehaald</p>
+                        <p class="userRecieved">Zijn we daar ook weer vanaf</p>
+                    </div>
+                    <div>
+                        <p class="emptySpace"></p>
+                        <p class="userSend">Ff kijke </p>
+                        <p class="userSend">Ze stuurde een mailtje dat het 21 feb is</p>
+                        <p class="emptySpace"></p>
+                        <p class="userSend">Heb nog niet gereageerd</p>
+                        <p class="emptySpace"></p>
+                        <p class="userSend">Ja kan wel</p>
+                    </div>`;
                     break;
                 case 3:
                     getProfileDiv.innerHTML = `
@@ -97,7 +138,6 @@
                         <div>
                             <p class="emptySpace"></p>
                             <p class="userRecieved">3A samen met Sarah</p>
-                            <p class="emptySpace"></p>                            
                             <p class="emptySpace"></p>
                             <p class="userRecieved">Zit je dan niet bij pieter?</p>
                             <p class="userRecieved">Onee lm die zit in 3D</p>
@@ -111,7 +151,6 @@
                             <p class="emptySpace"></p>
                             <p class="userSend">Die had mij al gecontact</p>
                             <p class="userSend">Ik zit 3C maar ga vragen of ik naar a mag</p>
-                            <p class="emptySpace"></p>
                             <p class="emptySpace"></p>
                             <p class="userSend">Ja klopt</p>
                         </div>`;
@@ -174,27 +213,10 @@
                         </div>`;
                     break;
                 default:
-                    getDiv.innerHTML = `
-                        <div>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Ja je weer hoe meneer van kuijk is eh</p>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Hij stuurde me er gister weer uit :(</p>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Ik leg morgen wel uit opschool</p>
-                            <p class="emptySpace"></p>
-                            <p class="userRecieved">Haha moet je dit filmpje zien</p>
-                            <p class="userRecieved"><a href="https://ditiszosupergrappig.nl/watleuk">https://ditiszosupergrappig.nl/watleuk</a></p>
-                        </div>
-                        <div>
-                            <p class="userSend">Zo gaat dat tijdens wiskunde ook alitjd</p>
-                            <p class="emptySpace"></p>
-                            <p class="userSend">Jaaaa</p>
-                            <p class="emptySpace"></p>
-                            <p class="userSend">Hoezo</p>
-                            <p class="emptySpace"></p>
-                            <p class="userSend">Isgoed</p>
-                        </div>`;
+                    getProfileDiv.innerHTML = `<div style="background-color="white"> </div>`
+                    getDiv.innerHTML = `<div>
+                        <p class="nothingSelected"> Geen bericht geselecteerd.</p>
+                    </div>`;
                     break;
             }
         }
@@ -222,45 +244,68 @@
             <div class="peopleConnections">
                 <div class="navContainerLeftPhotogram">
                     <div class="navPhotogram"></div>
-                    <div>
-                        <ul class="chatList">
-                            <li onclick="getEmma()">
-                                <img src="~/img/photogramImages/emma.jpg">
-                                <div class="userNameLastSeen">
-                                    <p>Emma</p>
-                                    <p class="lastSeenHoverEffect" style="font-size: 15px;">6 minuten geleden actief</p>
-                                </div>
-                            </li>
-                            <li onclick="getPleun()">
-                                <img src="~/img/photogramImages/pleun.jpg">
-                                <div class="userNameLastSeen">
-                                    <p>Pleun</p>
-                                    <p class="lastSeenHoverEffect" style="font-size: 15px;">53 minuten geleden actief</p>
-                                </div>
-                            </li>
-                            <li onclick="getLeon()">
-                                <img src="~/img/photogramImages/leon.jpg">
-                                <div class="userNameLastSeen">
-                                    <p>Leon</p>
-                                    <p class="lastSeenHoverEffect" style="font-size: 15px;">9 uur geleden actief</p>
-                                </div>
-                            </li>
-                            <li onclick="getTess()">
-                                <img src="~/img/photogramImages/tess.jpg">
-                                <div class="userNameLastSeen">
-                                    <p>Tess</p>
-                                    <p class="lastSeenHoverEffect" style="font-size: 15px;">19 minuten geleden actief</p>
-                                </div>
-                            </li>
-                            <li onclick="getDirk()">
-                                <img src="~/img/photogramImages/dirk.jpg">
-                                <div class="userNameLastSeen">
-                                    <p>Dirk</p>
-                                    <p class="lastSeenHoverEffect" style="font-size: 15px;">3 uur geleden actief</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                                <lu class="chatList">
+                                    <li id="deleteMessageEmma" >
+                                        <img src="~/img/photogramImages/emma.jpg">
+                                        <div class="userNameLastSeen" onclick="getEmma()">
+                                            <p>Emma</p>
+                                            <div onclick="trashEmma(event)" class="trash">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </div>
+                                            <p class="lastSeenHoverEffect" style="font-size: 15px;">6 minuten geleden actief</p>
+                                        </div>
+                                    </li>
+                                    <li id="deleteMessagePleun" onclick="getPleun()">
+                                        <img src="~/img/photogramImages/pleun.jpg">
+                                        <div class="userNameLastSeen">
+                                            <p>Pleun</p>
+                                            <div onclick="trashPleun(event)" class="trash">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </div>
+                                            <p class="lastSeenHoverEffect" style="font-size: 15px;">53 minuten geleden actief</p>
+                                        </div>
+                                    </li>
+                                    <li id="deleteMessageLeon" onclick="getLeon()">
+                                        <img src="~/img/photogramImages/leon.jpg">
+                                        <div class="userNameLastSeen">
+                                            <p>Leon</p>
+                                            <div onclick="trashLeon(event)" class="trash">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </div>
+                                            <p class="lastSeenHoverEffect" style="font-size: 15px;">9 uur geleden actief</p>
+                                        </div>
+                                    </li>
+                                    <li id="deleteMessageTess" onclick="getTess()">
+                                        <img src="~/img/photogramImages/tess.jpg">
+                                        <div class="userNameLastSeen">
+                                            <p>Tess</p>
+                                            <div onclick="trashTess(event)" class="trash">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </div>
+                                            <p class="lastSeenHoverEffect" style="font-size: 15px;">19 minuten geleden actief</p>
+                                        </div>
+                                    </li>
+                                    <li id="deleteMessageDirk" onclick="getDirk()">
+                                        <img src="~/img/photogramImages/dirk.jpg">
+                                        <div class="userNameLastSeen">
+                                            <p>Dirk</p>
+                                            <div onclick="trashDirk(event)" class="trash">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </div>
+                                            <p class="lastSeenHoverEffect" style="font-size: 15px;">3 uur geleden actief</p>
+                                        </div>
+                                    </li>
+                                </lu>
                 </div>
                 <div class="navContainerRightPhotogram">
                     <div class="navPhotogram">
