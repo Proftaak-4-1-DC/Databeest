@@ -5,7 +5,7 @@
 
 <div class="app-bar">
     <img class="app-bar-icon" src="~/img/layout/mail.png">
-    <a onclick="goHome()" class="app-bar-close"><img src="~/img/icons/close.png"></a>
+    <a onclick="goPage()" class="app-bar-close"><img src="~/img/icons/close.png"></a>
 </div>
 
 <div class="mail-container">
@@ -59,7 +59,7 @@
             <div class="inbox" id="2">
                 <p>flinkedeals.nl</p>
                 <p>Gefeliciteerd U heeft 1000 euro gewonnen!!!!</p>
-                <img class="trash" src="~/img/icons/trash.png">
+                <img class="trash goodbeast" data-id="1" src="~/img/icons/trash.png">
             </div>
             <div class="inbox" id="3">
                 <p>Leon vd pavert</p>
@@ -69,7 +69,7 @@
             <div class="inbox" id="4">
                 <p>Leon vd pavert</p>
                 <p>Filmpje School</p>
-                <img class="trash" src="~/img/icons/trash.png">
+                <img class="trash goodbeast" data-id="6" src="~/img/icons/trash.png">
             </div>
             <div class="inbox" id="5">
                 <p>Directeur River College</p>
@@ -89,7 +89,7 @@
             <div class="inbox" id="8">
                 <p>Directeur River College</p>
                 <p>Schoolspullen kopen</p>
-                <img class="trash" src="~/img/icons/trash.png">
+                <img class="trash goodbeast" data-id="8" src="~/img/icons/trash.png">
             </div>
             <div class="inbox" id="9">
                 <p>Directeur River College</p>
@@ -152,7 +152,7 @@
 
             <div class="mailbox-container" id="i2" style="display: none ;">
                 <div class="top-openmail-container">
-                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <img src="~/img/icons/trash.png" class="trash-openmail goodbeast" data-id="1">
                     <p class="afzender-openmail">Afzender: <span>Flinkedeals B.V.</span></p>
                     <p class="hide">win-actie@flinkedeals.nl</p>
                     <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
@@ -171,7 +171,7 @@
                         Het overmaken van dit bedrag is belastingvrij en zal tussen de 1-2 werkdagen duren.
                         <br><br>
                     </p>
-                    <a href="https://www.flinkedeals.nl/1000euro">Klik hier om uw gegevens in te vullen</a>
+                    <a class="badbeast" data-id="1">Klik hier om uw gegevens in te vullen</a>
                     <br><br>
                     <img src="~/img/congrats.png"> 
                 </div>
@@ -201,7 +201,7 @@
 
             <div class="mailbox-container" id="i4" style="display: none ;">
                 <div class="top-openmail-container">
-                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <img src="~/img/icons/trash.png" data-id="6" class="trash-openmail goodbeast">
                     <p class="afzender-openmail">Afzender: <span>Leon vd pavert</span></p>
                     <p class="hide">jrfokgtq1oe@gmail.com</p>
                     <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
@@ -214,7 +214,7 @@
                     <br><br>
                     Leon :)
                     </p>
-                    <a href="https://www.flinkedeals.nl/1000euro">http://yotube.com/funny-cat-fell/</a>
+                    <a data-id="6" class="badbeast">http://yotube.com/funny-cat-fell/</a>
                 </div>
             </div>
 
@@ -290,14 +290,14 @@
                         <br><br>
                         Er is mogelijk ongewenst gebruik gemaakt van uw account. Wij raden aan om met de onderstaande link uw wachtwoord te resetten.
                         <br><br>
-                        <a href="http://googlle.com/change-password">Google wachtwoord reset link</a>
+                        <a onclick="goPage('FakeGoogle')">Google wachtwoord reset link</a>
                     </p>
                 </div>
             </div>
 
             <div class="mailbox-container" id="i8" style="display: none ;">
                 <div class="top-openmail-container">
-                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <img src="~/img/icons/trash.png" class="trash-openmail goodbeast" data-id="8">
                     <p class="afzender-openmail">Afzender: <span>Directeur River College</span></p>
                     <p class="hide">jderonxerdjaoe@gmail.com</p>
                     <p class="ontvanger-openmai">Ontvanger: U (ditismijnmail@mailmail.com)</p>
@@ -312,7 +312,7 @@
                         <br><br>
                         Op deze pagina kun jij je schoolspullen kopen.
                         <br><br>
-                        <a href="#">http://schoollspullen.nl</a>
+                        <a class="badbeast" data-id="8">http://schoollspullen.nl</a>
                         <br><br>
                         Met vriendelijke groet,
                         <br><br>

@@ -97,6 +97,9 @@ html {
       margin-right: -4%;
   }
   /* COMPOSE BUTTON  */
+  .mail-container a{
+    cursor: pointer;
+  }
   .mail-container .compose-pop-up{
     visibility: hidden;
     width: 14%;
@@ -239,8 +242,7 @@ html {
           padding-top: 3%;
       }
   
-  /* MAIL CONTENT */
-  
+  /* MAIL CONTENT */ 
   .mail-container .inbox-container {
       width: 100%;
       display: flex;
@@ -376,6 +378,7 @@ html {
       float: right;
       margin-right: 5%;
       margin-top: 5%;
+      cursor: pointer;
   } 
   
   /* VIRUS PAGE CSS */
