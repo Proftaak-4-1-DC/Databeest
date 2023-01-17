@@ -162,6 +162,7 @@ function getTime() {
 }
 
 // Virus countdown timer 
+if ($('#virus-timer').length > 0) {
 function countdownVirusTimer(){
     let virusTimer = 120;
     let virusTimerText = virusTimer;
@@ -177,6 +178,7 @@ function countdownVirusTimer(){
     }, 1000);
 }     
 countdownVirusTimer();
+}
 
 function goPage(page) {
     if (page == null) {
