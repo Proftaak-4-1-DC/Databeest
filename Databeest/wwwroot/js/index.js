@@ -13,7 +13,7 @@ $(function () {
         $('#wifiPicker').toggleClass('d-none');
     });
 
-    $('.hoverSelect button').on('click', function () {
+    $('#logout button').on('click', function () {
         $('#homeOpener').toggleClass('d-none');
     });
 
@@ -73,6 +73,10 @@ $(function () {
             $('.mailbox-container').not('#' + 'i7').hide();  
         }
     }
+
+    if ($('.paginaprivacy').length > 0) {
+        $('body').css('background-image', 'none');
+    }
 });
 
 function composePopup() {
@@ -123,3 +127,6 @@ function countdownVirusTimer(){
 }     
 countdownVirusTimer();
 
+function goHome() {
+    window.location.replace("Main/Index");
+}

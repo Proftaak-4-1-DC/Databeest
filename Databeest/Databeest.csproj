@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\**" ExcludeFromSingleFile="false">
+    <Content Update="wwwroot\**" ExcludeFromSingleFile="true">
     </Content>
 </ItemGroup>
 
