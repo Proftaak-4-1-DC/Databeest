@@ -178,7 +178,7 @@ function countdownVirusTimer(){
 }     
 countdownVirusTimer();
 
-function goHome(page) {
+function goPage(page) {
     if (page == null) {
         window.location.replace("/Main/Index");
     } else {
