@@ -827,3 +827,14 @@ p.title { /* Geen hoofdletters nodig in p tag ;) wordt dynamisch ingevuld nameli
     font-size: 20px;
     color: rgb(124, 122, 122);
 }
+
+.deleteClass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+    .deleteClass p {
+        margin: 0px;
+        font-size: 20px;
+    }
