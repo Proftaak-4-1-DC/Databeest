@@ -1,3 +1,17 @@
+@section Scripts {
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "/Main/OverlayBad/7", // /Main/OverlayBad/1
+            success: function (data) {
+                $(".contentApps").prepend(data)
+                let myMusic = new Audio("/sound/negative.mp3");
+                myMusic.play();
+            },
+        });
+    </script>
+}
+
 <div class="app-bar">
 <img class="app-bar-icon" src="~/img/layout/internet.png">
     <div class="link-bar">

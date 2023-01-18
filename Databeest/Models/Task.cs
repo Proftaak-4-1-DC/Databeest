@@ -31,7 +31,8 @@ namespace Databeest.Models
         [DataType(DataType.Text)]
         public string? ShortGood { get; set; }
 
-        public string ReturnUrl { get; set; }
+        public string? ReturnUrl { get; set; }
+        public bool IsShown { get; set; } = false;
 
         public Task()
         { }

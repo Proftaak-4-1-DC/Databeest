@@ -97,11 +97,7 @@ $(function () {
         $('body').css('background-image', 'none');
     }
 
-    $('.goodbeast').on('click', function () {
-        // Pakt data-id uit het geklikte element:
-        // <div data-id="1"></div> --> id = 1
-        let id = $(this).attr('data-id');
-
+    function goodbeast(id) {
         $.ajax({
             type: "POST",
             url: "/Main/OverlayGood/" + id, // /Main/OverlayGood/1
@@ -111,13 +107,9 @@ $(function () {
                 myMusic.play();
             },
         });
-    });
+    }
 
-    $('.badbeast').on('click', function () {
-        // Pakt data-id uit het geklikte element:
-        // <div data-id="1"></div> --> id = 1
-        let id = $(this).attr('data-id');
-
+    function badbeast(id) {
         $.ajax({
             type: "POST",
             url: "/Main/OverlayBad/" + id, // /Main/OverlayBad/1
@@ -127,6 +119,22 @@ $(function () {
                 myMusic.play();
             },
         });
+    }
+
+    $('.goodbeast').on('click', function () {
+        // Pakt data-id uit het geklikte element:
+        // <div data-id="1"></div> --> id = 1
+        let id = $(this).attr('data-id');
+
+        goodbeast(id);
+    });
+
+    $('.badbeast').on('click', function () {
+        // Pakt data-id uit het geklikte element:
+        // <div data-id="1"></div> --> id = 1
+        let id = $(this).attr('data-id');
+
+        badbeast(id);
     });
 });
 

@@ -28,7 +28,22 @@ namespace Databeest.Controllers
 
         public IActionResult Login()
         {
-            return View();
+            UserDB userDB = new UserDB();
+
+            ClaimsIdentity? identity = (ClaimsIdentity)User.Identity;
+            if (!identity.IsAuthenticated)
+                return View();
+
+            Claim claim = identity.FindFirst("Username");
+            User user = userDB.Select(claim.Value);
+
+            ViewData["Username"] = user.Username;
+            ViewData["Email"] = user.Email;
+
+            TaskDB taskDB = new TaskDB();
+            Task task = taskDB.SelectUserTask(user, "Wachtwoord Sterkte");
+
+            return View(task);
         }
 
         [HttpPost]

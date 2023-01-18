@@ -27,6 +27,7 @@ namespace Databeest.Controllers
             User user = GetAuthUser();
             ViewData["Username"] = user.Username;
             ViewData["Email"] = user.Email;
+            ViewData["Wifi"] = HasWifi() ? "true" : "false";
         }
 
         public IActionResult Index()
@@ -38,13 +39,27 @@ namespace Databeest.Controllers
 
         public IActionResult Mailbox()
         {
+            if (!HasWifi())
+                return Redirect("/Main/NoWifi");
+
             PrepView();
 
-            return View("Mailbox");
+            User user = GetAuthUser();
+
+            TaskDB taskDB = new TaskDB();
+            Task[] tasks = new Task[3];
+            tasks[0] = taskDB.SelectUserTask(user, 1);
+            tasks[1] = taskDB.SelectUserTask(user, 6);
+            tasks[2] = taskDB.SelectUserTask(user, 8);
+
+            return View(tasks);
         }
 
         public IActionResult Photogram()
         {
+            if (!HasWifi())
+                return Redirect("/Main/NoWifi");
+
             PrepView();
             User user = GetAuthUser();
 
@@ -71,6 +86,9 @@ namespace Databeest.Controllers
 
         public IActionResult Virus()
         {
+            if (!HasWifi())
+                return Redirect("/Main/NoWifi");
+
             PrepView();
             User user = GetAuthUser();
 
@@ -89,6 +107,9 @@ namespace Databeest.Controllers
 
         public IActionResult FakeGoogle()
         {
+            if (!HasWifi())
+                return Redirect("/Main/NoWifi");
+
             PrepView();
 
             return View();
@@ -110,8 +131,14 @@ namespace Databeest.Controllers
 
             TaskDB taskDB = new TaskDB();
 
-            taskDB.UpdateUserTask(user, id, TaskStatus.Good);
             Task task = taskDB.SelectUserTask(user, id);
+            if (task.IsShown)
+                return Redirect(task.ReturnUrl);
+
+            taskDB.UpdateUserTask(user, id, TaskStatus.Good);
+            task = taskDB.SelectUserTask(user, id);
+
+            taskDB.UpdateUserTask(user, id, true);
 
             return PartialView(task);
         }
@@ -125,8 +152,14 @@ namespace Databeest.Controllers
 
             TaskDB taskDB = new TaskDB();
 
-            taskDB.UpdateUserTask(user, id, TaskStatus.Good);
             Task task = taskDB.SelectUserTask(user, id);
+            if (task.IsShown)
+                return Redirect(task.ReturnUrl);
+
+            taskDB.UpdateUserTask(user, id, TaskStatus.Bad);
+            task = taskDB.SelectUserTask(user, id);
+
+            taskDB.UpdateUserTask(user, id, true);
 
             return PartialView(task);
         }
@@ -142,6 +175,18 @@ namespace Databeest.Controllers
             User user = userDB.Select(claim.Value);
 
             return user;
+        }
+
+        private bool HasWifi()
+        {
+            User user = GetAuthUser();
+            TaskDB taskDB = new TaskDB();
+
+            Task task = taskDB.SelectUserTask(user, 3);
+            if (task.Status != TaskStatus.NotStarted)
+                return true;
+            else
+                return false;
         }
 
         // MS generated

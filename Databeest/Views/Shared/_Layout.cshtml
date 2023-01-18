@@ -63,7 +63,13 @@
                     </div>
                     <div class="secondConnection">
                         <div class="informationConnection"><p>i</p></div>
-                        <button type="submit" class="connectButttonClass">verbinden</button>
+                        @if (ViewData["Wifi"] == "false")
+                        {
+                            <button type="submit" class="connectButttonClass badbeast" data-id="3">verbinden</button>
+                        } else
+                        {
+                            <button type="submit" class="connectButttonClass" disabled>Verbonden!</button>
+                        }
                     </div>
                 </div>
                 <div class="optionClass">
@@ -73,7 +79,13 @@
                     </div>
                     <div class="secondConnection">
                         <div class="informationConnection"><p>i</p></div>
-                        <button type="submit" class="connectButttonClass">verbinden</button>
+                        @if (ViewData["Wifi"] == "false")
+                        {
+                            <button type="submit" class="connectButttonClass goodbeast" data-id="3">verbinden</button>
+                        } else
+                        {
+                            <button type="submit" class="connectButttonClass" disabled>Verbonden!</button>
+                        }
                     </div>
                 </div>
             </div>

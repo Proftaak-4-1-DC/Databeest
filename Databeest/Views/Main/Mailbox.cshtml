@@ -1,11 +1,12 @@
-﻿@{
+﻿@model Databeest.Models.Task[]
+@{
     ViewData["Title"] = "Mailbox";
     Layout = "_Layout";
 }
 
 <div class="app-bar">
     <img class="app-bar-icon" src="~/img/layout/mail.png">
-    <a onclick="goPage()" class="app-bar-close"><img src="~/img/icons/close.png"></a>
+    <a onclick="/Main/Index" class="app-bar-close"><img src="~/img/icons/close.png"></a>
 </div>
 
 <div class="mail-container">
@@ -56,21 +57,27 @@
                 <p>Welkom</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
-            <div class="inbox" id="2">
-                <p>flinkedeals.nl</p>
-                <p>Gefeliciteerd U heeft 1000 euro gewonnen!!!!</p>
-                <img class="trash goodbeast" data-id="1" src="~/img/icons/trash.png">
-            </div>
+            @if (Model[0].Status == Databeest.Models.TaskStatus.NotStarted)
+            {
+                <div class="inbox" id="2">
+                    <p>flinkedeals.nl</p>
+                    <p>Gefeliciteerd U heeft 1000 euro gewonnen!!!!</p>
+                    <img class="trash goodbeast" data-id="1" src="~/img/icons/trash.png">
+                </div>
+            }
             <div class="inbox" id="3">
                 <p>Leon vd pavert</p>
                 <p>Les uitval mevrouw Dorst</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
-            <div class="inbox" id="4">
-                <p>Leon vd pavert</p>
-                <p>Filmpje School</p>
-                <img class="trash goodbeast" data-id="6" src="~/img/icons/trash.png">
-            </div>
+            @if (Model[1].Status == Databeest.Models.TaskStatus.NotStarted)
+            {
+                <div class="inbox" id="4">
+                    <p>Leon vd pavert</p>
+                    <p>Filmpje School</p>
+                    <img class="trash goodbeast" data-id="6" src="~/img/icons/trash.png">
+                </div>
+            }
             <div class="inbox" id="5">
                 <p>Directeur River College</p>
                 <p>De open dag van het River College</p>
@@ -86,11 +93,14 @@
                 <p>Wachtwoord resetten</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
-            <div class="inbox" id="8">
-                <p>Directeur River College</p>
-                <p>Schoolspullen kopen</p>
-                <img class="trash goodbeast" data-id="8" src="~/img/icons/trash.png">
-            </div>
+            @if (Model[2].Status == Databeest.Models.TaskStatus.NotStarted)
+            {
+                <div class="inbox" id="8">
+                    <p>Directeur River College</p>
+                    <p>Schoolspullen kopen</p>
+                    <img class="trash goodbeast" data-id="8" src="~/img/icons/trash.png">
+                </div>
+            }
             <div class="inbox" id="9">
                 <p>Directeur River College</p>
                 <p>Inschrijving voltooid</p>

@@ -54,6 +54,10 @@ namespace Databeest.Common
                 task.DescriptionGood = dataReader.GetString("description_good");
                 task.ShortBad = dataReader.GetString("short_bad");
                 task.ShortGood = dataReader.GetString("short_good");
+                task.ReturnUrl = dataReader.GetString("return_url");
+
+                if (String.IsNullOrEmpty(task.ReturnUrl))
+                    task.ReturnUrl = "/Main/Index";
 
                 tasks.Add(task);
             }
@@ -85,6 +89,10 @@ namespace Databeest.Common
                 task.DescriptionGood = dataReader.GetString("description_good");
                 task.ShortBad = dataReader.GetString("short_bad");
                 task.ShortGood = dataReader.GetString("short_good");
+                task.ReturnUrl = dataReader.GetString("return_url");
+
+                if (String.IsNullOrEmpty(task.ReturnUrl))
+                    task.ReturnUrl = "/Main/Index";
             }
 
             CloseConnection();
@@ -114,6 +122,10 @@ namespace Databeest.Common
                 task.DescriptionGood = dataReader.GetString("description_good");
                 task.ShortBad = dataReader.GetString("short_bad");
                 task.ShortGood = dataReader.GetString("short_good");
+                task.ReturnUrl = dataReader.GetString("return_url");
+
+                if (String.IsNullOrEmpty(task.ReturnUrl))
+                    task.ReturnUrl = "/Main/Index";
             }
 
             CloseConnection();
@@ -140,6 +152,7 @@ namespace Databeest.Common
             {
                 // And then fill the user specific data
                 task.Status = (TaskStatus)dataReader.GetInt32("status");
+                task.IsShown = dataReader.GetInt32("is_shown") == 1 ? true : false;
             }
 
             CloseConnection();
@@ -166,6 +179,7 @@ namespace Databeest.Common
             {
                 // And then fill the user specific data
                 task.Status = (TaskStatus)dataReader.GetInt32("status");
+                task.IsShown = dataReader.GetInt32("is_shown") == 1 ? true : false;
             }
 
             CloseConnection();
@@ -197,6 +211,22 @@ namespace Databeest.Common
 
             MySqlCommand command = new MySqlCommand(query, Connection);
             command.Parameters.AddWithValue("status", (int)status);
+            command.Parameters.AddWithValue("userid", user.Id);
+            command.Parameters.AddWithValue("taskid", taskid);
+
+            command.ExecuteNonQuery();
+
+            CloseConnection();
+        }
+
+        public void UpdateUserTask(User user, int taskid, bool shown)
+        {
+            OpenConnection();
+
+            string query = "UPDATE user_task SET is_shown=@shown WHERE user_id=@userid AND task_id=@taskid";
+
+            MySqlCommand command = new MySqlCommand(query, Connection);
+            command.Parameters.AddWithValue("shown", shown ? 1 : 0);
             command.Parameters.AddWithValue("userid", user.Id);
             command.Parameters.AddWithValue("taskid", taskid);
 
