@@ -91,7 +91,7 @@
             <div class="inbox" id="7">
                 <p>Google Inc.</p>
                 <p>Wachtwoord resetten</p>
-                <img class="trash" src="~/img/icons/trash.png">
+                <img class="trash goodbeast" data-id="7" src="~/img/icons/trash.png">
             </div>
             @if (Model[2].Status == Databeest.Models.TaskStatus.NotStarted)
             {
@@ -272,7 +272,7 @@
                         <br><br>
                         Klik hier om de nieuwsbrief van de start van het schooljaar te lezen.
                         <br><br>
-                        <a href="https://www.flinkedeals.nl/1000euro">https://denieuwsbriefvanhetjaar.nl</a>
+                        <a>https://denieuwsbriefvanhetjaar.nl</a>
                         <br><br>
                         Met vriendelijke groet,
                         <br><br>
@@ -285,7 +285,7 @@
 
             <div class="mailbox-container" id="i7" style="display: none ;">
                 <div class="top-openmail-container">
-                    <img src="~/img/icons/trash.png" class="trash-openmail">
+                    <img src="~/img/icons/trash.png" class="trash-openmail goodbeast" data-id="7">
                     <p class="afzender-openmail">Afzender: <span>Google Inc</span></p>
                     <p class="hide">no-reply@googlle.com</p>
                     <p class="ontvanger-openmai">Ontvanger: U (@ViewData["Email"])</p>
