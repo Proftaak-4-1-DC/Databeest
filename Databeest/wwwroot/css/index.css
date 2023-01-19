@@ -90,6 +90,10 @@ body {
     justify-content: space-between;
     padding: 10px 10px 0px 15px;
 }
+.buttonAfmelden {
+    display: flex; justify-content: space-between;
+}
+
 #afmelden:hover {
     background-color: #275d81;
 }
