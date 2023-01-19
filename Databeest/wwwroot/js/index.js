@@ -195,3 +195,4 @@ function goPage(page) {
         window.location.replace("/Main/" + page);
     }
 }
+

@@ -3,6 +3,55 @@
     ViewData["Title"] = "Eindscore";
 }
 <div class="eindscorehelepagina">
+    <script>
+        function modalInfo(selectedTask) {
+            document.querySelector('.modal').style.display = 'flex';
+            let modelImg = document.getElementById('model-img');
+            let modelText = document.getElementById('model-text');
+
+            if (selectedTask === 'privacy') {
+                modelImg.src = '/img/privacy-meme.png';
+                modelText.innerHTML = 'Je hebt de voorwaarde geaccepteerd anders kon je niet verder. Dit is bij heel veel sites het geval en iedereen accepteert ze standaard. Maar in dit geval hebben wij in de voorwaarden gezet dat we alle gegevens die je verstuurt of uitleest mogen uitlezen/gebruiken. Dit is natuurlijk niet iets wat je wil.';
+            }
+             else if (selectedTask === 'emma') {
+                modelImg.src = '/img/emma-meme.png';
+                modelText.innerHTML = "Een e-mail, sms of betaalverzoek met een valse link is een gebruikelijke manier om aan uw gegevens te komen of u te misleiden om geld over te maken. Dit noem je phishing. Deze informatie, zoals wachtwoorden of toegangscodes, kan door cybercriminelen worden gebruikt om veel geld van u te stelen. Het is dus belangrijk om attent te zijn. Door phishing te herkennen en niet op links of bijlagen te klikken, verkleint u het aantal cybercriminelen sterk.\n\n Om te weten of je link veilig is kun je gebruik maken van de website https://checkjelinkje.nl/. Deze wordt ook aanbevolen door het ministerie van Justitie en Veiligheid. "
+            }
+            else if (selectedTask === 'filmpje') {
+                modelImg.src = '/img/filmpje-meme.png';
+                modelText.innerHTML = "Check altijd goed of een linkje wel van het juiste email adres komt. sommige mensen doen zich voor als iemand die jij kent om je zo op linkjes te laten klikken.\n\n Om te weten of je link veilig is kun je gebruik maken van de website https://checkjelinkje.nl/. Deze wordt ook aanbevolen door het ministerie van Justitie en Veiligheid."
+            }
+            else if (selectedTask === 'vergeten') {
+                modelImg.src = '/img/vergeten-meme.png';
+                modelText.innerHTML = "De wachtwoord vergeten link leek af te komen van Google, maar dit was van iemand die zich voordeed als google met het email adress van googLLe met 2 keer een L";
+            }
+            else if (selectedTask === 'schoolspullen') {
+                modelImg.src = '/img/schoolspullen-meme.png';
+                modelText.innerHTML = "Het schoolspullen mailtje leek af te komen van de directeur, maar dit was van iemand die zich voordeed als jouw directeur\n\n Om te weten of je link veilig is kun je gebruik maken van de website https://checkjelinkje.nl/. Deze wordt ook aanbevolen door het ministerie van Justitie en Veiligheid.";
+            }
+            else if (selectedTask === 'spam') {
+                modelImg.src = '/img/spam-meme.png';
+                modelText.innerHTML = "Dit mailtje is te goed om waar te zijn. Je wint vrijwel nooit zomaar 1000 euro. Check altijd goed de afzender en zoek eventueel op wie dit is.\n\n Om te weten of je link veilig is kun je gebruik maken van de website https://checkjelinkje.nl/. Deze wordt ook aanbevolen door het ministerie van Justitie en Veiligheid.";
+            }
+            else if (selectedTask === 'virus') {
+                modelImg.src = '/img/virus-meme.png';
+                modelText.innerHTML = "Het komt wel is voor dat je een virus melding krijgt deze kunnen ook nep zijn met de gedachten dat je erop klikt zoals in het spel.\n\n Wanneer je een virusmelding krijgt zorg er altijd voor dat je met eigen geïnstalleerde virusscanner een scan maakt van de hele computer. Beste gratis antivirusprogramma’s zijn: AVG AntiVirus Free en Avast Free Antivirus. ";
+            }
+            else if (selectedTask === 'wifi') {
+                modelImg.src = '/img/wifi-meme.png';
+                modelText.innerHTML = "Het gebruik van een openbaar wifi-netwerk zoals in een café, hotel, camping, luchthaven, trein of bus is nooit veilig, of je nu een wachtwoord gebruikt of niet. Zodra je inlogt op een openbaar wifi-netwerk, heeft een hacker toegang tot je apparaat en daarmee tot je persoonlijke en belangrijke informatie. Hij kan deze gegevens gebruiken voor identiteitsfraude, inloggen op je e-mail- of Facebook-account, DigiD-accounts kapen. U kunt de risico’s beperken door gebruik te maken van je mobile internet of het wifi netwerk die beveiligd is met een wachtwoord. ";
+            }
+            else if (selectedTask === 'wachtwoord') {
+                modelImg.src = '/img/wachtwoord-meme.jpg';
+                modelText.innerHTML = "Gebruik altijd een sterk wachtwoord dit wil zeggen dat alle eisen van een sterk wachtwoord erin zitten. Dit wil niet zeggen dat het wachtwoord niet gekraakt kan worden probeer daarom elk jaar minimaal het wachtwoord te wijzigen om zo je gegevens veilig te houden.";
+            }
+            
+        }
+
+        function closeModal() {
+            document.querySelector('.modal').style.display = 'none';
+        }
+    </script>
     <div class="containerUp">
         <div class="upLeft">
             <div class="eindscoretekst">
@@ -24,35 +73,35 @@
         <div class="borderresultaat">
             <div class="containerResultaat">
                 <div class="berichtemma">
-                    <img class="berichtemmaclass" src="~/img/instagram export logo.png" alt="afbeeldingberichtemma" width="70">
+                    <a onclick="modalInfo('emma')"><img class="berichtemmaclass" src="~/img/instagram export logo.png" alt="afbeeldingberichtemma" width="70"></a>
                     <p>Bericht van Emma</p>
                 </div>
                 <div class="filmpjemail">
-                    <img class="filmpjemailclass" src="~/img/mail filmpje.png" alt="afbeeldingmailfilmpje" width="80">
+                    <a onclick="modalInfo('filmpje')"><img class="filmpjemailclass" src="~/img/mail filmpje.png" alt="afbeeldingmailfilmpje" width="80"></a>
                     <p>Filmpje mail</p>
                 </div>
                 <div class="wachtwoordvergetenmail">
-                    <img class="wachtwoordvergetenmailclass" src="~/img/wachtwoord vergeten mail.png" alt="afbeeldingwachtwoordvergeten" width="80">
+                    <a onclick="modalInfo('vergeten')"><img class="wachtwoordvergetenmailclass" src="~/img/wachtwoord vergeten mail.png" alt="afbeeldingwachtwoordvergeten" width="80"></a>
                     <p>Wachtwoord mail</p>
                 </div>
                 <div class="schoolspullenmail">
-                    <img class="schoolspullenmailclass" src="~/img/Mail schoolspullen.png" alt="afbeeldingschoolspullen" width="80">
+                    <a onclick="modalInfo('schoolspullen')"><img class="schoolspullenmailclass" src="~/img/Mail schoolspullen.png" alt="afbeeldingschoolspullen" width="80"></a>
                     <p>Schoolspullen mail</p>
                 </div>
                 <div class="spammail">
-                    <img class="spammailclass" src="~/img/image-removebg-preview (29) 1.png" alt="afbeeldingspammail" width="80">
+                    <a onclick="modalInfo('spam')"><img class="spammailclass" src="~/img/image-removebg-preview (29) 1.png" alt="afbeeldingspammail" width="80"></a>
                     <p>Spam mail</p>
                 </div>
                 <div class="virusmelding">
-                    <img class="virusmeldingclass" src="~/img/virusmelding-removebg-preview.png" alt="afbeeldingvirusmelding" width="80">
+                    <a onclick="modalInfo('virus')"><img class="virusmeldingclass" src="~/img/virusmelding-removebg-preview.png" alt="afbeeldingvirusmelding" width="80"></a>
                     <p>Virusmelding</p>
                 </div>
                 <div class="wifiverbinding">
-                    <img class="wifiverbindingclass" src="~/img/wifi logo eindresultaat.png" alt="afbeeldingwifi" width="80">
+                    <a onclick="modalInfo('wifi')"><img class="wifiverbindingclass" src="~/img/wifi logo eindresultaat.png" alt="afbeeldingwifi" width="80"></a>
                     <p>Wifiverbinding</p>
                 </div>
                 <div class="wachtwoord">
-                    <img class="wachtwoordclass" src="~/img/Slecht wachtwoord eindraport.png" alt="afbeeldingwachtwoord" width="70">
+                    <a onclick="modalInfo('wachtwoord')"><img class="wachtwoordclass" src="~/img/Slecht wachtwoord eindraport.png" alt="afbeeldingwachtwoord" width="70"></a>
                     <p>Wachtwoord</p>
                 </div>
             </div>
@@ -60,20 +109,19 @@
         <div class="privacyborder">
             <div class="containerPrivacy">
                 <div class="privacyvoorwaarde">
-                    <img class="privacyvoorwaardeclass" src="~/img/privacy policy.png" alt="afbeeldingprivacyvoorwaarde" width="80">
+                    <a onclick="modalInfo('privacy')"><img class="privacyvoorwaardeclass" src="~/img/privacy policy.png" alt="afbeeldingprivacyvoorwaarde" width="80"></a>
                     <p>Privacy voorwaarde</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="modal">
+<div class="modal" style="display: none;">
+    <a onclick="closeModal()"><img class="modal-close" src="~/img/close.png"></a>
     <div class="modal-wrap">
-        <img src="https://assets.codepen.io/1462889/sl3.jpg" alt="">
-        <p>
-            Je hebt de voorwaarde geaccepteerd anders kon je niet verder.
-            Dit is bij heel veel sites het geval en iedereen accepteert ze standaard.
-            Maar in dit geval hebben wij in de voorwaarden gezet dat we alle gegevens die je verstuurt of uitleest mogen uitlezen/gebruiken. Dit is natuurlijk niet iets wat je wil.
+        <img id="model-img" src="https://assets.codepen.io/1462889/sl3.jpg" alt="meme">
+        <p id="model-text">
+            test test
         </p>
     </div>
 </div>
