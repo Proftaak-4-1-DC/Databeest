@@ -130,3 +130,11 @@ countdownVirusTimer();
 function goHome() {
     window.location.replace("Main/Index");
 }
+
+$(document).ready(function(){  
+  $(".profielfoto").hover(function(){  
+      $(this).attr('src','~/img/icons/pf databeest.png');  
+    }, function(){  
+    $(this).attr('src','https://jpeg.org/images/jpegsystems-home.jpg');  
+  });  
+});  

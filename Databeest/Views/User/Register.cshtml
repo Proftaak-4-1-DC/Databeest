@@ -12,18 +12,19 @@
                     <p>@ViewData["Title"]</p>
                  </div>
                 <div class="avatar">
-                     <img class="profielfoto" src="~/img/icons/pf databeest.png" alt="profielfoto">
+                    <img class="normaledatabase" src="~/img/icons/pf databeest.png" alt="profielfoto" width="200px">
+                    <img class="bozedatabase" src="~/img//icons/pf databeest boos.png" alt="profielfoto" width="200px" />
                 </div>
                 <div class="loginText">
                      <input id="usernameblockid" type="text" placeholder="Username" name="Username" required>
                      <input id="passwordblockid" type="password" placeholder="Password" name="Password" required>
                      <input id="reenterpasswordid" type="password" placeholder="Re-Password" name="PasswordConfirm" required>
                      @ViewBag.Message
-                    <button id="buttonlogin" type="submit"><img src="~/img/icons/buttonlogin.png" alt="loginknop" height="45"></button>
+                    <button class="buttonregister" type="submit"><img src="~/img/icons/buttonlogin.png" alt="loginknop" height="45"></button>
                 </div>
                 <div class="layoutprivacycheckbox">
                     <input type="checkbox" name="voorwaardeprivacy" value="privacyvoorwaarde" required>
-                    <label for="voorwaardeprivacy">Ik ga akkoord met de <a id="nohyperlink" href="/User/Policy">privacyvoorwaarde</a></label><br>
+                    <label for="voorwaardeprivacy">Ik ga akkoord met de <a id="nohyperlink" href="/User/Policy">privacyvoorwaarden</a></label><br>
                 </div>
                 <div class="goback">
                         <a href="/User/Login">
