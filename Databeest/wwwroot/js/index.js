@@ -102,6 +102,7 @@ $(function () {
             type: "POST",
             url: "/Main/OverlayGood/" + id, // /Main/OverlayGood/1
             success: function (data) {
+                console.log(data.status);
                 $(".contentApps").prepend(data)
                 let myMusic = new Audio("/sound/positive.mp3");
                 myMusic.play();
@@ -171,22 +172,20 @@ function getTime() {
 
 // Virus countdown timer 
 if ($('#virus-timer').length > 0) {
-function countdownVirusTimer(){
-    let virusTimer = 30;
-    let virusTimerText = virusTimer;
-    document.getElementById("virus-timer").innerHTML = virusTimerText + " seconds";
-    let virusTimerInterval = setInterval(function(){
-        virusTimer--;
-        virusTimerText = virusTimer;
-        document.getElementById("virus-timer").innerHTML = virusTimerText + " seconds";
-        if(virusTimer == 0){
-            clearInterval(virusTimerInterval);
+    let virusTimer = 5;
+    setInterval(countdownVirusTimer, 1000);
+    
+    function countdownVirusTimer(){
+        if (virusTimer == 0) {
             document.getElementById("virus-timer").innerHTML = "0";
-            document.getElementById("virus-close").click();
+            document.getElementsByClassName("goodbeast")[0].click();
+            virusTimer = -1;
+            return;
+        } else if (virusTimer > 0) {
+            document.getElementById("virus-timer").innerHTML = virusTimer + " seconden";
+            virusTimer--;
         }
-    }, 1000);
-}     
-countdownVirusTimer();
+    }     
 }
 
 function goPage(page) {

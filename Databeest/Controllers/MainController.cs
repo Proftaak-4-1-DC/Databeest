@@ -27,7 +27,7 @@ namespace Databeest.Controllers
             User user = GetAuthUser();
             ViewData["Username"] = user.Username;
             ViewData["Email"] = user.Email;
-            ViewData["Wifi"] = HasWifi() ? "true" : "false";
+            ViewData["Wifi"] = HasWifi();
         }
 
         public IActionResult Index()
@@ -39,7 +39,7 @@ namespace Databeest.Controllers
 
         public IActionResult Mailbox()
         {
-            if (!HasWifi())
+            if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
             PrepView();
@@ -57,7 +57,7 @@ namespace Databeest.Controllers
 
         public IActionResult Photogram()
         {
-            if (!HasWifi())
+            if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
             PrepView();
@@ -74,19 +74,20 @@ namespace Databeest.Controllers
             PrepView();
             User user = GetAuthUser();
 
-            TaskDB taskDB = new TaskDB();
-            Task task = taskDB.SelectUserTask(user, "WiFi");
-
-            // If wifi is connected (either public or private) go to virus page, otherwise, no wifi
-            if (task.Status != TaskStatus.NotStarted)
-                return Redirect("/Main/Virus");
-            else
+            if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
+
+            TaskDB taskDB = new TaskDB();
+            Task virusTask = taskDB.SelectUserTask(user, "Virus");
+
+            if (virusTask.Status != TaskStatus.NotStarted)
+                return Redirect("/Main/OverlayDone");
+            return Redirect("/Main/Virus");
         }
 
         public IActionResult Virus()
         {
-            if (!HasWifi())
+            if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
             PrepView();
@@ -107,7 +108,7 @@ namespace Databeest.Controllers
 
         public IActionResult FakeGoogle()
         {
-            if (!HasWifi())
+            if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
             PrepView();
@@ -133,7 +134,10 @@ namespace Databeest.Controllers
 
             Task task = taskDB.SelectUserTask(user, id);
             if (task.IsShown)
-                return Redirect(task.ReturnUrl);
+            {
+                StatusCodeResult result = new StatusCodeResult(418);
+                return result;
+            }
 
             taskDB.UpdateUserTask(user, id, TaskStatus.Good);
             task = taskDB.SelectUserTask(user, id);
@@ -177,16 +181,18 @@ namespace Databeest.Controllers
             return user;
         }
 
-        private bool HasWifi()
+        private string HasWifi()
         {
             User user = GetAuthUser();
             TaskDB taskDB = new TaskDB();
 
             Task task = taskDB.SelectUserTask(user, 3);
-            if (task.Status != TaskStatus.NotStarted)
-                return true;
+            if (task.Status == TaskStatus.NotStarted)
+                return "nowifi";
+            else if (task.Status == TaskStatus.Bad)
+                return "free";
             else
-                return false;
+                return "notfree";
         }
 
         // MS generated

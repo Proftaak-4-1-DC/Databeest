@@ -114,8 +114,8 @@ body {
     padding: 8px;
 }
 .optionClass img {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
 .optionClass:hover {
     background-color: #254f6b;
@@ -153,8 +153,8 @@ body {
 }
 /* WifiPicker end */
 .svgClass {
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
 }
 
 /* Photogram NavBar */

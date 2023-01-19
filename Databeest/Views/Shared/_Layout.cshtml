@@ -27,7 +27,13 @@
                 <div class="wifiContainer">
                     <div class="hoverSelect">
                         <button style="background: none; border: none;">
-                            <img src="~/img/layout/wifiIcon.png" class="imageClass" alt="wifi">
+                            @if (ViewData["Wifi"] == "false")
+                            {
+                                <img src="~/img/no-wifi-white.png" class="imageClass" alt="wifi">
+                            } else
+                            {
+                                <img src="~/img/layout/wifiIcon.png" class="imageClass" alt="wifi">
+                            }
                         </button>
                     </div>
                     <div class="dateTime">
@@ -63,14 +69,17 @@
                     </div>
                     <div class="secondConnection">
                         <div class="informationConnection"><p>i</p></div>
-                        @if (ViewData["Wifi"] == "false")
+                        @if (ViewData["Wifi"] == "nowifi")
                         {
-                            <button type="submit" class="connectButttonClass badbeast" data-id="3">verbinden</button>
-                        } else
+                            <button type="submit" class="connectButttonClass badbeast" data-id="3">Verbinden</button>
+                        } else if (ViewData["Wifi"] == "free")
                         {
-                            <button type="submit" class="connectButttonClass" disabled>Verbonden!</button>
+                            <button type="submit" class="connectButttonClass" disabled>Verbonden</button>
+                        } else if (ViewData["Wifi"] == "notfree")
+                        {
+                            <button type="submit" class="connectButttonClass" disabled>Verbinden</button>
                         }
-                    </div>
+                </div>
                 </div>
                 <div class="optionClass">
                     <div class="mainConnection">
@@ -79,12 +88,17 @@
                     </div>
                     <div class="secondConnection">
                         <div class="informationConnection"><p>i</p></div>
-                        @if (ViewData["Wifi"] == "false")
+                        @if (ViewData["Wifi"] == "nowifi")
                         {
-                            <button type="submit" class="connectButttonClass goodbeast" data-id="3">verbinden</button>
-                        } else
+                            <button type="submit" class="connectButttonClass goodbeast" data-id="3">Verbinden</button>
+                        }
+                        else if (ViewData["Wifi"] == "free")
                         {
-                            <button type="submit" class="connectButttonClass" disabled>Verbonden!</button>
+                            <button type="submit" class="connectButttonClass" disabled>Verbinden</button>
+                        }
+                        else if (ViewData["Wifi"] == "notfree")
+                        {
+                            <button type="submit" class="connectButttonClass" disabled>Verbonden</button>
                         }
                     </div>
                 </div>
