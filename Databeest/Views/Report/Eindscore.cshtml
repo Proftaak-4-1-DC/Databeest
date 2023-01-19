@@ -1,8 +1,6 @@
 @{
     Layout = "_LayoutDone";
     ViewData["Title"] = "Eindscore";
-
-    var scores = ViewData["scores"] as Dictionary<string, int>;
 }
 @section Scripts {
         @if (ViewData["totalScore"] as int? > 5)

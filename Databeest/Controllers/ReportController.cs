@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Task = Databeest.Models.Task;
 using TaskStatus = Databeest.Models.TaskStatus;
-using System.Collections.Generic;
 
 namespace Databeest.Controllers
 {
@@ -17,7 +16,10 @@ namespace Databeest.Controllers
 
             int score = 0;
             foreach (var item in dict)
+            {
                 score += item.Value;
+                ViewData[item.Key] = item.Value;
+            }
 
             ViewData["totalScore"] = score;
 
