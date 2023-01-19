@@ -9,7 +9,8 @@
             <p class="title">@ViewData["Title"]</p>
         </div>
         <div class="avatar">
-            <img class="profielfoto" id="logodatabase" src="~/img/icons/pf databeest.png" alt="profielfoto">
+            <img class="normaledatabase" src="~/img/icons/pf databeest.png" alt="profielfoto" width="200px">
+            <img class="bozedatabase" src="~/img//icons/pf databeest boos.png" alt="profielfoto" width="200px" />
         </div>
 
         <div class="loginText">
@@ -17,7 +18,7 @@
             <input id="passwordblockid" type="password" placeholder="Password" name="password" required>
             @ViewBag.Message
             <div class="buttonsoptie">
-                <button id="buttonlogin" type="submit">
+                <button class="buttonlogin" type="submit">
                     <img id="next" src="~/img/icons/buttonlogin.png" alt="loginknop" height="40">
                 </button>
             </div>
