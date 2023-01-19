@@ -28,10 +28,15 @@ namespace Databeest.Controllers
             ViewData["Username"] = user.Username;
             ViewData["Email"] = user.Email;
             ViewData["Wifi"] = HasWifi();
+            
+            
         }
 
         public IActionResult Index()
         {
+            if (TasksDone())
+                return Redirect("/Report/Eindscore");
+
             PrepView();
 
             return View();
@@ -39,6 +44,9 @@ namespace Databeest.Controllers
 
         public IActionResult Mailbox()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
@@ -57,6 +65,9 @@ namespace Databeest.Controllers
 
         public IActionResult Photogram()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
@@ -71,6 +82,9 @@ namespace Databeest.Controllers
 
         public IActionResult Interwebs()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             PrepView();
             User user = GetAuthUser();
 
@@ -87,6 +101,9 @@ namespace Databeest.Controllers
 
         public IActionResult Virus()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
@@ -101,6 +118,9 @@ namespace Databeest.Controllers
 
         public IActionResult NoWifi()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             PrepView();
 
             return View();
@@ -108,6 +128,9 @@ namespace Databeest.Controllers
 
         public IActionResult FakeGoogle()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             if (HasWifi() == "nowifi")
                 return Redirect("/Main/NoWifi");
 
@@ -118,6 +141,9 @@ namespace Databeest.Controllers
 
         public IActionResult OverlayDone()
         {
+            if (TasksDone())
+                Redirect("/Report/Eindscore");
+
             PrepView();
 
             return View();
@@ -193,6 +219,23 @@ namespace Databeest.Controllers
                 return "free";
             else
                 return "notfree";
+        }
+
+        private bool TasksDone()
+        {
+            User user = GetAuthUser();
+            TaskDB taskDB = new TaskDB();
+
+            // 1 t/m 8
+            bool allTasksDone = true;
+            for (int i = 1; i < 9; i++)
+            {
+                Task task = taskDB.SelectUserTask(user, i);
+                if (task.Status == TaskStatus.NotStarted)
+                    allTasksDone = false;
+            }
+
+            return allTasksDone;
         }
 
         // MS generated
