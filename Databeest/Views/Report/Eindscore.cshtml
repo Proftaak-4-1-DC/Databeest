@@ -26,7 +26,7 @@
                 <p>Jouw eindscore is een :</p> 
                 </div>
                 <div class="scorebalkContainer">
-                    <p>Score: <br> @ViewData["totalScore"]</p>
+                    <p>Score: <br> @ViewData["totalScore"]/10</p>
                     <div class="scorebalk"></div>
                 </div>
                 <div class="onderdelen">
@@ -34,7 +34,7 @@
                 </div>
         </div>
         <div class="eindcijfer">
-            <p>7</p>
+            <p>@ViewData["totalScore"]</p>
         </div>
     </div>
     <div class="mainContainerResultaat">
