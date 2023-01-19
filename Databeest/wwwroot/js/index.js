@@ -91,7 +91,8 @@ $(function () {
         let deleteMail = $(this).closest('.mailbox-container').attr('id').replace('i', '');
         $('#' + deleteMail).remove();
     });
-      
+
+    
 
     if ($('.paginaprivacy').length > 0) {
         $('body').css('background-image', 'none');
@@ -102,10 +103,8 @@ $(function () {
             type: "POST",
             url: "/Main/OverlayGood/" + id, // /Main/OverlayGood/1
             success: function (data) {
-                console.log(data.status);
                 $(".contentApps").prepend(data)
-                let myMusic = new Audio("/sound/positive.mp3");
-                myMusic.play();
+                playSound('/sound/positive.mp3');
             },
         });
     }
@@ -116,8 +115,7 @@ $(function () {
             url: "/Main/OverlayBad/" + id, // /Main/OverlayBad/1
             success: function (data) {
                 $(".contentApps").prepend(data)
-                let myMusic = new Audio("/sound/negative.mp3");
-                myMusic.play();
+                playSound('/sound/negative.mp3');
             },
         });
     }
@@ -138,6 +136,13 @@ $(function () {
         badbeast(id);
     });
 });
+
+function playSound(url, volume) {
+    let music = new Audio(url);
+    if (volume)
+        music.volume = volume;
+    music.play();
+}
 
 function composePopup() {
     let popup = document.getElementsByClassName("pop-up");
@@ -172,7 +177,8 @@ function getTime() {
 
 // Virus countdown timer 
 if ($('#virus-timer').length > 0) {
-    let virusTimer = 5;
+    playSound('/sound/virus.mp3', 0.2);
+    let virusTimer = 30;
     setInterval(countdownVirusTimer, 1000);
     
     function countdownVirusTimer(){

@@ -88,11 +88,14 @@
                 <p>Nieuwsbrief</p>
                 <img class="trash" src="~/img/icons/trash.png">
             </div>
-            <div class="inbox" id="7">
-                <p>Google Inc.</p>
-                <p>Wachtwoord resetten</p>
-                <img class="trash goodbeast" data-id="7" src="~/img/icons/trash.png">
-            </div>
+            @if (Model[3].Status == Databeest.Models.TaskStatus.NotStarted)
+            {
+                <div class="inbox" id="7">
+                    <p>Google Inc.</p>
+                    <p>Wachtwoord resetten</p>
+                    <img class="trash goodbeast" data-id="7" src="~/img/icons/trash.png">
+                </div>
+            }
             @if (Model[2].Status == Databeest.Models.TaskStatus.NotStarted)
             {
                 <div class="inbox" id="8">

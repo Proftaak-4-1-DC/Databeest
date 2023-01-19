@@ -1,6 +1,23 @@
 @{
     Layout = "_LayoutDone";
     ViewData["Title"] = "Eindscore";
+
+    var scores = ViewData["scores"] as Dictionary<string, int>;
+}
+@section Scripts {
+        @if (ViewData["totalScore"] as int? > 5)
+        {
+            <script>
+                let music = new Audio('/sound/positive-score.mp3');
+                music.play();
+            </script>
+        } else
+        {
+            <script>
+                let music = new Audio('/sound/negative-score.mp3');
+                music.play(); 
+            </script>
+        }
 }
 <div class="eindscorehelepagina">
     <div class="containerUp">
@@ -9,7 +26,7 @@
                 <p>Jouw eindscore is een :</p> 
                 </div>
                 <div class="scorebalkContainer">
-                    <p>Score: <br> {5/8}</p>
+                    <p>Score: <br> @ViewData["totalScore"]</p>
                     <div class="scorebalk"></div>
                 </div>
                 <div class="onderdelen">

@@ -1,6 +1,7 @@
 ﻿namespace Databeest.Models
 {
-    public class Report
+    // Wegens tijdgebrek niet geïmplementeerd
+    /*public class Report
     {
         public DateTime PlayTime { get; set; }
         public DateTime CompletionTime { get; set; }
@@ -9,5 +10,5 @@
         {
             
         }
-    }
+    }*/
 }

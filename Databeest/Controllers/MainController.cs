@@ -55,10 +55,11 @@ namespace Databeest.Controllers
             User user = GetAuthUser();
 
             TaskDB taskDB = new TaskDB();
-            Task[] tasks = new Task[3];
+            Task[] tasks = new Task[4];
             tasks[0] = taskDB.SelectUserTask(user, 1);
             tasks[1] = taskDB.SelectUserTask(user, 6);
             tasks[2] = taskDB.SelectUserTask(user, 8);
+            tasks[3] = taskDB.SelectUserTask(user, 7);
 
             return View(tasks);
         }
