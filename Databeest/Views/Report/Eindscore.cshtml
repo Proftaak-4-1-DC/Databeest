@@ -3,19 +3,75 @@
     ViewData["Title"] = "Eindscore";
 }
 @section Scripts {
-        @if (ViewData["totalScore"] as int? > 5)
-        {
-            <script>
-                let music = new Audio('/sound/positive-score.mp3');
-                music.play();
-            </script>
-        } else
-        {
-            <script>
-                let music = new Audio('/sound/negative-score.mp3');
-                music.play(); 
-            </script>
-        }
+    @if (ViewData["totalScore"] as int? > 5)
+    {
+        <script>
+            let music = new Audio('/sound/positive-score.mp3');
+            music.play();
+        </script>
+    } else
+    {
+        <script>
+            let music = new Audio('/sound/negative-score.mp3');
+            music.play(); 
+        </script>
+    }
+
+    @if (ViewData["Photogram"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.berichtemma').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["Spam Mail"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.spammail').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["WiFi"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.wifiverbinding').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["Wachtwoord Sterkte"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.wachtwoord').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["Virus"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.virusmelding').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["Phishing Filmpje"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.filmpjemail').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["Wachtwoord Vergeten"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.wachtwoordvergetenmail').style.background = 'red';
+        </script>
+    }
+
+    @if (ViewData["School Spullen"] as int? == 0)
+    {
+        <script>
+            document.querySelector('.schoolspullenmail').style.background = 'red';
+        </script>
+    }
 }
 <div class="eindscorehelepagina">
     <script>
