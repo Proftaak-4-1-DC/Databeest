@@ -851,7 +851,7 @@ p.title { /* Geen hoofdletters nodig in p tag ;) wordt dynamisch ingevuld nameli
     position: relative;
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 40vw;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -867,10 +867,18 @@ p.title { /* Geen hoofdletters nodig in p tag ;) wordt dynamisch ingevuld nameli
     transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
 }
 
+.modal-close {
+    position: absolute;
+    width: 4% !important;
+    height: 8% !important;
+    right: 4%;
+    top: 6%;
+    filter: invert(1);
+}
     .modal-wrap img {
         display: block;
         width: 100%;
-        height: auto;
+        max-height: 500px;
     }
 
     .modal-wrap p {
