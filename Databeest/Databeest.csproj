@@ -28,6 +28,9 @@
   <ItemGroup>
     <Content Update="wwwroot\**" ExcludeFromSingleFile="true">
     </Content>
+    <Content Update="wwwroot\img\no-wifi-white.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
 </ItemGroup>
 
   <ItemGroup>
