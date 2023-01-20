@@ -1,5 +1,6 @@
 ﻿using Databeest.Common;
 using Databeest.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Task = Databeest.Models.Task;
@@ -7,6 +8,7 @@ using TaskStatus = Databeest.Models.TaskStatus;
 
 namespace Databeest.Controllers
 {
+    [Authorize(Policy = "User")]
     public class ReportController : Controller
     {
         public IActionResult Eindscore()
