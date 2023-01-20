@@ -37,7 +37,11 @@ namespace Databeest.Models
                 return false;
 
             // https://regex101.com/
-            Regex minChars = new Regex(@"[A-Z]{1,}[a-z]{1,}[0-9]{1,}\S{3,}");
+            // 12 chars
+            // kleine letter + grote letter + leesteken + cijfer
+            Regex regex = new Regex(@"(?=^.{12,}$)((?=.*\w)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[|!$%&\/\(\)\?\^\'\\\+\-\*]))^.*");
+            if (!regex.IsMatch(Password))
+                return false;
 
             return true;
         }
