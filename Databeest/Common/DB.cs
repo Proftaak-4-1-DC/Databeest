@@ -7,22 +7,6 @@ namespace Databeest.Common
         private readonly IConfigurationBuilder ConfigBuilder = new ConfigurationBuilder();
         private string ConnectionString { get; set; }
         protected MySqlConnection Connection { get; set; }
-        //public MySqlDataReader DataReader { get; set; }
-
-        /*private MySqlCommand _command = new MySqlCommand();
-        public MySqlCommand Command
-        {
-            get
-            {
-                return _command;
-            }
-            set
-            {
-                _command = value;
-                _command.Connection = Connection;
-                _command.ExecuteNonQuery();
-            }
-        }*/
         
         public DB()
         {
